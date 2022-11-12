@@ -263,12 +263,20 @@ __cache_apps_lock__ = threading.Lock()
 __instance__ = None
 web_application = None
 from fastapi import Depends, FastAPI, HTTPException, status
+from datetime import datetime, timedelta
+from typing import Union
 from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
-def create_access_token(data: dict,secret_key,algorithm):
+def create_access_token(data: dict, expires_delta = None,SECRET_KEY=None,ALGORITHM=None):
     to_encode = data.copy()
-
-    encoded_jwt = jwt.encode(to_encode, secret_key, algorithm)
+    if expires_delta:
+        expire = datetime.utcnow() + expires_delta
+    else:
+        expire = datetime.utcnow() + timedelta(minutes=15)
+    to_encode.update({"exp": None})
+    encoded_jwt = jwt.encode(data, SECRET_KEY, algorithm=ALGORITHM)
     return encoded_jwt
+
+
 def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
     global web_application
     if not isinstance(web_application,WebApp):
@@ -277,8 +285,10 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
         raise Exception("Please create on auth user with  cy_web_x.auth_user")
     user = web_application.on_auth_user(form_data.username, form_data.password)
     if not isinstance(user,dict):
-        raise Exception(f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and appplication:str,is_ok:bool")
-
+        raise Exception(f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")
+    if set(["username","application","is_ok"]).intersection(list(user.keys())) != set(["username","application","is_ok"]):
+        raise Exception(
+            f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")
     if user.get("is_ok") == False:
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
@@ -290,7 +300,9 @@ def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
         {
             "username": user.get("username"),
             "application":user.get("application")
-        }, web_application.oauth2.jwt_secret_key,web_application.jwt_algorithm
+        },expires_delta=None,
+        SECRET_KEY= web_application.jwt_secret_key,
+        ALGORITHM= web_application.jwt_algorithm
     )
     return {"access_token": access_token, "token_type": "bearer"}
 
@@ -310,8 +322,8 @@ class WebApp(BaseWebApp):
                  dev_mode: bool = False,
                  template_dir: str = None,
                  url_get_token: str = "api/accounts/token",
-                 jwt_algorithm: str = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7",
-                 jwt_secret_key: str = "HS256"
+                 jwt_algorithm: str ="HS256",
+                 jwt_secret_key: str =  "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7"
                  ):
         global __cache_apps__
         global __cache_apps_lock__
@@ -457,6 +469,7 @@ class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):
         if request.cookies.get('access_token_cookie', None) is not None:
             token = request.cookies['access_token_cookie']
             try:
+
                 ret_data = jwt.decode(token, self.jwt_secret_key,
                                       algorithms=[self.jwt_algorithm],
                                       options={"verify_signature": False},
@@ -473,7 +486,7 @@ class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):
                 )
         else:
             authorization: str = request.headers.get("Authorization")
-            scheme, token = fastapi.utils.get_authorization_scheme_param(authorization)
+            scheme, token = tuple(authorization.split(' '))
             if not authorization or scheme.lower() != "bearer":
                 if self.auto_error:
                     raise HTTPException(
@@ -491,7 +504,7 @@ class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):
                                       )
 
                 setattr(request, "usernane", ret_data.get("sup"))
-                setattr(request, "application_name", ret_data.get("application"))
+                setattr(request, "application", ret_data.get("application"))
             except jose.exceptions.JWTError:
                 raise HTTPException(
                     status_code=401,

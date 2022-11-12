@@ -24,7 +24,12 @@ def fx1(x=fastapi.Depends(fx.oauth2_type)):
 cy_web_x.load_controller_from_dir("api","./controllers")
 @cy_web_x.auth_account()
 def ok(username:str,password:str):
-    return 1
+    return dict(
+        username=username,
+        application='admin',
+        is_ok = True
+
+    )
 if __name__ =="__main__":
     cy_web_x.start_with_uvicorn()
     cy_web_x.web_handler(
