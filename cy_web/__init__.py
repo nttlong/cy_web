@@ -50,4 +50,14 @@ def start_with_uvicorn():
 def middleware():
     return cy_web_x.middleware()
 def auth():
+    """
+    Set require auth on api handler
+    :return:
+    """
     return cy_web_x.auth()
+def auth_account():
+    """
+    Code decorate for on aoyhthenti cate token
+    :return:
+    """
+    return cy_web_x.auth_account()

@@ -22,6 +22,8 @@ cy_web.create_web_app(
 #     response.headers["X-Process-Time"] = str(process_time)
 #     return response
 cy_web.load_controller_from_dir("api","./controllers")
-
+@cy_web.auth_account()
+def verify_account(username:str,password:str):
+    return dict()
 if __name__ =="__main__":
     cy_web.start_with_uvicorn()
