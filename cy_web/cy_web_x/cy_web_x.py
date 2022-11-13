@@ -274,6 +274,10 @@ class BaseWebApp:
                     _path = "/" + prefix + _path
                 if self.host_dir is not None:
                     _path = self.host_dir + _path
+                if v.return_type is None:
+                    if hasattr(v.handler, "__annotations__"):
+                        if v.handler.__annotations__.get("return") is not None:
+                            v.return_type =v.handler.__annotations__.get("return")
 
                 if v.return_type is not None:
                     getattr(self.app, v.method)(_path, response_model=v.return_type)(v.handler)
@@ -587,3 +591,9 @@ def auth_account():
         if isinstance(web_application,WebApp):
             web_application.on_auth_user = fn
     return wrapper
+
+
+def fast_api()->fastapi.FastAPI:
+    global web_application
+    if isinstance(web_application,WebApp):
+        return web_application.app

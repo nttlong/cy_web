@@ -1,4 +1,5 @@
 import fastapi
+import pydantic
 
 import cy_web_x
 fx=cy_web_x.WebApp(
@@ -30,6 +31,17 @@ def ok(username:str,password:str):
         is_ok = True
 
     )
+
+
+class MyClass(pydantic.BaseModel):
+    pass
+
+my_app =cy_web_x.fast_api()
+def test():
+    return 1
+fx=my_app.post(path="test",response_model=MyClass)(test)
+
+fy = fx
 if __name__ =="__main__":
     cy_web_x.start_with_uvicorn()
     cy_web_x.web_handler(
