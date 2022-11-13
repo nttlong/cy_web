@@ -1,3 +1,9 @@
+import pathlib
+import sys
+
+sys.path.append(
+    pathlib.Path(__file__).parent.parent.__str__()
+)
 from datetime import time
 
 import fastapi
@@ -24,6 +30,11 @@ cy_web.create_web_app(
 cy_web.load_controller_from_dir("api","./controllers")
 @cy_web.auth_account()
 def verify_account(username:str,password:str):
-    return dict()
+    return dict(
+        application='a',
+        is_ok=True,
+        username =username
+
+    )
 if __name__ =="__main__":
     cy_web.start_with_uvicorn()

@@ -10,8 +10,8 @@ def create_web_app(
         logs_dir:str,
         bind:str,
         url_get_token: str = "api/accounts/token",
-        jwt_algorithm: str = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7",
-        jwt_secret_key: str = "HS256",
+        jwt_algorithm: str = "HS256",
+        jwt_secret_key: str = "09d25e094faa6ca2556c818166b7a9563b93f7099f6f0f4caa6cf63b88e8d3e7",
         dev_mode:bool =False
 ):
     ret = cy_web_x.WebApp(

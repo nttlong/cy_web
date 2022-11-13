@@ -533,7 +533,7 @@ class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):
                                       options={"verify_signature": False},
                                       )
 
-                setattr(request, "usernane", ret_data.get("usernane"))
+                setattr(request, "usernane", ret_data.get("username"))
                 setattr(request, "application", ret_data.get("application"))
             except jose.exceptions.JWTError:
                 raise HTTPException(
