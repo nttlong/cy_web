@@ -1,6 +1,7 @@
 import logging
 from fastapi.exceptions import HTTPException
 from typing import List
+import typing
 import uvicorn
 import jose
 from jose import JWTError, jwt
@@ -18,6 +19,10 @@ __wrap_pydantic_lock__ = threading.Lock()
 def __wrap_pydantic__(pre, cls, is_lock=True):
     global __wrap_pydantic_cache__
     global __wrap_pydantic_lock__
+    if cls.__module__ ==typing.__name__  and cls.__origin__==list:
+        for x in cls.__args__:
+            __wrap_pydantic__("",x)
+        return
     if __wrap_pydantic_cache__.get(f"{cls.__module__}/{cls.__name__}") and is_lock:
         return __wrap_pydantic_cache__.get(f"{cls.__module__}/{cls.__name__}")
     with __wrap_pydantic_lock__:
@@ -40,7 +45,17 @@ def __wrap_pydantic__(pre, cls, is_lock=True):
                         setattr(sys.modules[cls.__module__], k, re_modify)
 
         ret_cls = type(f"{cls.__name__}", (cls, pydantic.BaseModel,), dict(cls.__dict__))
-        setattr(sys.modules[cls.__module__], cls.__name__, ret_cls)
+        def get_mdl(cls):
+            if sys.modules.get(cls.__module__):
+                return sys.modules[cls.__module__]
+            else:
+                for k,v in sys.modules.items():
+                    if hasattr(v,"__file__"):
+                        if v.__file__==cls.__module__:
+                            return v
+
+        cls_module= get_mdl(cls)
+        setattr(cls_module, cls.__name__, ret_cls)
         ret_cls.__name__ = cls.__name__
         __wrap_pydantic_cache__[f"{cls.__module__}/{cls.__name__}"] = ret_cls
     return __wrap_pydantic_cache__.get(f"{cls.__module__}/{cls.__name__}")
@@ -48,6 +63,13 @@ def __wrap_pydantic__(pre, cls, is_lock=True):
 
 def check_is_need_pydantic(cls):
     import typing
+    if isinstance(cls,tuple):
+        ret=False
+        for x in cls:
+            ret= ret or check_is_need_pydantic(x)
+        return ret
+    if cls.__module__ == typing.__name__ and cls.__origin__==list and hasattr(cls,"__args__"):
+        return check_is_need_pydantic(cls.__args__)
     if cls == fastapi.Request or issubclass(cls, fastapi.Request):
         return False
     if not inspect.isclass(cls) and callable(cls):
@@ -198,7 +220,7 @@ class BaseWebApp:
         for x in dirs:
             sys.path.append(x)
         for _file_ in files:
-            self.load_conttroler_from_file(os.path.join(root_dir, _file_), route_prefix)
+            self.load_controller_from_file(os.path.join(root_dir, _file_), route_prefix)
         for dir in dirs:
             self.load_controller_module_dir(os.path.join(root_dir, dir), route_prefix)
 
@@ -220,7 +242,7 @@ class BaseWebApp:
             if os.path.splitext(_file_)[1] == ".py":
                 full_file_path = os.path.join(module_dir, _file_)
                 if os.path.isfile(full_file_path):
-                    self.load_conttroler_from_file(full_file_path,prefix)
+                    self.load_controller_from_file(full_file_path, prefix)
     def auth(self):
         def wrapper(fn):
             setattr(self.oauth2_type, "__call__", fn)
@@ -232,7 +254,7 @@ class BaseWebApp:
             jwt_secret_key=self.jwt_secret_key
         )
 
-    def load_conttroler_from_file(self,full_file_path,prefix):
+    def load_controller_from_file(self, full_file_path, prefix):
         if not os.path.isfile(full_file_path):
             return
         if os.path.splitext(full_file_path).__len__()!=2 and os.path.splitext(full_file_path)[1]!=".py":
@@ -242,6 +264,7 @@ class BaseWebApp:
         import sys
         spec = importlib.util.spec_from_file_location(full_file_path, full_file_path)
         _mdl_ = importlib.util.module_from_spec(spec)
+        sys.modules[_mdl_.__name__]=_mdl_
         spec.loader.exec_module(_mdl_)
         for k, v in _mdl_.__dict__.items():
             if isinstance(v, RequestHandler):
@@ -425,7 +448,8 @@ class WebApp(BaseWebApp):
             )
 
 
-def web_handler(path: str, method: str):
+def web_handler(path: str, method: str,response_model=None):
+
     def warpper(obj):
         import inspect
         if inspect.isclass(obj):
@@ -486,6 +510,8 @@ class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):
                 )
         else:
             authorization: str = request.headers.get("Authorization")
+            if authorization is None:
+                raise fastapi.exceptions.HTTPException(status_code=401)
             scheme, token = tuple(authorization.split(' '))
             if not authorization or scheme.lower() != "bearer":
                 if self.auto_error:
@@ -503,7 +529,7 @@ class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):
                                       options={"verify_signature": False},
                                       )
 
-                setattr(request, "usernane", ret_data.get("sup"))
+                setattr(request, "usernane", ret_data.get("usernane"))
                 setattr(request, "application", ret_data.get("application"))
             except jose.exceptions.JWTError:
                 raise HTTPException(
