@@ -1,10 +1,11 @@
+import datetime
 import pathlib
 import sys
 
 sys.path.append(
     pathlib.Path(__file__).parent.parent.__str__()
 )
-from datetime import time
+
 
 import fastapi
 
@@ -20,13 +21,20 @@ cy_web.create_web_app(
 
 
 )
-# @cy_web.middleware()
-# async def test(request: fastapi.Request, call_next):
-#     start_time = time.time()
-#     response = await call_next(request)
-#     process_time = time.time() - start_time
-#     response.headers["X-Process-Time"] = str(process_time)
-#     return response
+@cy_web.middleware()
+async def mdlware(request: fastapi.Request, call_next):
+    start_time = datetime.datetime.now()
+    response = await call_next(request)
+    process_time = datetime.datetime.now()- start_time
+    response.headers["X-Process-Time"] = str(process_time)
+    return response
+cy_web.add_cors(
+[
+    "http://localhost.tiangolo.com",
+    "https://localhost.tiangolo.com",
+    "http://localhost",
+    "http://localhost:8080",
+])
 cy_web.load_controller_from_dir("api","./controllers")
 @cy_web.auth_account()
 def verify_account(username:str,password:str):
