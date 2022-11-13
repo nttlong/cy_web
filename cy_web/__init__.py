@@ -1,4 +1,5 @@
 import pathlib
+from typing import List
 import sys
 sys.path.append(pathlib.Path(__file__).parent.__str__())
 import cy_web_x
@@ -61,3 +62,5 @@ def auth_account():
     :return:
     """
     return cy_web_x.auth_account()
+def add_cors(origins:List[str]):
+    return cy_web_x.add_cors(origins)

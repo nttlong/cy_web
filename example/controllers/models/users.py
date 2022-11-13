@@ -3,6 +3,6 @@ from example.controllers.models.tanents import Tanents
 
 class Users:
 
-    Tanent:Tanents
-    OldTanets:List[Tanents]
+    # Tanent: Optional[Tanents]
+    OldTanets:Optional[List[Tanents]]
 

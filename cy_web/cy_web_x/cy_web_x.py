@@ -400,6 +400,7 @@ mimetypes.guess_type=__new__fn__
 all re definre hear
 """
 
+from fastapi.middleware.cors import CORSMiddleware
 
 import logging
 from fastapi.exceptions import HTTPException
@@ -421,6 +422,9 @@ __wrap_pydantic_lock__ = threading.Lock()
 def get_cls(cls):
     if sys.modules.get(cls.__module__):
         mdl = sys.modules[cls.__module__]
+        if not hasattr(cls,"__name__"):
+
+            return
         if hasattr(mdl,cls.__name__):
             ret = getattr(mdl,cls.__name__)
             if issubclass(ret,pydantic.BaseModel):
@@ -429,9 +433,11 @@ def __wrap_pydantic__(pre, cls, is_lock=True):
     global __wrap_pydantic_cache__
     global __wrap_pydantic_lock__
     if cls.__module__ ==typing.__name__  and cls.__origin__==list:
+        ret=[]
         for x in cls.__args__:
-            __wrap_pydantic__("",x)
-        return
+            ret+=[__wrap_pydantic__("",x)]
+        cls.__args__ = tuple(ret)
+        return cls
     if __wrap_pydantic_cache__.get(f"{cls.__module__}/{cls.__name__}") and is_lock:
         return __wrap_pydantic_cache__.get(f"{cls.__module__}/{cls.__name__}")
 
@@ -456,6 +462,7 @@ def __wrap_pydantic__(pre, cls, is_lock=True):
                             re_modify =__wrap_pydantic__(cls.__name__, fv, False)
                             # setattr(sys.modules[fv.__module__],fv.__name__,re_modify)
                             # setattr(sys.modules[cls.__module__], fv.__name__, re_modify)
+
                             temp+=[re_modify]
                         else:
                             temp += [get_cls(fv)]
@@ -492,6 +499,9 @@ def __wrap_pydantic__(pre, cls, is_lock=True):
 
 
 def check_is_need_pydantic(cls):
+    if inspect.isclass(cls):
+        if cls.__module__ == bytes.__module__ and cls.__name__=="NoneType":
+            return False
     import typing
     if isinstance(cls,tuple):
         ret=False
@@ -1049,3 +1059,13 @@ def fast_api()->fastapi.FastAPI:
     global web_application
     if isinstance(web_application,WebApp):
         return web_application.app
+def add_cors(origins:List[str]):
+    global web_application
+    if isinstance(web_application,WebApp):
+        web_application.app.add_middleware(
+            CORSMiddleware,
+            allow_origins=origins,
+            allow_credentials=True,
+            allow_methods=["*"],
+            allow_headers=["*"],
+        )
