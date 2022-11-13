@@ -993,7 +993,7 @@ struct __pyx_obj_8cy_web_x___pyx_scope_struct__auth {
 };
 
 
-/* "cy_web_x.py":451
+/* "cy_web_x.py":455
  * 
  * 
  * def web_handler(path: str, method: str,response_model=None):             # <<<<<<<<<<<<<<
@@ -1007,7 +1007,7 @@ struct __pyx_obj_8cy_web_x___pyx_scope_struct_1_web_handler {
 };
 
 
-/* "cy_web_x.py":491
+/* "cy_web_x.py":495
  *         self.jwt_algorithm = jwt_algorithm
  * 
  *     async def __call__(self, request: fastapi.Request):             # <<<<<<<<<<<<<<
@@ -1989,6 +1989,7 @@ static const char __pyx_k_datetime[] = "datetime";
 static const char __pyx_k_defaults[] = "__defaults__";
 static const char __pyx_k_dev_mode[] = "dev_mode";
 static const char __pyx_k_exist_ok[] = "exist_ok";
+static const char __pyx_k_fast_api[] = "fast_api";
 static const char __pyx_k_get_auth[] = "get_auth";
 static const char __pyx_k_host_dir[] = "host_dir";
 static const char __pyx_k_host_url[] = "host_url";
@@ -2284,6 +2285,7 @@ static PyObject *__pyx_n_s_exit;
 static PyObject *__pyx_n_s_exp;
 static PyObject *__pyx_n_s_expire;
 static PyObject *__pyx_n_s_expires_delta;
+static PyObject *__pyx_n_s_fast_api;
 static PyObject *__pyx_n_s_fastapi;
 static PyObject *__pyx_n_s_fastapi_exceptions;
 static PyObject *__pyx_n_s_fastapi_security;
@@ -2500,9 +2502,9 @@ static PyObject *__pyx_pf_8cy_web_x_10BaseWebApp_8auth(CYTHON_UNUSED PyObject *_
 static PyObject *__pyx_pf_8cy_web_x_10BaseWebApp_10get_auth(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self); /* proto */
 static PyObject *__pyx_pf_8cy_web_x_10BaseWebApp_12load_controller_from_file(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_full_file_path, PyObject *__pyx_v_prefix); /* proto */
 static PyObject *__pyx_pf_8cy_web_x_10create_access_token(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_data, PyObject *__pyx_v_expires_delta, PyObject *__pyx_v_SECRET_KEY, PyObject *__pyx_v_ALGORITHM); /* proto */
-static PyObject *__pyx_pf_8cy_web_x_28__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
-static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_form_data); /* proto */
 static PyObject *__pyx_pf_8cy_web_x_30__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_form_data); /* proto */
+static PyObject *__pyx_pf_8cy_web_x_32__defaults__(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_working_dir, PyObject *__pyx_v_bind, PyObject *__pyx_v_host_url, PyObject *__pyx_v_logs_dir, PyObject *__pyx_v_controller_dirs, PyObject *__pyx_v_api_host_dir, PyObject *__pyx_v_static_dir, PyObject *__pyx_v_dev_mode, PyObject *__pyx_v_template_dir, PyObject *__pyx_v_url_get_token, PyObject *__pyx_v_jwt_algorithm, PyObject *__pyx_v_jwt_secret_key); /* proto */
 static PyObject *__pyx_pf_8cy_web_x_6WebApp_2unvicorn_start(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_self, PyObject *__pyx_v_start_path); /* proto */
 static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, PyObject *__pyx_v_obj); /* proto */
@@ -2516,6 +2518,7 @@ static PyObject *__pyx_pf_8cy_web_x_22middleware(CYTHON_UNUSED PyObject *__pyx_s
 static PyObject *__pyx_pf_8cy_web_x_24auth(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_pf_8cy_web_x_12auth_account_wrapper(CYTHON_UNUSED PyObject *__pyx_self, PyObject *__pyx_v_fn); /* proto */
 static PyObject *__pyx_pf_8cy_web_x_26auth_account(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
+static PyObject *__pyx_pf_8cy_web_x_28fast_api(CYTHON_UNUSED PyObject *__pyx_self); /* proto */
 static PyObject *__pyx_tp_new_8cy_web_x___pyx_scope_struct__auth(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_8cy_web_x___pyx_scope_struct_1_web_handler(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
 static PyObject *__pyx_tp_new_8cy_web_x___pyx_scope_struct_2___call__(PyTypeObject *t, PyObject *a, PyObject *k); /*proto*/
@@ -2601,6 +2604,7 @@ static PyObject *__pyx_codeobj__77;
 static PyObject *__pyx_codeobj__78;
 static PyObject *__pyx_codeobj__79;
 static PyObject *__pyx_codeobj__81;
+static PyObject *__pyx_codeobj__82;
 /* Late includes */
 
 /* "cy_web_x.py":19
@@ -10018,7 +10022,7 @@ static PyObject *__pyx_pf_8cy_web_x_10BaseWebApp_12load_controller_from_file(CYT
  *                     _path = "/" + prefix + _path
  *                 if self.host_dir is not None:             # <<<<<<<<<<<<<<
  *                     _path = self.host_dir + _path
- * 
+ *                 if v.return_type is None:
  */
       __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 275, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
@@ -10031,8 +10035,8 @@ static PyObject *__pyx_pf_8cy_web_x_10BaseWebApp_12load_controller_from_file(CYT
  *                     _path = "/" + prefix + _path
  *                 if self.host_dir is not None:
  *                     _path = self.host_dir + _path             # <<<<<<<<<<<<<<
- * 
- *                 if v.return_type is not None:
+ *                 if v.return_type is None:
+ *                     if hasattr(v.handler, "__annotations__"):
  */
         __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 276, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
@@ -10047,56 +10051,179 @@ static PyObject *__pyx_pf_8cy_web_x_10BaseWebApp_12load_controller_from_file(CYT
  *                     _path = "/" + prefix + _path
  *                 if self.host_dir is not None:             # <<<<<<<<<<<<<<
  *                     _path = self.host_dir + _path
- * 
+ *                 if v.return_type is None:
  */
       }
 
-      /* "cy_web_x.py":278
+      /* "cy_web_x.py":277
+ *                 if self.host_dir is not None:
  *                     _path = self.host_dir + _path
+ *                 if v.return_type is None:             # <<<<<<<<<<<<<<
+ *                     if hasattr(v.handler, "__annotations__"):
+ *                         if v.handler.__annotations__.get("return") is not None:
+ */
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_return_type); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 277, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __pyx_t_12 = (__pyx_t_3 == Py_None);
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_4 = (__pyx_t_12 != 0);
+      if (__pyx_t_4) {
+
+        /* "cy_web_x.py":278
+ *                     _path = self.host_dir + _path
+ *                 if v.return_type is None:
+ *                     if hasattr(v.handler, "__annotations__"):             # <<<<<<<<<<<<<<
+ *                         if v.handler.__annotations__.get("return") is not None:
+ *                             v.return_type =v.handler.__annotations__.get("return")
+ */
+        __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_handler); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 278, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_4 = __Pyx_HasAttr(__pyx_t_3, __pyx_n_s_annotations); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(0, 278, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_12 = (__pyx_t_4 != 0);
+        if (__pyx_t_12) {
+
+          /* "cy_web_x.py":279
+ *                 if v.return_type is None:
+ *                     if hasattr(v.handler, "__annotations__"):
+ *                         if v.handler.__annotations__.get("return") is not None:             # <<<<<<<<<<<<<<
+ *                             v.return_type =v.handler.__annotations__.get("return")
+ * 
+ */
+          __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_handler); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 279, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_6);
+          __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_annotations); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 279, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_2);
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 279, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_6);
+          __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+          __pyx_t_2 = NULL;
+          if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
+            __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_6);
+            if (likely(__pyx_t_2)) {
+              PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+              __Pyx_INCREF(__pyx_t_2);
+              __Pyx_INCREF(function);
+              __Pyx_DECREF_SET(__pyx_t_6, function);
+            }
+          }
+          __pyx_t_3 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_2, __pyx_n_s_return) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_n_s_return);
+          __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+          if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 279, __pyx_L1_error)
+          __Pyx_GOTREF(__pyx_t_3);
+          __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+          __pyx_t_12 = (__pyx_t_3 != Py_None);
+          __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+          __pyx_t_4 = (__pyx_t_12 != 0);
+          if (__pyx_t_4) {
+
+            /* "cy_web_x.py":280
+ *                     if hasattr(v.handler, "__annotations__"):
+ *                         if v.handler.__annotations__.get("return") is not None:
+ *                             v.return_type =v.handler.__annotations__.get("return")             # <<<<<<<<<<<<<<
+ * 
+ *                 if v.return_type is not None:
+ */
+            __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_handler); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 280, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_6);
+            __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_annotations); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 280, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_2);
+            __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+            __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 280, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_6);
+            __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+            __pyx_t_2 = NULL;
+            if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
+              __pyx_t_2 = PyMethod_GET_SELF(__pyx_t_6);
+              if (likely(__pyx_t_2)) {
+                PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_6);
+                __Pyx_INCREF(__pyx_t_2);
+                __Pyx_INCREF(function);
+                __Pyx_DECREF_SET(__pyx_t_6, function);
+              }
+            }
+            __pyx_t_3 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_2, __pyx_n_s_return) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_n_s_return);
+            __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
+            if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 280, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_3);
+            __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+            if (__Pyx_PyObject_SetAttrStr(__pyx_v_v, __pyx_n_s_return_type, __pyx_t_3) < 0) __PYX_ERR(0, 280, __pyx_L1_error)
+            __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+
+            /* "cy_web_x.py":279
+ *                 if v.return_type is None:
+ *                     if hasattr(v.handler, "__annotations__"):
+ *                         if v.handler.__annotations__.get("return") is not None:             # <<<<<<<<<<<<<<
+ *                             v.return_type =v.handler.__annotations__.get("return")
+ * 
+ */
+          }
+
+          /* "cy_web_x.py":278
+ *                     _path = self.host_dir + _path
+ *                 if v.return_type is None:
+ *                     if hasattr(v.handler, "__annotations__"):             # <<<<<<<<<<<<<<
+ *                         if v.handler.__annotations__.get("return") is not None:
+ *                             v.return_type =v.handler.__annotations__.get("return")
+ */
+        }
+
+        /* "cy_web_x.py":277
+ *                 if self.host_dir is not None:
+ *                     _path = self.host_dir + _path
+ *                 if v.return_type is None:             # <<<<<<<<<<<<<<
+ *                     if hasattr(v.handler, "__annotations__"):
+ *                         if v.handler.__annotations__.get("return") is not None:
+ */
+      }
+
+      /* "cy_web_x.py":282
+ *                             v.return_type =v.handler.__annotations__.get("return")
  * 
  *                 if v.return_type is not None:             # <<<<<<<<<<<<<<
  *                     getattr(self.app, v.method)(_path, response_model=v.return_type)(v.handler)
  *                 else:
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_return_type); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 278, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_return_type); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 282, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_12 = (__pyx_t_3 != Py_None);
+      __pyx_t_4 = (__pyx_t_3 != Py_None);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_4 = (__pyx_t_12 != 0);
-      if (__pyx_t_4) {
+      __pyx_t_12 = (__pyx_t_4 != 0);
+      if (__pyx_t_12) {
 
-        /* "cy_web_x.py":279
+        /* "cy_web_x.py":283
  * 
  *                 if v.return_type is not None:
  *                     getattr(self.app, v.method)(_path, response_model=v.return_type)(v.handler)             # <<<<<<<<<<<<<<
  *                 else:
  *                     getattr(self.app, v.method)(_path)(v.handler)
  */
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_app); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 279, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_app); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 283, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_method); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 279, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_method); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 283, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_10 = __Pyx_GetAttr(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 279, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_GetAttr(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 283, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 279, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 283, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_INCREF(__pyx_v__path);
         __Pyx_GIVEREF(__pyx_v__path);
         PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v__path);
-        __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 279, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 283, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_return_type); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 279, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_return_type); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 283, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
-        if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_response_model, __pyx_t_13) < 0) __PYX_ERR(0, 279, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_response_model, __pyx_t_13) < 0) __PYX_ERR(0, 283, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 279, __pyx_L1_error)
+        __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_2, __pyx_t_6); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 283, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_handler); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 279, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_handler); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 283, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __pyx_t_2 = NULL;
         if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_13))) {
@@ -10111,22 +10238,22 @@ static PyObject *__pyx_pf_8cy_web_x_10BaseWebApp_12load_controller_from_file(CYT
         __pyx_t_3 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_13, __pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_13, __pyx_t_6);
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 279, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 283, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-        /* "cy_web_x.py":278
- *                     _path = self.host_dir + _path
+        /* "cy_web_x.py":282
+ *                             v.return_type =v.handler.__annotations__.get("return")
  * 
  *                 if v.return_type is not None:             # <<<<<<<<<<<<<<
  *                     getattr(self.app, v.method)(_path, response_model=v.return_type)(v.handler)
  *                 else:
  */
-        goto __pyx_L16;
+        goto __pyx_L19;
       }
 
-      /* "cy_web_x.py":281
+      /* "cy_web_x.py":285
  *                     getattr(self.app, v.method)(_path, response_model=v.return_type)(v.handler)
  *                 else:
  *                     getattr(self.app, v.method)(_path)(v.handler)             # <<<<<<<<<<<<<<
@@ -10134,11 +10261,11 @@ static PyObject *__pyx_pf_8cy_web_x_10BaseWebApp_12load_controller_from_file(CYT
  * 
  */
       /*else*/ {
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_app); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 281, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_app); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 285, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_method); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 281, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_method); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 285, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_10 = __Pyx_GetAttr(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 281, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_GetAttr(__pyx_t_6, __pyx_t_2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 285, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -10154,10 +10281,10 @@ static PyObject *__pyx_pf_8cy_web_x_10BaseWebApp_12load_controller_from_file(CYT
         }
         __pyx_t_13 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_2, __pyx_v__path) : __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_v__path);
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-        if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 281, __pyx_L1_error)
+        if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 285, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_handler); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 281, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_handler); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 285, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
         __pyx_t_2 = NULL;
         if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_13))) {
@@ -10172,25 +10299,25 @@ static PyObject *__pyx_pf_8cy_web_x_10BaseWebApp_12load_controller_from_file(CYT
         __pyx_t_3 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_13, __pyx_t_2, __pyx_t_10) : __Pyx_PyObject_CallOneArg(__pyx_t_13, __pyx_t_10);
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 281, __pyx_L1_error)
+        if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 285, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       }
-      __pyx_L16:;
+      __pyx_L19:;
 
-      /* "cy_web_x.py":282
+      /* "cy_web_x.py":286
  *                 else:
  *                     getattr(self.app, v.method)(_path)(v.handler)
  *                 self.request_handlers[v.path]=v             # <<<<<<<<<<<<<<
  * 
  * __cache_apps__ = {}
  */
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_request_handlers); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 282, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_request_handlers); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 286, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_path); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 282, __pyx_L1_error)
+      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_v_v, __pyx_n_s_path); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 286, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_13);
-      if (unlikely(PyObject_SetItem(__pyx_t_3, __pyx_t_13, __pyx_v_v) < 0)) __PYX_ERR(0, 282, __pyx_L1_error)
+      if (unlikely(PyObject_SetItem(__pyx_t_3, __pyx_t_13, __pyx_v_v) < 0)) __PYX_ERR(0, 286, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
 
@@ -10246,7 +10373,7 @@ static PyObject *__pyx_pf_8cy_web_x_10BaseWebApp_12load_controller_from_file(CYT
   return __pyx_r;
 }
 
-/* "cy_web_x.py":292
+/* "cy_web_x.py":296
  * from typing import Union
  * from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
  * def create_access_token(data: dict, expires_delta = None,SECRET_KEY=None,ALGORITHM=None):             # <<<<<<<<<<<<<<
@@ -10314,7 +10441,7 @@ static PyObject *__pyx_pw_8cy_web_x_11create_access_token(PyObject *__pyx_self, 
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "create_access_token") < 0)) __PYX_ERR(0, 292, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "create_access_token") < 0)) __PYX_ERR(0, 296, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -10336,13 +10463,13 @@ static PyObject *__pyx_pw_8cy_web_x_11create_access_token(PyObject *__pyx_self, 
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("create_access_token", 0, 1, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 292, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("create_access_token", 0, 1, 4, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 296, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cy_web_x.create_access_token", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_data), (&PyDict_Type), 1, "data", 1))) __PYX_ERR(0, 292, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_data), (&PyDict_Type), 1, "data", 1))) __PYX_ERR(0, 296, __pyx_L1_error)
   __pyx_r = __pyx_pf_8cy_web_x_10create_access_token(__pyx_self, __pyx_v_data, __pyx_v_expires_delta, __pyx_v_SECRET_KEY, __pyx_v_ALGORITHM);
 
   /* function exit code */
@@ -10370,7 +10497,7 @@ static PyObject *__pyx_pf_8cy_web_x_10create_access_token(CYTHON_UNUSED PyObject
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("create_access_token", 0);
 
-  /* "cy_web_x.py":293
+  /* "cy_web_x.py":297
  * from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
  * def create_access_token(data: dict, expires_delta = None,SECRET_KEY=None,ALGORITHM=None):
  *     to_encode = data.copy()             # <<<<<<<<<<<<<<
@@ -10379,33 +10506,33 @@ static PyObject *__pyx_pf_8cy_web_x_10create_access_token(CYTHON_UNUSED PyObject
  */
   if (unlikely(__pyx_v_data == Py_None)) {
     PyErr_Format(PyExc_AttributeError, "'NoneType' object has no attribute '%.30s'", "copy");
-    __PYX_ERR(0, 293, __pyx_L1_error)
+    __PYX_ERR(0, 297, __pyx_L1_error)
   }
-  __pyx_t_1 = PyDict_Copy(__pyx_v_data); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 293, __pyx_L1_error)
+  __pyx_t_1 = PyDict_Copy(__pyx_v_data); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 297, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_to_encode = ((PyObject*)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":294
+  /* "cy_web_x.py":298
  * def create_access_token(data: dict, expires_delta = None,SECRET_KEY=None,ALGORITHM=None):
  *     to_encode = data.copy()
  *     if expires_delta:             # <<<<<<<<<<<<<<
  *         expire = datetime.utcnow() + expires_delta
  *     else:
  */
-  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_expires_delta); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 294, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_IsTrue(__pyx_v_expires_delta); if (unlikely(__pyx_t_2 < 0)) __PYX_ERR(0, 298, __pyx_L1_error)
   if (__pyx_t_2) {
 
-    /* "cy_web_x.py":295
+    /* "cy_web_x.py":299
  *     to_encode = data.copy()
  *     if expires_delta:
  *         expire = datetime.utcnow() + expires_delta             # <<<<<<<<<<<<<<
  *     else:
  *         expire = datetime.utcnow() + timedelta(minutes=15)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_datetime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 295, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_datetime); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 299, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_utcnow); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 295, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_utcnow); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 299, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_3 = NULL;
@@ -10420,16 +10547,16 @@ static PyObject *__pyx_pf_8cy_web_x_10create_access_token(CYTHON_UNUSED PyObject
     }
     __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_4);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 295, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 299, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-    __pyx_t_4 = PyNumber_Add(__pyx_t_1, __pyx_v_expires_delta); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 295, __pyx_L1_error)
+    __pyx_t_4 = PyNumber_Add(__pyx_t_1, __pyx_v_expires_delta); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 299, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_expire = __pyx_t_4;
     __pyx_t_4 = 0;
 
-    /* "cy_web_x.py":294
+    /* "cy_web_x.py":298
  * def create_access_token(data: dict, expires_delta = None,SECRET_KEY=None,ALGORITHM=None):
  *     to_encode = data.copy()
  *     if expires_delta:             # <<<<<<<<<<<<<<
@@ -10439,7 +10566,7 @@ static PyObject *__pyx_pf_8cy_web_x_10create_access_token(CYTHON_UNUSED PyObject
     goto __pyx_L3;
   }
 
-  /* "cy_web_x.py":297
+  /* "cy_web_x.py":301
  *         expire = datetime.utcnow() + expires_delta
  *     else:
  *         expire = datetime.utcnow() + timedelta(minutes=15)             # <<<<<<<<<<<<<<
@@ -10447,9 +10574,9 @@ static PyObject *__pyx_pf_8cy_web_x_10create_access_token(CYTHON_UNUSED PyObject
  *     encoded_jwt = jwt.encode(data, SECRET_KEY, algorithm=ALGORITHM)
  */
   /*else*/ {
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_datetime); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 297, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_datetime); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_utcnow); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 297, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_utcnow); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 301, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_1 = NULL;
@@ -10464,19 +10591,19 @@ static PyObject *__pyx_pf_8cy_web_x_10create_access_token(CYTHON_UNUSED PyObject
     }
     __pyx_t_4 = (__pyx_t_1) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_1) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 297, __pyx_L1_error)
+    if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 301, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_timedelta); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 297, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_timedelta); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 301, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 297, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_minutes, __pyx_int_15) < 0) __PYX_ERR(0, 297, __pyx_L1_error)
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 297, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_minutes, __pyx_int_15) < 0) __PYX_ERR(0, 301, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 301, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyNumber_Add(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 297, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Add(__pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 301, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -10485,34 +10612,34 @@ static PyObject *__pyx_pf_8cy_web_x_10create_access_token(CYTHON_UNUSED PyObject
   }
   __pyx_L3:;
 
-  /* "cy_web_x.py":298
+  /* "cy_web_x.py":302
  *     else:
  *         expire = datetime.utcnow() + timedelta(minutes=15)
  *     to_encode.update({"exp": None})             # <<<<<<<<<<<<<<
  *     encoded_jwt = jwt.encode(data, SECRET_KEY, algorithm=ALGORITHM)
  *     return encoded_jwt
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 298, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_exp, Py_None) < 0) __PYX_ERR(0, 298, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyDict_Type_update, __pyx_v_to_encode, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 298, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_exp, Py_None) < 0) __PYX_ERR(0, 302, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyDict_Type_update, __pyx_v_to_encode, __pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 302, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "cy_web_x.py":299
+  /* "cy_web_x.py":303
  *         expire = datetime.utcnow() + timedelta(minutes=15)
  *     to_encode.update({"exp": None})
  *     encoded_jwt = jwt.encode(data, SECRET_KEY, algorithm=ALGORITHM)             # <<<<<<<<<<<<<<
  *     return encoded_jwt
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_jwt); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 299, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_jwt); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 303, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_encode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 299, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_encode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 299, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 303, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_INCREF(__pyx_v_data);
   __Pyx_GIVEREF(__pyx_v_data);
@@ -10520,10 +10647,10 @@ static PyObject *__pyx_pf_8cy_web_x_10create_access_token(CYTHON_UNUSED PyObject
   __Pyx_INCREF(__pyx_v_SECRET_KEY);
   __Pyx_GIVEREF(__pyx_v_SECRET_KEY);
   PyTuple_SET_ITEM(__pyx_t_5, 1, __pyx_v_SECRET_KEY);
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 299, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 303, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_algorithm, __pyx_v_ALGORITHM) < 0) __PYX_ERR(0, 299, __pyx_L1_error)
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 299, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_algorithm, __pyx_v_ALGORITHM) < 0) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 303, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -10531,7 +10658,7 @@ static PyObject *__pyx_pf_8cy_web_x_10create_access_token(CYTHON_UNUSED PyObject
   __pyx_v_encoded_jwt = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "cy_web_x.py":300
+  /* "cy_web_x.py":304
  *     to_encode.update({"exp": None})
  *     encoded_jwt = jwt.encode(data, SECRET_KEY, algorithm=ALGORITHM)
  *     return encoded_jwt             # <<<<<<<<<<<<<<
@@ -10543,7 +10670,7 @@ static PyObject *__pyx_pf_8cy_web_x_10create_access_token(CYTHON_UNUSED PyObject
   __pyx_r = __pyx_v_encoded_jwt;
   goto __pyx_L0;
 
-  /* "cy_web_x.py":292
+  /* "cy_web_x.py":296
  * from typing import Union
  * from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
  * def create_access_token(data: dict, expires_delta = None,SECRET_KEY=None,ALGORITHM=None):             # <<<<<<<<<<<<<<
@@ -10568,7 +10695,7 @@ static PyObject *__pyx_pf_8cy_web_x_10create_access_token(CYTHON_UNUSED PyObject
   return __pyx_r;
 }
 
-/* "cy_web_x.py":303
+/* "cy_web_x.py":307
  * 
  * 
  * def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):             # <<<<<<<<<<<<<<
@@ -10576,7 +10703,7 @@ static PyObject *__pyx_pf_8cy_web_x_10create_access_token(CYTHON_UNUSED PyObject
  *     if not isinstance(web_application,WebApp):
  */
 
-static PyObject *__pyx_pf_8cy_web_x_28__defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_8cy_web_x_30__defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -10586,12 +10713,12 @@ static PyObject *__pyx_pf_8cy_web_x_28__defaults__(CYTHON_UNUSED PyObject *__pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__defaults__", 0);
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_form_data);
   __Pyx_GIVEREF(__Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_form_data);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_self)->__pyx_arg_form_data);
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
@@ -10649,7 +10776,7 @@ static PyObject *__pyx_pw_8cy_web_x_13login_for_access_token(PyObject *__pyx_sel
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "login_for_access_token") < 0)) __PYX_ERR(0, 303, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "login_for_access_token") < 0)) __PYX_ERR(0, 307, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -10663,7 +10790,7 @@ static PyObject *__pyx_pw_8cy_web_x_13login_for_access_token(PyObject *__pyx_sel
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("login_for_access_token", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 303, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("login_for_access_token", 0, 0, 1, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 307, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cy_web_x.login_for_access_token", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -10697,37 +10824,37 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("login_for_access_token", 0);
 
-  /* "cy_web_x.py":305
+  /* "cy_web_x.py":309
  * def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
  *     global web_application
  *     if not isinstance(web_application,WebApp):             # <<<<<<<<<<<<<<
  *         raise Exception("WebApp was not found")
  *     if web_application.on_auth_user is None:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 305, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyObject_IsInstance(__pyx_t_1, __pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 305, __pyx_L1_error)
+  __pyx_t_3 = PyObject_IsInstance(__pyx_t_1, __pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 309, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = ((!(__pyx_t_3 != 0)) != 0);
   if (unlikely(__pyx_t_4)) {
 
-    /* "cy_web_x.py":306
+    /* "cy_web_x.py":310
  *     global web_application
  *     if not isinstance(web_application,WebApp):
  *         raise Exception("WebApp was not found")             # <<<<<<<<<<<<<<
  *     if web_application.on_auth_user is None:
  *         raise Exception("Please create on auth user with  cy_web_x.auth_user")
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 306, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__14, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 310, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 306, __pyx_L1_error)
+    __PYX_ERR(0, 310, __pyx_L1_error)
 
-    /* "cy_web_x.py":305
+    /* "cy_web_x.py":309
  * def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):
  *     global web_application
  *     if not isinstance(web_application,WebApp):             # <<<<<<<<<<<<<<
@@ -10736,16 +10863,16 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
  */
   }
 
-  /* "cy_web_x.py":307
+  /* "cy_web_x.py":311
  *     if not isinstance(web_application,WebApp):
  *         raise Exception("WebApp was not found")
  *     if web_application.on_auth_user is None:             # <<<<<<<<<<<<<<
  *         raise Exception("Please create on auth user with  cy_web_x.auth_user")
  *     user = web_application.on_auth_user(form_data.username, form_data.password)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_web_application); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_web_application); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 311, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_on_auth_user); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_on_auth_user); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = (__pyx_t_1 == Py_None);
@@ -10753,20 +10880,20 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   __pyx_t_3 = (__pyx_t_4 != 0);
   if (unlikely(__pyx_t_3)) {
 
-    /* "cy_web_x.py":308
+    /* "cy_web_x.py":312
  *         raise Exception("WebApp was not found")
  *     if web_application.on_auth_user is None:
  *         raise Exception("Please create on auth user with  cy_web_x.auth_user")             # <<<<<<<<<<<<<<
  *     user = web_application.on_auth_user(form_data.username, form_data.password)
  *     if not isinstance(user,dict):
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 308, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_tuple__15, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 312, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 308, __pyx_L1_error)
+    __PYX_ERR(0, 312, __pyx_L1_error)
 
-    /* "cy_web_x.py":307
+    /* "cy_web_x.py":311
  *     if not isinstance(web_application,WebApp):
  *         raise Exception("WebApp was not found")
  *     if web_application.on_auth_user is None:             # <<<<<<<<<<<<<<
@@ -10775,21 +10902,21 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
  */
   }
 
-  /* "cy_web_x.py":309
+  /* "cy_web_x.py":313
  *     if web_application.on_auth_user is None:
  *         raise Exception("Please create on auth user with  cy_web_x.auth_user")
  *     user = web_application.on_auth_user(form_data.username, form_data.password)             # <<<<<<<<<<<<<<
  *     if not isinstance(user,dict):
  *         raise Exception(f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_web_application); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 309, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_web_application); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_on_auth_user); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 309, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_on_auth_user); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_form_data, __pyx_n_s_username); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 309, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_form_data, __pyx_n_s_username); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_form_data, __pyx_n_s_password); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 309, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_form_data, __pyx_n_s_password); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 313, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_7 = NULL;
   __pyx_t_8 = 0;
@@ -10806,7 +10933,7 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_5)) {
     PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_t_2, __pyx_t_6};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 309, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -10816,7 +10943,7 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
     PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_t_2, __pyx_t_6};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 309, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -10824,7 +10951,7 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   } else
   #endif
   {
-    __pyx_t_9 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 309, __pyx_L1_error)
+    __pyx_t_9 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     if (__pyx_t_7) {
       __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -10835,7 +10962,7 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
     PyTuple_SET_ITEM(__pyx_t_9, 1+__pyx_t_8, __pyx_t_6);
     __pyx_t_2 = 0;
     __pyx_t_6 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 309, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_9, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 313, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   }
@@ -10843,7 +10970,7 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   __pyx_v_user = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":310
+  /* "cy_web_x.py":314
  *         raise Exception("Please create on auth user with  cy_web_x.auth_user")
  *     user = web_application.on_auth_user(form_data.username, form_data.password)
  *     if not isinstance(user,dict):             # <<<<<<<<<<<<<<
@@ -10854,26 +10981,26 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   __pyx_t_4 = ((!(__pyx_t_3 != 0)) != 0);
   if (unlikely(__pyx_t_4)) {
 
-    /* "cy_web_x.py":311
+    /* "cy_web_x.py":315
  *     user = web_application.on_auth_user(form_data.username, form_data.password)
  *     if not isinstance(user,dict):
  *         raise Exception(f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")             # <<<<<<<<<<<<<<
  *     if set(["username","application","is_ok"]).intersection(list(user.keys())) != set(["username","application","is_ok"]):
  *         raise Exception(
  */
-    __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 315, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __pyx_t_10 = 0;
     __pyx_t_11 = 127;
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_web_application); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 311, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_web_application); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 315, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_on_auth_user); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 311, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_on_auth_user); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 315, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_name); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 311, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_name); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 315, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 311, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 315, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_11 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_9) > __pyx_t_11) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_9) : __pyx_t_11;
@@ -10885,18 +11012,18 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
     __pyx_t_10 += 4;
     __Pyx_GIVEREF(__pyx_kp_u_in);
     PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_kp_u_in);
-    __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_web_application); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 311, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_web_application); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 315, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_on_auth_user); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 311, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_on_auth_user); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 315, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_code); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 311, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_code); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 315, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_co_filename); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 311, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_co_filename); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 315, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 311, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 315, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_11 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_9) > __pyx_t_11) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_9) : __pyx_t_11;
@@ -10908,17 +11035,17 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
     __pyx_t_10 += 72;
     __Pyx_GIVEREF(__pyx_kp_u_must_return_dictionary_with_use);
     PyTuple_SET_ITEM(__pyx_t_1, 3, __pyx_kp_u_must_return_dictionary_with_use);
-    __pyx_t_9 = __Pyx_PyUnicode_Join(__pyx_t_1, 4, __pyx_t_10, __pyx_t_11); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 311, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyUnicode_Join(__pyx_t_1, 4, __pyx_t_10, __pyx_t_11); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 315, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 311, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 315, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
     __Pyx_Raise(__pyx_t_1, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __PYX_ERR(0, 311, __pyx_L1_error)
+    __PYX_ERR(0, 315, __pyx_L1_error)
 
-    /* "cy_web_x.py":310
+    /* "cy_web_x.py":314
  *         raise Exception("Please create on auth user with  cy_web_x.auth_user")
  *     user = web_application.on_auth_user(form_data.username, form_data.password)
  *     if not isinstance(user,dict):             # <<<<<<<<<<<<<<
@@ -10927,22 +11054,22 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
  */
   }
 
-  /* "cy_web_x.py":312
+  /* "cy_web_x.py":316
  *     if not isinstance(user,dict):
  *         raise Exception(f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")
  *     if set(["username","application","is_ok"]).intersection(list(user.keys())) != set(["username","application","is_ok"]):             # <<<<<<<<<<<<<<
  *         raise Exception(
  *             f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")
  */
-  __pyx_t_9 = PySet_New(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 312, __pyx_L1_error)
+  __pyx_t_9 = PySet_New(0); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 316, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
-  if (PySet_Add(__pyx_t_9, __pyx_n_s_username) < 0) __PYX_ERR(0, 312, __pyx_L1_error)
-  if (PySet_Add(__pyx_t_9, __pyx_n_s_application) < 0) __PYX_ERR(0, 312, __pyx_L1_error)
-  if (PySet_Add(__pyx_t_9, __pyx_n_s_is_ok) < 0) __PYX_ERR(0, 312, __pyx_L1_error)
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_intersection); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 312, __pyx_L1_error)
+  if (PySet_Add(__pyx_t_9, __pyx_n_s_username) < 0) __PYX_ERR(0, 316, __pyx_L1_error)
+  if (PySet_Add(__pyx_t_9, __pyx_n_s_application) < 0) __PYX_ERR(0, 316, __pyx_L1_error)
+  if (PySet_Add(__pyx_t_9, __pyx_n_s_is_ok) < 0) __PYX_ERR(0, 316, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_intersection); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 316, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_user, __pyx_n_s_keys); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 312, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_user, __pyx_n_s_keys); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 316, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_6))) {
@@ -10956,10 +11083,10 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   }
   __pyx_t_9 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_6);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 312, __pyx_L1_error)
+  if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 316, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = PySequence_List(__pyx_t_9); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 312, __pyx_L1_error)
+  __pyx_t_6 = PySequence_List(__pyx_t_9); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 316, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   __pyx_t_9 = NULL;
@@ -10975,41 +11102,41 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   __pyx_t_1 = (__pyx_t_9) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_9, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6);
   __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 312, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 316, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = PySet_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 312, __pyx_L1_error)
+  __pyx_t_5 = PySet_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 316, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PySet_Add(__pyx_t_5, __pyx_n_s_username) < 0) __PYX_ERR(0, 312, __pyx_L1_error)
-  if (PySet_Add(__pyx_t_5, __pyx_n_s_application) < 0) __PYX_ERR(0, 312, __pyx_L1_error)
-  if (PySet_Add(__pyx_t_5, __pyx_n_s_is_ok) < 0) __PYX_ERR(0, 312, __pyx_L1_error)
-  __pyx_t_6 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 312, __pyx_L1_error)
+  if (PySet_Add(__pyx_t_5, __pyx_n_s_username) < 0) __PYX_ERR(0, 316, __pyx_L1_error)
+  if (PySet_Add(__pyx_t_5, __pyx_n_s_application) < 0) __PYX_ERR(0, 316, __pyx_L1_error)
+  if (PySet_Add(__pyx_t_5, __pyx_n_s_is_ok) < 0) __PYX_ERR(0, 316, __pyx_L1_error)
+  __pyx_t_6 = PyObject_RichCompare(__pyx_t_1, __pyx_t_5, Py_NE); __Pyx_XGOTREF(__pyx_t_6); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 316, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 312, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_6); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 316, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   if (unlikely(__pyx_t_4)) {
 
-    /* "cy_web_x.py":314
+    /* "cy_web_x.py":318
  *     if set(["username","application","is_ok"]).intersection(list(user.keys())) != set(["username","application","is_ok"]):
  *         raise Exception(
  *             f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")             # <<<<<<<<<<<<<<
  *     if user.get("is_ok") == False:
  *         raise HTTPException(
  */
-    __pyx_t_6 = PyTuple_New(4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 314, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 318, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __pyx_t_10 = 0;
     __pyx_t_11 = 127;
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_web_application); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 314, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_web_application); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 318, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_on_auth_user); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 314, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_on_auth_user); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_name); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 314, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_name); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 318, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 314, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_11 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) > __pyx_t_11) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) : __pyx_t_11;
@@ -11021,18 +11148,18 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
     __pyx_t_10 += 4;
     __Pyx_GIVEREF(__pyx_kp_u_in);
     PyTuple_SET_ITEM(__pyx_t_6, 1, __pyx_kp_u_in);
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 314, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_on_auth_user); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 314, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_on_auth_user); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 318, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_code); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 314, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_code); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_co_filename); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 314, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_co_filename); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 318, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 314, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_t_5, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_11 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) > __pyx_t_11) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_1) : __pyx_t_11;
@@ -11044,25 +11171,25 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
     __pyx_t_10 += 72;
     __Pyx_GIVEREF(__pyx_kp_u_must_return_dictionary_with_use);
     PyTuple_SET_ITEM(__pyx_t_6, 3, __pyx_kp_u_must_return_dictionary_with_use);
-    __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_6, 4, __pyx_t_10, __pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 314, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyUnicode_Join(__pyx_t_6, 4, __pyx_t_10, __pyx_t_11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 318, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "cy_web_x.py":313
+    /* "cy_web_x.py":317
  *         raise Exception(f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")
  *     if set(["username","application","is_ok"]).intersection(list(user.keys())) != set(["username","application","is_ok"]):
  *         raise Exception(             # <<<<<<<<<<<<<<
  *             f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")
  *     if user.get("is_ok") == False:
  */
-    __pyx_t_6 = __Pyx_PyObject_CallOneArg(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 313, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_CallOneArg(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 317, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_Raise(__pyx_t_6, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __PYX_ERR(0, 313, __pyx_L1_error)
+    __PYX_ERR(0, 317, __pyx_L1_error)
 
-    /* "cy_web_x.py":312
+    /* "cy_web_x.py":316
  *     if not isinstance(user,dict):
  *         raise Exception(f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")
  *     if set(["username","application","is_ok"]).intersection(list(user.keys())) != set(["username","application","is_ok"]):             # <<<<<<<<<<<<<<
@@ -11071,14 +11198,14 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
  */
   }
 
-  /* "cy_web_x.py":315
+  /* "cy_web_x.py":319
  *         raise Exception(
  *             f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")
  *     if user.get("is_ok") == False:             # <<<<<<<<<<<<<<
  *         raise HTTPException(
  *             status_code=status.HTTP_401_UNAUTHORIZED,
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_user, __pyx_n_s_get); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 315, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_user, __pyx_n_s_get); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -11092,72 +11219,72 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   }
   __pyx_t_6 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_5, __pyx_n_s_is_ok) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_n_s_is_ok);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 315, __pyx_L1_error)
+  if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 319, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = PyObject_RichCompare(__pyx_t_6, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 315, __pyx_L1_error)
+  __pyx_t_1 = PyObject_RichCompare(__pyx_t_6, Py_False, Py_EQ); __Pyx_XGOTREF(__pyx_t_1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 319, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 315, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 319, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (unlikely(__pyx_t_4)) {
 
-    /* "cy_web_x.py":316
+    /* "cy_web_x.py":320
  *             f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")
  *     if user.get("is_ok") == False:
  *         raise HTTPException(             # <<<<<<<<<<<<<<
  *             status_code=status.HTTP_401_UNAUTHORIZED,
  *             detail="Incorrect username or password",
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 316, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 320, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
 
-    /* "cy_web_x.py":317
+    /* "cy_web_x.py":321
  *     if user.get("is_ok") == False:
  *         raise HTTPException(
  *             status_code=status.HTTP_401_UNAUTHORIZED,             # <<<<<<<<<<<<<<
  *             detail="Incorrect username or password",
  *             headers={"WWW-Authenticate": "Bearer"},
  */
-    __pyx_t_6 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 317, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 321, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_status); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 317, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_status); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 321, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_HTTP_401_UNAUTHORIZED); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 317, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_HTTP_401_UNAUTHORIZED); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 321, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_status_code, __pyx_t_9) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_status_code, __pyx_t_9) < 0) __PYX_ERR(0, 321, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_detail, __pyx_kp_s_Incorrect_username_or_password) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_detail, __pyx_kp_s_Incorrect_username_or_password) < 0) __PYX_ERR(0, 321, __pyx_L1_error)
 
-    /* "cy_web_x.py":319
+    /* "cy_web_x.py":323
  *             status_code=status.HTTP_401_UNAUTHORIZED,
  *             detail="Incorrect username or password",
  *             headers={"WWW-Authenticate": "Bearer"},             # <<<<<<<<<<<<<<
  *         )
  *     # access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
  */
-    __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 319, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 323, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
-    if (PyDict_SetItem(__pyx_t_9, __pyx_kp_s_WWW_Authenticate, __pyx_n_s_Bearer) < 0) __PYX_ERR(0, 319, __pyx_L1_error)
-    if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_headers, __pyx_t_9) < 0) __PYX_ERR(0, 317, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_9, __pyx_kp_s_WWW_Authenticate, __pyx_n_s_Bearer) < 0) __PYX_ERR(0, 323, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_headers, __pyx_t_9) < 0) __PYX_ERR(0, 321, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-    /* "cy_web_x.py":316
+    /* "cy_web_x.py":320
  *             f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")
  *     if user.get("is_ok") == False:
  *         raise HTTPException(             # <<<<<<<<<<<<<<
  *             status_code=status.HTTP_401_UNAUTHORIZED,
  *             detail="Incorrect username or password",
  */
-    __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_t_6); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 316, __pyx_L1_error)
+    __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_t_6); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 320, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_9);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_Raise(__pyx_t_9, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-    __PYX_ERR(0, 316, __pyx_L1_error)
+    __PYX_ERR(0, 320, __pyx_L1_error)
 
-    /* "cy_web_x.py":315
+    /* "cy_web_x.py":319
  *         raise Exception(
  *             f"{web_application.on_auth_user.__name__} in {web_application.on_auth_user.__code__.co_filename} must return dictionary with username:str and application:str,is_ok:bool")
  *     if user.get("is_ok") == False:             # <<<<<<<<<<<<<<
@@ -11166,26 +11293,26 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
  */
   }
 
-  /* "cy_web_x.py":322
+  /* "cy_web_x.py":326
  *         )
  *     # access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
  *     access_token = create_access_token(             # <<<<<<<<<<<<<<
  *         {
  *             "username": user.get("username"),
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_create_access_token); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 322, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_create_access_token); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 326, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
 
-  /* "cy_web_x.py":324
+  /* "cy_web_x.py":328
  *     access_token = create_access_token(
  *         {
  *             "username": user.get("username"),             # <<<<<<<<<<<<<<
  *             "application":user.get("application")
  *         },expires_delta=None,
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 324, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 328, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_user, __pyx_n_s_get); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 324, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_user, __pyx_n_s_get); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 328, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -11199,20 +11326,20 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_2, __pyx_n_s_username) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_n_s_username);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 324, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 328, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_username, __pyx_t_1) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_username, __pyx_t_1) < 0) __PYX_ERR(0, 328, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":325
+  /* "cy_web_x.py":329
  *         {
  *             "username": user.get("username"),
  *             "application":user.get("application")             # <<<<<<<<<<<<<<
  *         },expires_delta=None,
  *         SECRET_KEY= web_application.jwt_secret_key,
  */
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_user, __pyx_n_s_get); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 325, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_user, __pyx_n_s_get); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 329, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -11226,74 +11353,74 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_2, __pyx_n_s_application) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_n_s_application);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 325, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 329, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_application, __pyx_t_1) < 0) __PYX_ERR(0, 324, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_application, __pyx_t_1) < 0) __PYX_ERR(0, 328, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":322
+  /* "cy_web_x.py":326
  *         )
  *     # access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
  *     access_token = create_access_token(             # <<<<<<<<<<<<<<
  *         {
  *             "username": user.get("username"),
  */
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 326, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_6);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_6);
   __pyx_t_6 = 0;
 
-  /* "cy_web_x.py":326
+  /* "cy_web_x.py":330
  *             "username": user.get("username"),
  *             "application":user.get("application")
  *         },expires_delta=None,             # <<<<<<<<<<<<<<
  *         SECRET_KEY= web_application.jwt_secret_key,
  *         ALGORITHM= web_application.jwt_algorithm
  */
-  __pyx_t_6 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 326, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 330, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_expires_delta, Py_None) < 0) __PYX_ERR(0, 326, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_expires_delta, Py_None) < 0) __PYX_ERR(0, 330, __pyx_L1_error)
 
-  /* "cy_web_x.py":327
+  /* "cy_web_x.py":331
  *             "application":user.get("application")
  *         },expires_delta=None,
  *         SECRET_KEY= web_application.jwt_secret_key,             # <<<<<<<<<<<<<<
  *         ALGORITHM= web_application.jwt_algorithm
  *     )
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_web_application); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 327, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_web_application); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 331, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_jwt_secret_key); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 327, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_jwt_secret_key); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 331, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_SECRET_KEY, __pyx_t_2) < 0) __PYX_ERR(0, 326, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_SECRET_KEY, __pyx_t_2) < 0) __PYX_ERR(0, 330, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cy_web_x.py":328
+  /* "cy_web_x.py":332
  *         },expires_delta=None,
  *         SECRET_KEY= web_application.jwt_secret_key,
  *         ALGORITHM= web_application.jwt_algorithm             # <<<<<<<<<<<<<<
  *     )
  *     return {"access_token": access_token, "token_type": "bearer"}
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_web_application); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 328, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_web_application); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 332, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_jwt_algorithm); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 328, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_jwt_algorithm); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 332, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_ALGORITHM, __pyx_t_5) < 0) __PYX_ERR(0, 326, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_6, __pyx_n_s_ALGORITHM, __pyx_t_5) < 0) __PYX_ERR(0, 330, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "cy_web_x.py":322
+  /* "cy_web_x.py":326
  *         )
  *     # access_token_expires = timedelta(minutes=ACCESS_TOKEN_EXPIRE_MINUTES)
  *     access_token = create_access_token(             # <<<<<<<<<<<<<<
  *         {
  *             "username": user.get("username"),
  */
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_1, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 322, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_1, __pyx_t_6); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 326, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11301,7 +11428,7 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   __pyx_v_access_token = __pyx_t_5;
   __pyx_t_5 = 0;
 
-  /* "cy_web_x.py":330
+  /* "cy_web_x.py":334
  *         ALGORITHM= web_application.jwt_algorithm
  *     )
  *     return {"access_token": access_token, "token_type": "bearer"}             # <<<<<<<<<<<<<<
@@ -11309,15 +11436,15 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
  * class WebApp(BaseWebApp):
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 330, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 334, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_access_token, __pyx_v_access_token) < 0) __PYX_ERR(0, 330, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_token_type, __pyx_n_s_bearer) < 0) __PYX_ERR(0, 330, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_access_token, __pyx_v_access_token) < 0) __PYX_ERR(0, 334, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_token_type, __pyx_n_s_bearer) < 0) __PYX_ERR(0, 334, __pyx_L1_error)
   __pyx_r = __pyx_t_5;
   __pyx_t_5 = 0;
   goto __pyx_L0;
 
-  /* "cy_web_x.py":303
+  /* "cy_web_x.py":307
  * 
  * 
  * def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):             # <<<<<<<<<<<<<<
@@ -11343,7 +11470,7 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
   return __pyx_r;
 }
 
-/* "cy_web_x.py":335
+/* "cy_web_x.py":339
  * 
  * 
  *     def __init__(self,             # <<<<<<<<<<<<<<
@@ -11351,7 +11478,7 @@ static PyObject *__pyx_pf_8cy_web_x_12login_for_access_token(CYTHON_UNUSED PyObj
  * 
  */
 
-static PyObject *__pyx_pf_8cy_web_x_30__defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
+static PyObject *__pyx_pf_8cy_web_x_32__defaults__(CYTHON_UNUSED PyObject *__pyx_self) {
   PyObject *__pyx_r = NULL;
   __Pyx_RefNannyDeclarations
   PyObject *__pyx_t_1 = NULL;
@@ -11362,14 +11489,14 @@ static PyObject *__pyx_pf_8cy_web_x_30__defaults__(CYTHON_UNUSED PyObject *__pyx
   __Pyx_RefNannySetupContext("__defaults__", 0);
   __Pyx_XDECREF(__pyx_r);
 
-  /* "cy_web_x.py":346
+  /* "cy_web_x.py":350
  *                  static_dir: str = None,
  *                  dev_mode: bool = False,
  *                  template_dir: str = None,             # <<<<<<<<<<<<<<
  *                  url_get_token: str = "api/accounts/token",
  *                  jwt_algorithm: str ="HS256",
  */
-  __pyx_t_1 = PyTuple_New(11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(11); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(((PyObject*)__pyx_kp_s_0_0_0_0_8011));
   __Pyx_GIVEREF(((PyObject*)__pyx_kp_s_0_0_0_0_8011));
@@ -11405,14 +11532,14 @@ static PyObject *__pyx_pf_8cy_web_x_30__defaults__(CYTHON_UNUSED PyObject *__pyx
   __Pyx_GIVEREF(((PyObject*)__pyx_kp_s_09d25e094faa6ca2556c818166b7a956));
   PyTuple_SET_ITEM(__pyx_t_1, 10, ((PyObject*)__pyx_kp_s_09d25e094faa6ca2556c818166b7a956));
 
-  /* "cy_web_x.py":335
+  /* "cy_web_x.py":339
  * 
  * 
  *     def __init__(self,             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
@@ -11516,7 +11643,7 @@ static PyObject *__pyx_pw_8cy_web_x_6WebApp_1__init__(PyObject *__pyx_self, PyOb
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_working_dir)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 13, 1); __PYX_ERR(0, 335, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 13, 1); __PYX_ERR(0, 339, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -11586,7 +11713,7 @@ static PyObject *__pyx_pw_8cy_web_x_6WebApp_1__init__(PyObject *__pyx_self, PyOb
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 335, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 339, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -11634,22 +11761,22 @@ static PyObject *__pyx_pw_8cy_web_x_6WebApp_1__init__(PyObject *__pyx_self, PyOb
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 13, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 335, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 0, 2, 13, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 339, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cy_web_x.WebApp.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_working_dir), (&PyString_Type), 1, "working_dir", 1))) __PYX_ERR(0, 338, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_bind), (&PyString_Type), 1, "bind", 1))) __PYX_ERR(0, 339, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_host_url), (&PyString_Type), 1, "host_url", 1))) __PYX_ERR(0, 340, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_logs_dir), (&PyString_Type), 1, "logs_dir", 1))) __PYX_ERR(0, 341, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_api_host_dir), (&PyString_Type), 1, "api_host_dir", 1))) __PYX_ERR(0, 343, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_static_dir), (&PyString_Type), 1, "static_dir", 1))) __PYX_ERR(0, 344, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_template_dir), (&PyString_Type), 1, "template_dir", 1))) __PYX_ERR(0, 346, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_url_get_token), (&PyString_Type), 1, "url_get_token", 1))) __PYX_ERR(0, 347, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_jwt_algorithm), (&PyString_Type), 1, "jwt_algorithm", 1))) __PYX_ERR(0, 348, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_jwt_secret_key), (&PyString_Type), 1, "jwt_secret_key", 1))) __PYX_ERR(0, 349, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_working_dir), (&PyString_Type), 1, "working_dir", 1))) __PYX_ERR(0, 342, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_bind), (&PyString_Type), 1, "bind", 1))) __PYX_ERR(0, 343, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_host_url), (&PyString_Type), 1, "host_url", 1))) __PYX_ERR(0, 344, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_logs_dir), (&PyString_Type), 1, "logs_dir", 1))) __PYX_ERR(0, 345, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_api_host_dir), (&PyString_Type), 1, "api_host_dir", 1))) __PYX_ERR(0, 347, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_static_dir), (&PyString_Type), 1, "static_dir", 1))) __PYX_ERR(0, 348, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_template_dir), (&PyString_Type), 1, "template_dir", 1))) __PYX_ERR(0, 350, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_url_get_token), (&PyString_Type), 1, "url_get_token", 1))) __PYX_ERR(0, 351, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_jwt_algorithm), (&PyString_Type), 1, "jwt_algorithm", 1))) __PYX_ERR(0, 352, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_jwt_secret_key), (&PyString_Type), 1, "jwt_secret_key", 1))) __PYX_ERR(0, 353, __pyx_L1_error)
   __pyx_r = __pyx_pf_8cy_web_x_6WebApp___init__(__pyx_self, __pyx_v_self, __pyx_v_working_dir, __pyx_v_bind, __pyx_v_host_url, __pyx_v_logs_dir, __pyx_v_controller_dirs, __pyx_v_api_host_dir, __pyx_v_static_dir, __pyx_v_dev_mode, __pyx_v_template_dir, __pyx_v_url_get_token, __pyx_v_jwt_algorithm, __pyx_v_jwt_secret_key);
 
   /* function exit code */
@@ -11687,37 +11814,37 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "cy_web_x.py":354
+  /* "cy_web_x.py":358
  *         global __cache_apps_lock__
  *         global web_application
  *         web_application=self             # <<<<<<<<<<<<<<
  *         self.request_handlers = dict()
  *         self.app =fastapi.FastAPI()
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_web_application, __pyx_v_self) < 0) __PYX_ERR(0, 354, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_web_application, __pyx_v_self) < 0) __PYX_ERR(0, 358, __pyx_L1_error)
 
-  /* "cy_web_x.py":355
+  /* "cy_web_x.py":359
  *         global web_application
  *         web_application=self
  *         self.request_handlers = dict()             # <<<<<<<<<<<<<<
  *         self.app =fastapi.FastAPI()
  *         self.url_get_token = url_get_token
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 355, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 359, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_request_handlers, __pyx_t_1) < 0) __PYX_ERR(0, 355, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_request_handlers, __pyx_t_1) < 0) __PYX_ERR(0, 359, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":356
+  /* "cy_web_x.py":360
  *         web_application=self
  *         self.request_handlers = dict()
  *         self.app =fastapi.FastAPI()             # <<<<<<<<<<<<<<
  *         self.url_get_token = url_get_token
  *         self.jwt_algorithm = jwt_algorithm
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_fastapi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 356, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_fastapi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 360, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_FastAPI); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 356, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_FastAPI); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 360, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -11732,92 +11859,92 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 356, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 360, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_app, __pyx_t_1) < 0) __PYX_ERR(0, 356, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_app, __pyx_t_1) < 0) __PYX_ERR(0, 360, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":357
+  /* "cy_web_x.py":361
  *         self.request_handlers = dict()
  *         self.app =fastapi.FastAPI()
  *         self.url_get_token = url_get_token             # <<<<<<<<<<<<<<
  *         self.jwt_algorithm = jwt_algorithm
  *         self.jwt_secret_key = jwt_secret_key
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_url_get_token, __pyx_v_url_get_token) < 0) __PYX_ERR(0, 357, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_url_get_token, __pyx_v_url_get_token) < 0) __PYX_ERR(0, 361, __pyx_L1_error)
 
-  /* "cy_web_x.py":358
+  /* "cy_web_x.py":362
  *         self.app =fastapi.FastAPI()
  *         self.url_get_token = url_get_token
  *         self.jwt_algorithm = jwt_algorithm             # <<<<<<<<<<<<<<
  *         self.jwt_secret_key = jwt_secret_key
  *         self.template_dir = template_dir
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_jwt_algorithm, __pyx_v_jwt_algorithm) < 0) __PYX_ERR(0, 358, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_jwt_algorithm, __pyx_v_jwt_algorithm) < 0) __PYX_ERR(0, 362, __pyx_L1_error)
 
-  /* "cy_web_x.py":359
+  /* "cy_web_x.py":363
  *         self.url_get_token = url_get_token
  *         self.jwt_algorithm = jwt_algorithm
  *         self.jwt_secret_key = jwt_secret_key             # <<<<<<<<<<<<<<
  *         self.template_dir = template_dir
  *         self.dev_mode = dev_mode
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_jwt_secret_key, __pyx_v_jwt_secret_key) < 0) __PYX_ERR(0, 359, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_jwt_secret_key, __pyx_v_jwt_secret_key) < 0) __PYX_ERR(0, 363, __pyx_L1_error)
 
-  /* "cy_web_x.py":360
+  /* "cy_web_x.py":364
  *         self.jwt_algorithm = jwt_algorithm
  *         self.jwt_secret_key = jwt_secret_key
  *         self.template_dir = template_dir             # <<<<<<<<<<<<<<
  *         self.dev_mode = dev_mode
  *         self.api_host_dir = api_host_dir
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_template_dir, __pyx_v_template_dir) < 0) __PYX_ERR(0, 360, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_template_dir, __pyx_v_template_dir) < 0) __PYX_ERR(0, 364, __pyx_L1_error)
 
-  /* "cy_web_x.py":361
+  /* "cy_web_x.py":365
  *         self.jwt_secret_key = jwt_secret_key
  *         self.template_dir = template_dir
  *         self.dev_mode = dev_mode             # <<<<<<<<<<<<<<
  *         self.api_host_dir = api_host_dir
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_dev_mode, __pyx_v_dev_mode) < 0) __PYX_ERR(0, 361, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_dev_mode, __pyx_v_dev_mode) < 0) __PYX_ERR(0, 365, __pyx_L1_error)
 
-  /* "cy_web_x.py":362
+  /* "cy_web_x.py":366
  *         self.template_dir = template_dir
  *         self.dev_mode = dev_mode
  *         self.api_host_dir = api_host_dir             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_api_host_dir, __pyx_v_api_host_dir) < 0) __PYX_ERR(0, 362, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_api_host_dir, __pyx_v_api_host_dir) < 0) __PYX_ERR(0, 366, __pyx_L1_error)
 
-  /* "cy_web_x.py":365
+  /* "cy_web_x.py":369
  * 
  * 
  *         self.working_dir = working_dir             # <<<<<<<<<<<<<<
  *         self.static_dir = static_dir
  *         if self.static_dir is not None and self.static_dir[0:2] == "./":
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_working_dir, __pyx_v_working_dir) < 0) __PYX_ERR(0, 365, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_working_dir, __pyx_v_working_dir) < 0) __PYX_ERR(0, 369, __pyx_L1_error)
 
-  /* "cy_web_x.py":366
+  /* "cy_web_x.py":370
  * 
  *         self.working_dir = working_dir
  *         self.static_dir = static_dir             # <<<<<<<<<<<<<<
  *         if self.static_dir is not None and self.static_dir[0:2] == "./":
  *             self.static_dir = os.path.join(self.working_dir, self.static_dir[2:])
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_static_dir, __pyx_v_static_dir) < 0) __PYX_ERR(0, 366, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_static_dir, __pyx_v_static_dir) < 0) __PYX_ERR(0, 370, __pyx_L1_error)
 
-  /* "cy_web_x.py":367
+  /* "cy_web_x.py":371
  *         self.working_dir = working_dir
  *         self.static_dir = static_dir
  *         if self.static_dir is not None and self.static_dir[0:2] == "./":             # <<<<<<<<<<<<<<
  *             self.static_dir = os.path.join(self.working_dir, self.static_dir[2:])
  *         self.logs_dir = logs_dir
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_static_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 367, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_static_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 371, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = (__pyx_t_1 != Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -11827,37 +11954,37 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     __pyx_t_4 = __pyx_t_6;
     goto __pyx_L4_bool_binop_done;
   }
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_static_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 367, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_static_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 371, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, 2, NULL, NULL, &__pyx_slice__3, 1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 367, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, 2, NULL, NULL, &__pyx_slice__3, 1, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 371, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_6 = (__Pyx_PyString_Equals(__pyx_t_3, __pyx_kp_s__11, Py_EQ)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 367, __pyx_L1_error)
+  __pyx_t_6 = (__Pyx_PyString_Equals(__pyx_t_3, __pyx_kp_s__11, Py_EQ)); if (unlikely(__pyx_t_6 < 0)) __PYX_ERR(0, 371, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_4 = __pyx_t_6;
   __pyx_L4_bool_binop_done:;
   if (__pyx_t_4) {
 
-    /* "cy_web_x.py":368
+    /* "cy_web_x.py":372
  *         self.static_dir = static_dir
  *         if self.static_dir is not None and self.static_dir[0:2] == "./":
  *             self.static_dir = os.path.join(self.working_dir, self.static_dir[2:])             # <<<<<<<<<<<<<<
  *         self.logs_dir = logs_dir
  *         if self.logs_dir[0:2] == "./":
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_os); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 368, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_os); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 368, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_path); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_join); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 368, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_join); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_working_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 368, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_working_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_static_dir); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 368, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_static_dir); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_8 = __Pyx_PyObject_GetSlice(__pyx_t_7, 2, 0, NULL, NULL, &__pyx_slice__16, 1, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 368, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetSlice(__pyx_t_7, 2, 0, NULL, NULL, &__pyx_slice__16, 1, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_7 = NULL;
@@ -11875,7 +12002,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_t_2, __pyx_t_8};
-      __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 368, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 372, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -11885,7 +12012,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_t_2, __pyx_t_8};
-      __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 368, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 372, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -11893,7 +12020,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     } else
     #endif
     {
-      __pyx_t_10 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 368, __pyx_L1_error)
+      __pyx_t_10 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 372, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       if (__pyx_t_7) {
         __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -11904,15 +12031,15 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
       PyTuple_SET_ITEM(__pyx_t_10, 1+__pyx_t_9, __pyx_t_8);
       __pyx_t_2 = 0;
       __pyx_t_8 = 0;
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_10, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 368, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_10, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 372, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_static_dir, __pyx_t_3) < 0) __PYX_ERR(0, 368, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_static_dir, __pyx_t_3) < 0) __PYX_ERR(0, 372, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "cy_web_x.py":367
+    /* "cy_web_x.py":371
  *         self.working_dir = working_dir
  *         self.static_dir = static_dir
  *         if self.static_dir is not None and self.static_dir[0:2] == "./":             # <<<<<<<<<<<<<<
@@ -11921,51 +12048,51 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
  */
   }
 
-  /* "cy_web_x.py":369
+  /* "cy_web_x.py":373
  *         if self.static_dir is not None and self.static_dir[0:2] == "./":
  *             self.static_dir = os.path.join(self.working_dir, self.static_dir[2:])
  *         self.logs_dir = logs_dir             # <<<<<<<<<<<<<<
  *         if self.logs_dir[0:2] == "./":
  *             self.logs_dir = os.path.join(self.working_dir, self.logs_dir[2:])
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_logs_dir, __pyx_v_logs_dir) < 0) __PYX_ERR(0, 369, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_logs_dir, __pyx_v_logs_dir) < 0) __PYX_ERR(0, 373, __pyx_L1_error)
 
-  /* "cy_web_x.py":370
+  /* "cy_web_x.py":374
  *             self.static_dir = os.path.join(self.working_dir, self.static_dir[2:])
  *         self.logs_dir = logs_dir
  *         if self.logs_dir[0:2] == "./":             # <<<<<<<<<<<<<<
  *             self.logs_dir = os.path.join(self.working_dir, self.logs_dir[2:])
  *         self.logs: logging.Logger = self.create_logs(self.logs_dir)
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_logs_dir); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 370, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_logs_dir); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 374, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_t_3, 0, 2, NULL, NULL, &__pyx_slice__3, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 370, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_t_3, 0, 2, NULL, NULL, &__pyx_slice__3, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 374, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_kp_s__11, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 370, __pyx_L1_error)
+  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_kp_s__11, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 374, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "cy_web_x.py":371
+    /* "cy_web_x.py":375
  *         self.logs_dir = logs_dir
  *         if self.logs_dir[0:2] == "./":
  *             self.logs_dir = os.path.join(self.working_dir, self.logs_dir[2:])             # <<<<<<<<<<<<<<
  *         self.logs: logging.Logger = self.create_logs(self.logs_dir)
  *         if bind.split(":").__len__() < 2:
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_os); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 371, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_os); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 375, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_path); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 371, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_path); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 375, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_join); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 371, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_join); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 375, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_working_dir); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 371, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_working_dir); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 375, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_logs_dir); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 371, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_logs_dir); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 375, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_t_8, 2, 0, NULL, NULL, &__pyx_slice__16, 1, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 371, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_t_8, 2, 0, NULL, NULL, &__pyx_slice__16, 1, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 375, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __pyx_t_8 = NULL;
@@ -11983,7 +12110,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_10, __pyx_t_2};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 371, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 375, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -11993,7 +12120,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
       PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_10, __pyx_t_2};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 371, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 375, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
@@ -12001,7 +12128,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     } else
     #endif
     {
-      __pyx_t_7 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 371, __pyx_L1_error)
+      __pyx_t_7 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 375, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       if (__pyx_t_8) {
         __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -12012,15 +12139,15 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
       PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_9, __pyx_t_2);
       __pyx_t_10 = 0;
       __pyx_t_2 = 0;
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 371, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 375, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_logs_dir, __pyx_t_1) < 0) __PYX_ERR(0, 371, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_logs_dir, __pyx_t_1) < 0) __PYX_ERR(0, 375, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "cy_web_x.py":370
+    /* "cy_web_x.py":374
  *             self.static_dir = os.path.join(self.working_dir, self.static_dir[2:])
  *         self.logs_dir = logs_dir
  *         if self.logs_dir[0:2] == "./":             # <<<<<<<<<<<<<<
@@ -12029,16 +12156,16 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
  */
   }
 
-  /* "cy_web_x.py":372
+  /* "cy_web_x.py":376
  *         if self.logs_dir[0:2] == "./":
  *             self.logs_dir = os.path.join(self.working_dir, self.logs_dir[2:])
  *         self.logs: logging.Logger = self.create_logs(self.logs_dir)             # <<<<<<<<<<<<<<
  *         if bind.split(":").__len__() < 2:
  *             raise Exception(f"bind in {self.__module__}.{WebApp.__name__}.__init__ must look like 0.0.0.0:1234")
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_create_logs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 372, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_create_logs); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_logs_dir); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 372, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_logs_dir); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_2 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -12053,22 +12180,22 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_t_7) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_7);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 372, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_logs, __pyx_t_1) < 0) __PYX_ERR(0, 372, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_logs, __pyx_t_1) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":373
+  /* "cy_web_x.py":377
  *             self.logs_dir = os.path.join(self.working_dir, self.logs_dir[2:])
  *         self.logs: logging.Logger = self.create_logs(self.logs_dir)
  *         if bind.split(":").__len__() < 2:             # <<<<<<<<<<<<<<
  *             raise Exception(f"bind in {self.__module__}.{WebApp.__name__}.__init__ must look like 0.0.0.0:1234")
  *         self.bind_ip = bind.split(':')[0]
  */
-  __pyx_t_3 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_v_bind, __pyx_kp_s__17); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_v_bind, __pyx_kp_s__17); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 377, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_len); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_len); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 377, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -12083,23 +12210,23 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_7);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 373, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 377, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = PyObject_RichCompare(__pyx_t_1, __pyx_int_2, Py_LT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_t_7 = PyObject_RichCompare(__pyx_t_1, __pyx_int_2, Py_LT); __Pyx_XGOTREF(__pyx_t_7); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 377, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 373, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_7); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 377, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   if (unlikely(__pyx_t_4)) {
 
-    /* "cy_web_x.py":374
+    /* "cy_web_x.py":378
  *         self.logs: logging.Logger = self.create_logs(self.logs_dir)
  *         if bind.split(":").__len__() < 2:
  *             raise Exception(f"bind in {self.__module__}.{WebApp.__name__}.__init__ must look like 0.0.0.0:1234")             # <<<<<<<<<<<<<<
  *         self.bind_ip = bind.split(':')[0]
  *         self.bind_port = int(bind.split(':')[1])
  */
-    __pyx_t_7 = PyTuple_New(5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 374, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 378, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_11 = 0;
     __pyx_t_12 = 127;
@@ -12107,9 +12234,9 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     __pyx_t_11 += 8;
     __Pyx_GIVEREF(__pyx_kp_u_bind_in);
     PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_kp_u_bind_in);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_module); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 374, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_module); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 378, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 374, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 378, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_12 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_12) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_12;
@@ -12121,12 +12248,12 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     __pyx_t_11 += 1;
     __Pyx_GIVEREF(__pyx_kp_u__18);
     PyTuple_SET_ITEM(__pyx_t_7, 2, __pyx_kp_u__18);
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 374, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 378, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_name); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 374, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_name); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 378, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 374, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_FormatSimple(__pyx_t_1, __pyx_empty_unicode); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 378, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_12 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) > __pyx_t_12) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_3) : __pyx_t_12;
@@ -12138,17 +12265,17 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     __pyx_t_11 += 37;
     __Pyx_GIVEREF(__pyx_kp_u_init___must_look_like_0_0_0_0);
     PyTuple_SET_ITEM(__pyx_t_7, 4, __pyx_kp_u_init___must_look_like_0_0_0_0);
-    __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_7, 5, __pyx_t_11, __pyx_t_12); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 374, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyUnicode_Join(__pyx_t_7, 5, __pyx_t_11, __pyx_t_12); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 378, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_CallOneArg(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 374, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_CallOneArg(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 378, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_Raise(__pyx_t_7, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __PYX_ERR(0, 374, __pyx_L1_error)
+    __PYX_ERR(0, 378, __pyx_L1_error)
 
-    /* "cy_web_x.py":373
+    /* "cy_web_x.py":377
  *             self.logs_dir = os.path.join(self.working_dir, self.logs_dir[2:])
  *         self.logs: logging.Logger = self.create_logs(self.logs_dir)
  *         if bind.split(":").__len__() < 2:             # <<<<<<<<<<<<<<
@@ -12157,58 +12284,58 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
  */
   }
 
-  /* "cy_web_x.py":375
+  /* "cy_web_x.py":379
  *         if bind.split(":").__len__() < 2:
  *             raise Exception(f"bind in {self.__module__}.{WebApp.__name__}.__init__ must look like 0.0.0.0:1234")
  *         self.bind_ip = bind.split(':')[0]             # <<<<<<<<<<<<<<
  *         self.bind_port = int(bind.split(':')[1])
  *         self.host_url = host_url
  */
-  __pyx_t_7 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_v_bind, __pyx_kp_s__17); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 375, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_v_bind, __pyx_kp_s__17); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_7, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 375, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_7, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 379, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bind_ip, __pyx_t_3) < 0) __PYX_ERR(0, 375, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bind_ip, __pyx_t_3) < 0) __PYX_ERR(0, 379, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "cy_web_x.py":376
+  /* "cy_web_x.py":380
  *             raise Exception(f"bind in {self.__module__}.{WebApp.__name__}.__init__ must look like 0.0.0.0:1234")
  *         self.bind_ip = bind.split(':')[0]
  *         self.bind_port = int(bind.split(':')[1])             # <<<<<<<<<<<<<<
  *         self.host_url = host_url
  *         self.host_schema = self.host_url.split(f"://")[0]
  */
-  __pyx_t_3 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_v_bind, __pyx_kp_s__17); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 376, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_v_bind, __pyx_kp_s__17); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 380, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 376, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 380, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyNumber_Int(__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 376, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyNumber_Int(__pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 380, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bind_port, __pyx_t_3) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bind_port, __pyx_t_3) < 0) __PYX_ERR(0, 380, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "cy_web_x.py":377
+  /* "cy_web_x.py":381
  *         self.bind_ip = bind.split(':')[0]
  *         self.bind_port = int(bind.split(':')[1])
  *         self.host_url = host_url             # <<<<<<<<<<<<<<
  *         self.host_schema = self.host_url.split(f"://")[0]
  *         remain = self.host_url[self.host_schema.__len__() + 3:]
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_url, __pyx_v_host_url) < 0) __PYX_ERR(0, 377, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_url, __pyx_v_host_url) < 0) __PYX_ERR(0, 381, __pyx_L1_error)
 
-  /* "cy_web_x.py":378
+  /* "cy_web_x.py":382
  *         self.bind_port = int(bind.split(':')[1])
  *         self.host_url = host_url
  *         self.host_schema = self.host_url.split(f"://")[0]             # <<<<<<<<<<<<<<
  *         remain = self.host_url[self.host_schema.__len__() + 3:]
  *         self.host_name = remain.split('/')[0].split(':')[0]
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_url); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 378, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_url); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 382, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 378, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 382, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_t_7 = NULL;
@@ -12223,27 +12350,27 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   }
   __pyx_t_3 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_7, __pyx_kp_u__19) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_u__19);
   __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 382, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 378, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 382, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_schema, __pyx_t_1) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_schema, __pyx_t_1) < 0) __PYX_ERR(0, 382, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":379
+  /* "cy_web_x.py":383
  *         self.host_url = host_url
  *         self.host_schema = self.host_url.split(f"://")[0]
  *         remain = self.host_url[self.host_schema.__len__() + 3:]             # <<<<<<<<<<<<<<
  *         self.host_name = remain.split('/')[0].split(':')[0]
  *         self.host_port = None
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_url); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 379, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_url); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_schema); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 379, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_schema); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_len); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 379, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_len); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_t_7 = NULL;
@@ -12258,27 +12385,27 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   }
   __pyx_t_3 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
   __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 379, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_t_3, __pyx_int_3, 3, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 379, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_t_3, __pyx_int_3, 3, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, 0, &__pyx_t_2, NULL, NULL, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 379, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, 0, &__pyx_t_2, NULL, NULL, 0, 0, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 383, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_remain = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "cy_web_x.py":380
+  /* "cy_web_x.py":384
  *         self.host_schema = self.host_url.split(f"://")[0]
  *         remain = self.host_url[self.host_schema.__len__() + 3:]
  *         self.host_name = remain.split('/')[0].split(':')[0]             # <<<<<<<<<<<<<<
  *         self.host_port = None
  *         self.host_api_url = self.host_url + "/" + self.api_host_dir
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_remain, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 380, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_remain, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_7 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -12292,13 +12419,13 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   }
   __pyx_t_2 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_7, __pyx_kp_s__2) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_s__2);
   __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 380, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 380, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_2, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 380, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
@@ -12313,53 +12440,53 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   }
   __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_1, __pyx_kp_s__17) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s__17);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 380, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 380, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_name, __pyx_t_2) < 0) __PYX_ERR(0, 380, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_name, __pyx_t_2) < 0) __PYX_ERR(0, 384, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cy_web_x.py":381
+  /* "cy_web_x.py":385
  *         remain = self.host_url[self.host_schema.__len__() + 3:]
  *         self.host_name = remain.split('/')[0].split(':')[0]
  *         self.host_port = None             # <<<<<<<<<<<<<<
  *         self.host_api_url = self.host_url + "/" + self.api_host_dir
  *         if remain.split('/')[0].split(':').__len__() == 2:
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_port, Py_None) < 0) __PYX_ERR(0, 381, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_port, Py_None) < 0) __PYX_ERR(0, 385, __pyx_L1_error)
 
-  /* "cy_web_x.py":382
+  /* "cy_web_x.py":386
  *         self.host_name = remain.split('/')[0].split(':')[0]
  *         self.host_port = None
  *         self.host_api_url = self.host_url + "/" + self.api_host_dir             # <<<<<<<<<<<<<<
  *         if remain.split('/')[0].split(':').__len__() == 2:
  *             self.host_port = int(remain.split('/')[0].split(':')[1])
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_url); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 382, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_url); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyNumber_Add(__pyx_t_2, __pyx_kp_s__2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 382, __pyx_L1_error)
+  __pyx_t_3 = PyNumber_Add(__pyx_t_2, __pyx_kp_s__2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_api_host_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 382, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_api_host_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = PyNumber_Add(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 382, __pyx_L1_error)
+  __pyx_t_1 = PyNumber_Add(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_api_url, __pyx_t_1) < 0) __PYX_ERR(0, 382, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_api_url, __pyx_t_1) < 0) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":383
+  /* "cy_web_x.py":387
  *         self.host_port = None
  *         self.host_api_url = self.host_url + "/" + self.api_host_dir
  *         if remain.split('/')[0].split(':').__len__() == 2:             # <<<<<<<<<<<<<<
  *             self.host_port = int(remain.split('/')[0].split(':')[1])
  *             remain = remain[self.host_name.__len__() + str(self.host_port).__len__() + 1:]
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_remain, __pyx_n_s_split); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 383, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_remain, __pyx_n_s_split); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_10 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
@@ -12373,13 +12500,13 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   }
   __pyx_t_3 = (__pyx_t_10) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_10, __pyx_kp_s__2) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_kp_s__2);
   __Pyx_XDECREF(__pyx_t_10); __pyx_t_10 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 383, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 383, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_3, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_split); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 383, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_split); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_t_7 = NULL;
@@ -12394,10 +12521,10 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   }
   __pyx_t_2 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_7, __pyx_kp_s__17) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_kp_s__17);
   __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 383, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_len); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 383, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_len); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -12412,24 +12539,24 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_3);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 383, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 383, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyInt_EqObjC(__pyx_t_1, __pyx_int_2, 2, 0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 383, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_3); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   if (__pyx_t_4) {
 
-    /* "cy_web_x.py":384
+    /* "cy_web_x.py":388
  *         self.host_api_url = self.host_url + "/" + self.api_host_dir
  *         if remain.split('/')[0].split(':').__len__() == 2:
  *             self.host_port = int(remain.split('/')[0].split(':')[1])             # <<<<<<<<<<<<<<
  *             remain = remain[self.host_name.__len__() + str(self.host_port).__len__() + 1:]
  *         self.host_dir = None
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_remain, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 384, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_remain, __pyx_n_s_split); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 388, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_7 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -12443,13 +12570,13 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     }
     __pyx_t_1 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_7, __pyx_kp_s__2) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_kp_s__2);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 384, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 388, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 384, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_GetItemInt(__pyx_t_1, 0, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 388, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 384, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_split); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 388, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_2 = NULL;
@@ -12464,28 +12591,28 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     }
     __pyx_t_3 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_2, __pyx_kp_s__17) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_kp_s__17);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 388, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 384, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_3, 1, long, 1, __Pyx_PyInt_From_long, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 388, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyNumber_Int(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 384, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyNumber_Int(__pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 388, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_port, __pyx_t_3) < 0) __PYX_ERR(0, 384, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_port, __pyx_t_3) < 0) __PYX_ERR(0, 388, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-    /* "cy_web_x.py":385
+    /* "cy_web_x.py":389
  *         if remain.split('/')[0].split(':').__len__() == 2:
  *             self.host_port = int(remain.split('/')[0].split(':')[1])
  *             remain = remain[self.host_name.__len__() + str(self.host_port).__len__() + 1:]             # <<<<<<<<<<<<<<
  *         self.host_dir = None
  *         if remain != "":
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_name); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 385, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_name); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 389, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_len); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 385, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_len); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 389, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_t_1 = NULL;
@@ -12500,15 +12627,15 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     }
     __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_1) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 385, __pyx_L1_error)
+    if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 389, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_port); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 385, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_port); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 389, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_7 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 385, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_CallOneArg(((PyObject *)(&PyString_Type)), __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 389, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_len); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 385, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_len); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 389, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_7 = NULL;
@@ -12523,23 +12650,23 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     }
     __pyx_t_2 = (__pyx_t_7) ? __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_7) : __Pyx_PyObject_CallNoArg(__pyx_t_1);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 385, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 389, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyNumber_Add(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 385, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_Add(__pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 389, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_t_1, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 385, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyInt_AddObjC(__pyx_t_1, __pyx_int_1, 1, 0, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 389, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_remain, 0, 0, &__pyx_t_2, NULL, NULL, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 385, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_remain, 0, 0, &__pyx_t_2, NULL, NULL, 0, 0, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 389, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF_SET(__pyx_v_remain, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "cy_web_x.py":383
+    /* "cy_web_x.py":387
  *         self.host_port = None
  *         self.host_api_url = self.host_url + "/" + self.api_host_dir
  *         if remain.split('/')[0].split(':').__len__() == 2:             # <<<<<<<<<<<<<<
@@ -12548,35 +12675,35 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
  */
   }
 
-  /* "cy_web_x.py":386
+  /* "cy_web_x.py":390
  *             self.host_port = int(remain.split('/')[0].split(':')[1])
  *             remain = remain[self.host_name.__len__() + str(self.host_port).__len__() + 1:]
  *         self.host_dir = None             # <<<<<<<<<<<<<<
  *         if remain != "":
  *             self.host_dir = remain
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_dir, Py_None) < 0) __PYX_ERR(0, 386, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_dir, Py_None) < 0) __PYX_ERR(0, 390, __pyx_L1_error)
 
-  /* "cy_web_x.py":387
+  /* "cy_web_x.py":391
  *             remain = remain[self.host_name.__len__() + str(self.host_port).__len__() + 1:]
  *         self.host_dir = None
  *         if remain != "":             # <<<<<<<<<<<<<<
  *             self.host_dir = remain
  * 
  */
-  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_remain, __pyx_kp_s_, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 387, __pyx_L1_error)
+  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_v_remain, __pyx_kp_s_, Py_NE)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 391, __pyx_L1_error)
   if (__pyx_t_4) {
 
-    /* "cy_web_x.py":388
+    /* "cy_web_x.py":392
  *         self.host_dir = None
  *         if remain != "":
  *             self.host_dir = remain             # <<<<<<<<<<<<<<
  * 
  * 
  */
-    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_dir, __pyx_v_remain) < 0) __PYX_ERR(0, 388, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_host_dir, __pyx_v_remain) < 0) __PYX_ERR(0, 392, __pyx_L1_error)
 
-    /* "cy_web_x.py":387
+    /* "cy_web_x.py":391
  *             remain = remain[self.host_name.__len__() + str(self.host_port).__len__() + 1:]
  *         self.host_dir = None
  *         if remain != "":             # <<<<<<<<<<<<<<
@@ -12585,50 +12712,50 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
  */
   }
 
-  /* "cy_web_x.py":392
+  /* "cy_web_x.py":396
  * 
  * 
  *         if self.static_dir is not None:             # <<<<<<<<<<<<<<
  *             from fastapi.staticfiles import StaticFiles
  *             if self.host_dir is not None and self.host_dir != "":
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_static_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 392, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_static_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 396, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_4 = (__pyx_t_1 != Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_6 = (__pyx_t_4 != 0);
   if (__pyx_t_6) {
 
-    /* "cy_web_x.py":393
+    /* "cy_web_x.py":397
  * 
  *         if self.static_dir is not None:
  *             from fastapi.staticfiles import StaticFiles             # <<<<<<<<<<<<<<
  *             if self.host_dir is not None and self.host_dir != "":
  *                 self.app.mount(self.host_dir + "/static", StaticFiles(directory=self.static_dir), name="static")
  */
-    __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 393, __pyx_L1_error)
+    __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 397, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_n_s_StaticFiles);
     __Pyx_GIVEREF(__pyx_n_s_StaticFiles);
     PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_StaticFiles);
-    __pyx_t_2 = __Pyx_Import(__pyx_n_s_fastapi_staticfiles, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 393, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_Import(__pyx_n_s_fastapi_staticfiles, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 397, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_StaticFiles); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 393, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_StaticFiles); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 397, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_INCREF(__pyx_t_1);
     __pyx_v_StaticFiles = __pyx_t_1;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "cy_web_x.py":394
+    /* "cy_web_x.py":398
  *         if self.static_dir is not None:
  *             from fastapi.staticfiles import StaticFiles
  *             if self.host_dir is not None and self.host_dir != "":             # <<<<<<<<<<<<<<
  *                 self.app.mount(self.host_dir + "/static", StaticFiles(directory=self.static_dir), name="static")
  *             else:
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 394, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 398, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_4 = (__pyx_t_2 != Py_None);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
@@ -12638,41 +12765,41 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
       __pyx_t_6 = __pyx_t_5;
       goto __pyx_L12_bool_binop_done;
     }
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 394, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 398, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_kp_s_, Py_NE)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 394, __pyx_L1_error)
+    __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_kp_s_, Py_NE)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 398, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_6 = __pyx_t_5;
     __pyx_L12_bool_binop_done:;
     if (__pyx_t_6) {
 
-      /* "cy_web_x.py":395
+      /* "cy_web_x.py":399
  *             from fastapi.staticfiles import StaticFiles
  *             if self.host_dir is not None and self.host_dir != "":
  *                 self.app.mount(self.host_dir + "/static", StaticFiles(directory=self.static_dir), name="static")             # <<<<<<<<<<<<<<
  *             else:
  *                 self.app.mount("/static", StaticFiles(directory=self.static_dir),
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_app); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 395, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_app); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_mount); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 395, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_mount); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 395, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_3 = PyNumber_Add(__pyx_t_2, __pyx_kp_s_static); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 395, __pyx_L1_error)
+      __pyx_t_3 = PyNumber_Add(__pyx_t_2, __pyx_kp_s_static); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 395, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_static_dir); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 395, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_static_dir); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_directory, __pyx_t_7) < 0) __PYX_ERR(0, 395, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_directory, __pyx_t_7) < 0) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_v_StaticFiles, __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 395, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_v_StaticFiles, __pyx_empty_tuple, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 395, __pyx_L1_error)
+      __pyx_t_2 = PyTuple_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_GIVEREF(__pyx_t_3);
       PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_3);
@@ -12680,17 +12807,17 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
       PyTuple_SET_ITEM(__pyx_t_2, 1, __pyx_t_7);
       __pyx_t_3 = 0;
       __pyx_t_7 = 0;
-      __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 395, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_name_2, __pyx_n_s_static_2) < 0) __PYX_ERR(0, 395, __pyx_L1_error)
-      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 395, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_7, __pyx_n_s_name_2, __pyx_n_s_static_2) < 0) __PYX_ERR(0, 399, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 399, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-      /* "cy_web_x.py":394
+      /* "cy_web_x.py":398
  *         if self.static_dir is not None:
  *             from fastapi.staticfiles import StaticFiles
  *             if self.host_dir is not None and self.host_dir != "":             # <<<<<<<<<<<<<<
@@ -12700,7 +12827,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
       goto __pyx_L11;
     }
 
-    /* "cy_web_x.py":397
+    /* "cy_web_x.py":401
  *                 self.app.mount(self.host_dir + "/static", StaticFiles(directory=self.static_dir), name="static")
  *             else:
  *                 self.app.mount("/static", StaticFiles(directory=self.static_dir),             # <<<<<<<<<<<<<<
@@ -12708,21 +12835,21 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
  *         if self.template_dir is not None and self.template_dir[0:2] == "./":
  */
     /*else*/ {
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_app); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 397, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_app); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 401, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_mount); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 397, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_mount); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 401, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 397, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 401, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_static_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 397, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_static_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 401, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_directory, __pyx_t_2) < 0) __PYX_ERR(0, 397, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_directory, __pyx_t_2) < 0) __PYX_ERR(0, 401, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_v_StaticFiles, __pyx_empty_tuple, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 397, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_v_StaticFiles, __pyx_empty_tuple, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 401, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 397, __pyx_L1_error)
+      __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 401, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_INCREF(__pyx_kp_s_static);
       __Pyx_GIVEREF(__pyx_kp_s_static);
@@ -12731,25 +12858,25 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
       PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "cy_web_x.py":398
+      /* "cy_web_x.py":402
  *             else:
  *                 self.app.mount("/static", StaticFiles(directory=self.static_dir),
  *                                name="static")             # <<<<<<<<<<<<<<
  *         if self.template_dir is not None and self.template_dir[0:2] == "./":
  *             self.template_dir = os.path.join(self.working_dir, self.template_dir[2:])
  */
-      __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 398, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 402, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_name_2, __pyx_n_s_static_2) < 0) __PYX_ERR(0, 398, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_name_2, __pyx_n_s_static_2) < 0) __PYX_ERR(0, 402, __pyx_L1_error)
 
-      /* "cy_web_x.py":397
+      /* "cy_web_x.py":401
  *                 self.app.mount(self.host_dir + "/static", StaticFiles(directory=self.static_dir), name="static")
  *             else:
  *                 self.app.mount("/static", StaticFiles(directory=self.static_dir),             # <<<<<<<<<<<<<<
  *                                name="static")
  *         if self.template_dir is not None and self.template_dir[0:2] == "./":
  */
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 397, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_3, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 401, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -12758,7 +12885,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     }
     __pyx_L11:;
 
-    /* "cy_web_x.py":392
+    /* "cy_web_x.py":396
  * 
  * 
  *         if self.static_dir is not None:             # <<<<<<<<<<<<<<
@@ -12767,14 +12894,14 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
  */
   }
 
-  /* "cy_web_x.py":399
+  /* "cy_web_x.py":403
  *                 self.app.mount("/static", StaticFiles(directory=self.static_dir),
  *                                name="static")
  *         if self.template_dir is not None and self.template_dir[0:2] == "./":             # <<<<<<<<<<<<<<
  *             self.template_dir = os.path.join(self.working_dir, self.template_dir[2:])
  *         if self.template_dir is not None:
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_template_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 399, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_template_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 403, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_5 = (__pyx_t_1 != Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -12784,37 +12911,37 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     __pyx_t_6 = __pyx_t_4;
     goto __pyx_L15_bool_binop_done;
   }
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_template_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 399, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_template_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 403, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, 2, NULL, NULL, &__pyx_slice__3, 1, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 399, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetSlice(__pyx_t_1, 0, 2, NULL, NULL, &__pyx_slice__3, 1, 1, 1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 403, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_kp_s__11, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 399, __pyx_L1_error)
+  __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_2, __pyx_kp_s__11, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 403, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_6 = __pyx_t_4;
   __pyx_L15_bool_binop_done:;
   if (__pyx_t_6) {
 
-    /* "cy_web_x.py":400
+    /* "cy_web_x.py":404
  *                                name="static")
  *         if self.template_dir is not None and self.template_dir[0:2] == "./":
  *             self.template_dir = os.path.join(self.working_dir, self.template_dir[2:])             # <<<<<<<<<<<<<<
  *         if self.template_dir is not None:
  *             self.templates = Jinja2Templates(directory=self.template_dir)
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_os); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 400, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_os); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 404, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 400, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 404, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_join); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 400, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_join); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 404, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_working_dir); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 400, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_working_dir); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 404, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_template_dir); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 400, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_template_dir); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 404, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_10 = __Pyx_PyObject_GetSlice(__pyx_t_7, 2, 0, NULL, NULL, &__pyx_slice__16, 1, 0, 1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 400, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyObject_GetSlice(__pyx_t_7, 2, 0, NULL, NULL, &__pyx_slice__16, 1, 0, 1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 404, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_7 = NULL;
@@ -12832,7 +12959,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_t_3, __pyx_t_10};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 400, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 404, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -12842,7 +12969,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_t_3, __pyx_t_10};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 400, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 404, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -12850,7 +12977,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     } else
     #endif
     {
-      __pyx_t_8 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 400, __pyx_L1_error)
+      __pyx_t_8 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 404, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       if (__pyx_t_7) {
         __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -12861,15 +12988,15 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
       PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_9, __pyx_t_10);
       __pyx_t_3 = 0;
       __pyx_t_10 = 0;
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 400, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 404, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_template_dir, __pyx_t_2) < 0) __PYX_ERR(0, 400, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_template_dir, __pyx_t_2) < 0) __PYX_ERR(0, 404, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "cy_web_x.py":399
+    /* "cy_web_x.py":403
  *                 self.app.mount("/static", StaticFiles(directory=self.static_dir),
  *                                name="static")
  *         if self.template_dir is not None and self.template_dir[0:2] == "./":             # <<<<<<<<<<<<<<
@@ -12878,43 +13005,43 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
  */
   }
 
-  /* "cy_web_x.py":401
+  /* "cy_web_x.py":405
  *         if self.template_dir is not None and self.template_dir[0:2] == "./":
  *             self.template_dir = os.path.join(self.working_dir, self.template_dir[2:])
  *         if self.template_dir is not None:             # <<<<<<<<<<<<<<
  *             self.templates = Jinja2Templates(directory=self.template_dir)
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_template_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 401, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_template_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 405, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_6 = (__pyx_t_2 != Py_None);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = (__pyx_t_6 != 0);
   if (__pyx_t_4) {
 
-    /* "cy_web_x.py":402
+    /* "cy_web_x.py":406
  *             self.template_dir = os.path.join(self.working_dir, self.template_dir[2:])
  *         if self.template_dir is not None:
  *             self.templates = Jinja2Templates(directory=self.template_dir)             # <<<<<<<<<<<<<<
  * 
  *         self.controller_dirs = []
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Jinja2Templates); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 402, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_Jinja2Templates); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 406, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 402, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 406, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_template_dir); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 402, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_template_dir); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 406, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_directory, __pyx_t_8) < 0) __PYX_ERR(0, 402, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_directory, __pyx_t_8) < 0) __PYX_ERR(0, 406, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 402, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_empty_tuple, __pyx_t_1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 406, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_templates, __pyx_t_8) < 0) __PYX_ERR(0, 402, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_templates, __pyx_t_8) < 0) __PYX_ERR(0, 406, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "cy_web_x.py":401
+    /* "cy_web_x.py":405
  *         if self.template_dir is not None and self.template_dir[0:2] == "./":
  *             self.template_dir = os.path.join(self.working_dir, self.template_dir[2:])
  *         if self.template_dir is not None:             # <<<<<<<<<<<<<<
@@ -12923,19 +13050,19 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
  */
   }
 
-  /* "cy_web_x.py":404
+  /* "cy_web_x.py":408
  *             self.templates = Jinja2Templates(directory=self.template_dir)
  * 
  *         self.controller_dirs = []             # <<<<<<<<<<<<<<
  *         for x in controller_dirs:
  *             if x[0:2] == "./":
  */
-  __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 404, __pyx_L1_error)
+  __pyx_t_8 = PyList_New(0); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 408, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_controller_dirs, __pyx_t_8) < 0) __PYX_ERR(0, 404, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_controller_dirs, __pyx_t_8) < 0) __PYX_ERR(0, 408, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "cy_web_x.py":405
+  /* "cy_web_x.py":409
  * 
  *         self.controller_dirs = []
  *         for x in controller_dirs:             # <<<<<<<<<<<<<<
@@ -12946,26 +13073,26 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     __pyx_t_8 = __pyx_v_controller_dirs; __Pyx_INCREF(__pyx_t_8); __pyx_t_11 = 0;
     __pyx_t_13 = NULL;
   } else {
-    __pyx_t_11 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_v_controller_dirs); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 405, __pyx_L1_error)
+    __pyx_t_11 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_v_controller_dirs); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 409, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_13 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 405, __pyx_L1_error)
+    __pyx_t_13 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 409, __pyx_L1_error)
   }
   for (;;) {
     if (likely(!__pyx_t_13)) {
       if (likely(PyList_CheckExact(__pyx_t_8))) {
         if (__pyx_t_11 >= PyList_GET_SIZE(__pyx_t_8)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_11); __Pyx_INCREF(__pyx_t_1); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 405, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_11); __Pyx_INCREF(__pyx_t_1); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 409, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_8, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 405, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_8, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 409, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_11 >= PyTuple_GET_SIZE(__pyx_t_8)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_11); __Pyx_INCREF(__pyx_t_1); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 405, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_11); __Pyx_INCREF(__pyx_t_1); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 409, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_8, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 405, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_8, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 409, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -12975,7 +13102,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 405, __pyx_L1_error)
+          else __PYX_ERR(0, 409, __pyx_L1_error)
         }
         break;
       }
@@ -12984,47 +13111,47 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "cy_web_x.py":406
+    /* "cy_web_x.py":410
  *         self.controller_dirs = []
  *         for x in controller_dirs:
  *             if x[0:2] == "./":             # <<<<<<<<<<<<<<
  *                 self.controller_dirs += [
  *                     os.path.join(self.working_dir, x[2:])
  */
-    __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_x, 0, 2, NULL, NULL, &__pyx_slice__3, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 406, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetSlice(__pyx_v_x, 0, 2, NULL, NULL, &__pyx_slice__3, 1, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 410, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_kp_s__11, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 406, __pyx_L1_error)
+    __pyx_t_4 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_kp_s__11, Py_EQ)); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 410, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_4) {
 
-      /* "cy_web_x.py":407
+      /* "cy_web_x.py":411
  *         for x in controller_dirs:
  *             if x[0:2] == "./":
  *                 self.controller_dirs += [             # <<<<<<<<<<<<<<
  *                     os.path.join(self.working_dir, x[2:])
  *                 ]
  */
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_controller_dirs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 407, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_controller_dirs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 411, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
 
-      /* "cy_web_x.py":408
+      /* "cy_web_x.py":412
  *             if x[0:2] == "./":
  *                 self.controller_dirs += [
  *                     os.path.join(self.working_dir, x[2:])             # <<<<<<<<<<<<<<
  *                 ]
  *             else:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_os); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 408, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_os); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 412, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 408, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_path); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 412, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_join); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 408, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_join); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 412, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_working_dir); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 408, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_working_dir); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 412, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
-      __pyx_t_7 = __Pyx_PyObject_GetSlice(__pyx_v_x, 2, 0, NULL, NULL, &__pyx_slice__16, 1, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 408, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetSlice(__pyx_v_x, 2, 0, NULL, NULL, &__pyx_slice__16, 1, 0, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 412, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __pyx_t_14 = NULL;
       __pyx_t_9 = 0;
@@ -13041,7 +13168,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_10)) {
         PyObject *__pyx_temp[3] = {__pyx_t_14, __pyx_t_3, __pyx_t_7};
-        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 408, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 412, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -13051,7 +13178,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_10)) {
         PyObject *__pyx_temp[3] = {__pyx_t_14, __pyx_t_3, __pyx_t_7};
-        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 408, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_10, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 412, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -13059,7 +13186,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
       } else
       #endif
       {
-        __pyx_t_15 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 408, __pyx_L1_error)
+        __pyx_t_15 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 412, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_15);
         if (__pyx_t_14) {
           __Pyx_GIVEREF(__pyx_t_14); PyTuple_SET_ITEM(__pyx_t_15, 0, __pyx_t_14); __pyx_t_14 = NULL;
@@ -13070,32 +13197,32 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
         PyTuple_SET_ITEM(__pyx_t_15, 1+__pyx_t_9, __pyx_t_7);
         __pyx_t_3 = 0;
         __pyx_t_7 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_15, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 408, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_15, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 412, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
       }
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-      /* "cy_web_x.py":407
+      /* "cy_web_x.py":411
  *         for x in controller_dirs:
  *             if x[0:2] == "./":
  *                 self.controller_dirs += [             # <<<<<<<<<<<<<<
  *                     os.path.join(self.working_dir, x[2:])
  *                 ]
  */
-      __pyx_t_10 = PyList_New(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 407, __pyx_L1_error)
+      __pyx_t_10 = PyList_New(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 411, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_GIVEREF(__pyx_t_2);
       PyList_SET_ITEM(__pyx_t_10, 0, __pyx_t_2);
       __pyx_t_2 = 0;
-      __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_t_1, __pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 407, __pyx_L1_error)
+      __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_t_1, __pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 411, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_controller_dirs, __pyx_t_2) < 0) __PYX_ERR(0, 407, __pyx_L1_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_controller_dirs, __pyx_t_2) < 0) __PYX_ERR(0, 411, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-      /* "cy_web_x.py":406
+      /* "cy_web_x.py":410
  *         self.controller_dirs = []
  *         for x in controller_dirs:
  *             if x[0:2] == "./":             # <<<<<<<<<<<<<<
@@ -13105,7 +13232,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
       goto __pyx_L20;
     }
 
-    /* "cy_web_x.py":411
+    /* "cy_web_x.py":415
  *                 ]
  *             else:
  *                 self.controller_dirs += [x]             # <<<<<<<<<<<<<<
@@ -13113,23 +13240,23 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
  *             self.load_controller_from_dir(x)
  */
     /*else*/ {
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_controller_dirs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 411, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_controller_dirs); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 415, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_10 = PyList_New(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 411, __pyx_L1_error)
+      __pyx_t_10 = PyList_New(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 415, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_INCREF(__pyx_v_x);
       __Pyx_GIVEREF(__pyx_v_x);
       PyList_SET_ITEM(__pyx_t_10, 0, __pyx_v_x);
-      __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_t_2, __pyx_t_10); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 411, __pyx_L1_error)
+      __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_t_2, __pyx_t_10); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 415, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_controller_dirs, __pyx_t_1) < 0) __PYX_ERR(0, 411, __pyx_L1_error)
+      if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_controller_dirs, __pyx_t_1) < 0) __PYX_ERR(0, 415, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     }
     __pyx_L20:;
 
-    /* "cy_web_x.py":405
+    /* "cy_web_x.py":409
  * 
  *         self.controller_dirs = []
  *         for x in controller_dirs:             # <<<<<<<<<<<<<<
@@ -13139,22 +13266,22 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "cy_web_x.py":412
+  /* "cy_web_x.py":416
  *             else:
  *                 self.controller_dirs += [x]
  *         for x in self.controller_dirs:             # <<<<<<<<<<<<<<
  *             self.load_controller_from_dir(x)
  *         if self.host_dir is not None and self.host_dir != "":
  */
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_controller_dirs); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 412, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_controller_dirs); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 416, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   if (likely(PyList_CheckExact(__pyx_t_8)) || PyTuple_CheckExact(__pyx_t_8)) {
     __pyx_t_1 = __pyx_t_8; __Pyx_INCREF(__pyx_t_1); __pyx_t_11 = 0;
     __pyx_t_13 = NULL;
   } else {
-    __pyx_t_11 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 412, __pyx_L1_error)
+    __pyx_t_11 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 416, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_13 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 412, __pyx_L1_error)
+    __pyx_t_13 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 416, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   for (;;) {
@@ -13162,17 +13289,17 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
       if (likely(PyList_CheckExact(__pyx_t_1))) {
         if (__pyx_t_11 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_8 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_11); __Pyx_INCREF(__pyx_t_8); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 412, __pyx_L1_error)
+        __pyx_t_8 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_11); __Pyx_INCREF(__pyx_t_8); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 416, __pyx_L1_error)
         #else
-        __pyx_t_8 = PySequence_ITEM(__pyx_t_1, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 412, __pyx_L1_error)
+        __pyx_t_8 = PySequence_ITEM(__pyx_t_1, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 416, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         #endif
       } else {
         if (__pyx_t_11 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_11); __Pyx_INCREF(__pyx_t_8); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 412, __pyx_L1_error)
+        __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_11); __Pyx_INCREF(__pyx_t_8); __pyx_t_11++; if (unlikely(0 < 0)) __PYX_ERR(0, 416, __pyx_L1_error)
         #else
-        __pyx_t_8 = PySequence_ITEM(__pyx_t_1, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 412, __pyx_L1_error)
+        __pyx_t_8 = PySequence_ITEM(__pyx_t_1, __pyx_t_11); __pyx_t_11++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 416, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
         #endif
       }
@@ -13182,7 +13309,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 412, __pyx_L1_error)
+          else __PYX_ERR(0, 416, __pyx_L1_error)
         }
         break;
       }
@@ -13191,14 +13318,14 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     __Pyx_XDECREF_SET(__pyx_v_x, __pyx_t_8);
     __pyx_t_8 = 0;
 
-    /* "cy_web_x.py":413
+    /* "cy_web_x.py":417
  *                 self.controller_dirs += [x]
  *         for x in self.controller_dirs:
  *             self.load_controller_from_dir(x)             # <<<<<<<<<<<<<<
  *         if self.host_dir is not None and self.host_dir != "":
  *             self.url_get_token = self.host_dir + "/" + self.url_get_token
  */
-    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_load_controller_from_dir); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 413, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_load_controller_from_dir); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 417, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
     __pyx_t_2 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
@@ -13212,12 +13339,12 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     }
     __pyx_t_8 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_10, __pyx_t_2, __pyx_v_x) : __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_v_x);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 413, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 417, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-    /* "cy_web_x.py":412
+    /* "cy_web_x.py":416
  *             else:
  *                 self.controller_dirs += [x]
  *         for x in self.controller_dirs:             # <<<<<<<<<<<<<<
@@ -13227,14 +13354,14 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":414
+  /* "cy_web_x.py":418
  *         for x in self.controller_dirs:
  *             self.load_controller_from_dir(x)
  *         if self.host_dir is not None and self.host_dir != "":             # <<<<<<<<<<<<<<
  *             self.url_get_token = self.host_dir + "/" + self.url_get_token
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 414, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 418, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = (__pyx_t_1 != Py_None);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -13244,36 +13371,36 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
     __pyx_t_4 = __pyx_t_5;
     goto __pyx_L24_bool_binop_done;
   }
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 414, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 418, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_kp_s_, Py_NE)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 414, __pyx_L1_error)
+  __pyx_t_5 = (__Pyx_PyString_Equals(__pyx_t_1, __pyx_kp_s_, Py_NE)); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 418, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_4 = __pyx_t_5;
   __pyx_L24_bool_binop_done:;
   if (__pyx_t_4) {
 
-    /* "cy_web_x.py":415
+    /* "cy_web_x.py":419
  *             self.load_controller_from_dir(x)
  *         if self.host_dir is not None and self.host_dir != "":
  *             self.url_get_token = self.host_dir + "/" + self.url_get_token             # <<<<<<<<<<<<<<
  * 
  *         self.oauth2_type = OAuth2PasswordBearerAndCookie
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 415, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_dir); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 419, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_8 = PyNumber_Add(__pyx_t_1, __pyx_kp_s__2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 415, __pyx_L1_error)
+    __pyx_t_8 = PyNumber_Add(__pyx_t_1, __pyx_kp_s__2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 419, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_url_get_token); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 415, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_url_get_token); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 419, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_10 = PyNumber_Add(__pyx_t_8, __pyx_t_1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 415, __pyx_L1_error)
+    __pyx_t_10 = PyNumber_Add(__pyx_t_8, __pyx_t_1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 419, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_url_get_token, __pyx_t_10) < 0) __PYX_ERR(0, 415, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_url_get_token, __pyx_t_10) < 0) __PYX_ERR(0, 419, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-    /* "cy_web_x.py":414
+    /* "cy_web_x.py":418
  *         for x in self.controller_dirs:
  *             self.load_controller_from_dir(x)
  *         if self.host_dir is not None and self.host_dir != "":             # <<<<<<<<<<<<<<
@@ -13282,33 +13409,33 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
  */
   }
 
-  /* "cy_web_x.py":417
+  /* "cy_web_x.py":421
  *             self.url_get_token = self.host_dir + "/" + self.url_get_token
  * 
  *         self.oauth2_type = OAuth2PasswordBearerAndCookie             # <<<<<<<<<<<<<<
  *         self.app.post("/"+self.url_get_token)(login_for_access_token)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_OAuth2PasswordBearerAndCookie); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 417, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_OAuth2PasswordBearerAndCookie); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 421, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_oauth2_type, __pyx_t_10) < 0) __PYX_ERR(0, 417, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_oauth2_type, __pyx_t_10) < 0) __PYX_ERR(0, 421, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-  /* "cy_web_x.py":418
+  /* "cy_web_x.py":422
  * 
  *         self.oauth2_type = OAuth2PasswordBearerAndCookie
  *         self.app.post("/"+self.url_get_token)(login_for_access_token)             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_app); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 418, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_app); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 418, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_post); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_url_get_token); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 418, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_url_get_token); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_15 = PyNumber_Add(__pyx_kp_s__2, __pyx_t_8); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 418, __pyx_L1_error)
+  __pyx_t_15 = PyNumber_Add(__pyx_kp_s__2, __pyx_t_8); if (unlikely(!__pyx_t_15)) __PYX_ERR(0, 422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_15);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __pyx_t_8 = NULL;
@@ -13324,10 +13451,10 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   __pyx_t_1 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_8, __pyx_t_15) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_15);
   __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
   __Pyx_DECREF(__pyx_t_15); __pyx_t_15 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 418, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_login_for_access_token); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 418, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_login_for_access_token); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_15 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
@@ -13342,12 +13469,12 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   __pyx_t_10 = (__pyx_t_15) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_15, __pyx_t_2) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_2);
   __Pyx_XDECREF(__pyx_t_15); __pyx_t_15 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 418, __pyx_L1_error)
+  if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_10);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-  /* "cy_web_x.py":335
+  /* "cy_web_x.py":339
  * 
  * 
  *     def __init__(self,             # <<<<<<<<<<<<<<
@@ -13378,7 +13505,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp___init__(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "cy_web_x.py":421
+/* "cy_web_x.py":425
  * 
  * 
  *     def unvicorn_start(self, start_path):             # <<<<<<<<<<<<<<
@@ -13421,11 +13548,11 @@ static PyObject *__pyx_pw_8cy_web_x_6WebApp_3unvicorn_start(PyObject *__pyx_self
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_start_path)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("unvicorn_start", 1, 2, 2, 1); __PYX_ERR(0, 421, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("unvicorn_start", 1, 2, 2, 1); __PYX_ERR(0, 425, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "unvicorn_start") < 0)) __PYX_ERR(0, 421, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "unvicorn_start") < 0)) __PYX_ERR(0, 425, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -13438,7 +13565,7 @@ static PyObject *__pyx_pw_8cy_web_x_6WebApp_3unvicorn_start(PyObject *__pyx_self
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("unvicorn_start", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 421, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("unvicorn_start", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 425, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cy_web_x.WebApp.unvicorn_start", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -13465,128 +13592,128 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp_2unvicorn_start(CYTHON_UNUSED PyObje
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("unvicorn_start", 0);
 
-  /* "cy_web_x.py":426
+  /* "cy_web_x.py":430
  *         #     if v==self:
  *         #        self.web_app_name=k
  *         run_path=f"{start_path}:web_application.app"             # <<<<<<<<<<<<<<
  *         if self.dev_mode:
  *             uvicorn.run(
  */
-  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_start_path, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 426, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_v_start_path, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 430, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyUnicode_Concat(__pyx_t_1, __pyx_kp_u_web_application_app); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 426, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyUnicode_Concat(__pyx_t_1, __pyx_kp_u_web_application_app); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 430, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_run_path = ((PyObject*)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "cy_web_x.py":427
+  /* "cy_web_x.py":431
  *         #        self.web_app_name=k
  *         run_path=f"{start_path}:web_application.app"
  *         if self.dev_mode:             # <<<<<<<<<<<<<<
  *             uvicorn.run(
  *                 run_path,
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_dev_mode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 427, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_dev_mode); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 431, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 427, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 431, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_3) {
 
-    /* "cy_web_x.py":428
+    /* "cy_web_x.py":432
  *         run_path=f"{start_path}:web_application.app"
  *         if self.dev_mode:
  *             uvicorn.run(             # <<<<<<<<<<<<<<
  *                 run_path,
  *                 host=self.bind_ip,
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_uvicorn); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 428, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_uvicorn); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 432, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_run); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 428, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_run); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 432, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "cy_web_x.py":429
+    /* "cy_web_x.py":433
  *         if self.dev_mode:
  *             uvicorn.run(
  *                 run_path,             # <<<<<<<<<<<<<<
  *                 host=self.bind_ip,
  *                 port=self.host_port,
  */
-    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 428, __pyx_L1_error)
+    __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 432, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_INCREF(__pyx_v_run_path);
     __Pyx_GIVEREF(__pyx_v_run_path);
     PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_v_run_path);
 
-    /* "cy_web_x.py":430
+    /* "cy_web_x.py":434
  *             uvicorn.run(
  *                 run_path,
  *                 host=self.bind_ip,             # <<<<<<<<<<<<<<
  *                 port=self.host_port,
  *                 log_level="info",
  */
-    __pyx_t_4 = __Pyx_PyDict_NewPresized(7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 430, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyDict_NewPresized(7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 434, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bind_ip); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 430, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bind_ip); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 434, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_host, __pyx_t_5) < 0) __PYX_ERR(0, 430, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_host, __pyx_t_5) < 0) __PYX_ERR(0, 434, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "cy_web_x.py":431
+    /* "cy_web_x.py":435
  *                 run_path,
  *                 host=self.bind_ip,
  *                 port=self.host_port,             # <<<<<<<<<<<<<<
  *                 log_level="info",
  *                 workers=8,
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_port); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 431, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_port); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 435, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_port, __pyx_t_5) < 0) __PYX_ERR(0, 430, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_port, __pyx_t_5) < 0) __PYX_ERR(0, 434, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_log_level, __pyx_n_s_info) < 0) __PYX_ERR(0, 430, __pyx_L1_error)
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_workers, __pyx_int_8) < 0) __PYX_ERR(0, 430, __pyx_L1_error)
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_lifespan, __pyx_n_s_on) < 0) __PYX_ERR(0, 430, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_log_level, __pyx_n_s_info) < 0) __PYX_ERR(0, 434, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_workers, __pyx_int_8) < 0) __PYX_ERR(0, 434, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_lifespan, __pyx_n_s_on) < 0) __PYX_ERR(0, 434, __pyx_L1_error)
 
-    /* "cy_web_x.py":435
+    /* "cy_web_x.py":439
  *                 workers=8,
  *                 lifespan='on',
  *                 reload=self.dev_mode,             # <<<<<<<<<<<<<<
  *                 reload_dirs=self.working_dir
  * 
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_dev_mode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 435, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_dev_mode); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 439, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_reload, __pyx_t_5) < 0) __PYX_ERR(0, 430, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_reload, __pyx_t_5) < 0) __PYX_ERR(0, 434, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "cy_web_x.py":436
+    /* "cy_web_x.py":440
  *                 lifespan='on',
  *                 reload=self.dev_mode,
  *                 reload_dirs=self.working_dir             # <<<<<<<<<<<<<<
  * 
  *             )
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_working_dir); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 436, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_working_dir); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 440, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_reload_dirs, __pyx_t_5) < 0) __PYX_ERR(0, 430, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_reload_dirs, __pyx_t_5) < 0) __PYX_ERR(0, 434, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "cy_web_x.py":428
+    /* "cy_web_x.py":432
  *         run_path=f"{start_path}:web_application.app"
  *         if self.dev_mode:
  *             uvicorn.run(             # <<<<<<<<<<<<<<
  *                 run_path,
  *                 host=self.bind_ip,
  */
-    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 428, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_2, __pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 432, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "cy_web_x.py":427
+    /* "cy_web_x.py":431
  *         #        self.web_app_name=k
  *         run_path=f"{start_path}:web_application.app"
  *         if self.dev_mode:             # <<<<<<<<<<<<<<
@@ -13596,7 +13723,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp_2unvicorn_start(CYTHON_UNUSED PyObje
     goto __pyx_L3;
   }
 
-  /* "cy_web_x.py":440
+  /* "cy_web_x.py":444
  *             )
  *         else:
  *             uvicorn.run(             # <<<<<<<<<<<<<<
@@ -13604,62 +13731,62 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp_2unvicorn_start(CYTHON_UNUSED PyObje
  *                 host=self.bind_ip,
  */
   /*else*/ {
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_uvicorn); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_uvicorn); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 444, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_run); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_run); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 444, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "cy_web_x.py":441
+    /* "cy_web_x.py":445
  *         else:
  *             uvicorn.run(
  *                 run_path,             # <<<<<<<<<<<<<<
  *                 host=self.bind_ip,
  *                 port=self.host_port,
  */
-    __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 444, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_INCREF(__pyx_v_run_path);
     __Pyx_GIVEREF(__pyx_v_run_path);
     PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_v_run_path);
 
-    /* "cy_web_x.py":442
+    /* "cy_web_x.py":446
  *             uvicorn.run(
  *                 run_path,
  *                 host=self.bind_ip,             # <<<<<<<<<<<<<<
  *                 port=self.host_port,
  *                 log_level="info",
  */
-    __pyx_t_2 = __Pyx_PyDict_NewPresized(5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 442, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyDict_NewPresized(5); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 446, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bind_ip); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 442, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bind_ip); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 446, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_host, __pyx_t_1) < 0) __PYX_ERR(0, 442, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_host, __pyx_t_1) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "cy_web_x.py":443
+    /* "cy_web_x.py":447
  *                 run_path,
  *                 host=self.bind_ip,
  *                 port=self.host_port,             # <<<<<<<<<<<<<<
  *                 log_level="info",
  *                 workers=8,
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_port); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 443, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_host_port); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 447, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_port, __pyx_t_1) < 0) __PYX_ERR(0, 442, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_port, __pyx_t_1) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_log_level, __pyx_n_s_info) < 0) __PYX_ERR(0, 442, __pyx_L1_error)
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_workers, __pyx_int_8) < 0) __PYX_ERR(0, 442, __pyx_L1_error)
-    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_lifespan, __pyx_n_s_on) < 0) __PYX_ERR(0, 442, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_log_level, __pyx_n_s_info) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_workers, __pyx_int_8) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
+    if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_lifespan, __pyx_n_s_on) < 0) __PYX_ERR(0, 446, __pyx_L1_error)
 
-    /* "cy_web_x.py":440
+    /* "cy_web_x.py":444
  *             )
  *         else:
  *             uvicorn.run(             # <<<<<<<<<<<<<<
  *                 run_path,
  *                 host=self.bind_ip,
  */
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_5, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 444, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -13668,7 +13795,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp_2unvicorn_start(CYTHON_UNUSED PyObje
   }
   __pyx_L3:;
 
-  /* "cy_web_x.py":421
+  /* "cy_web_x.py":425
  * 
  * 
  *     def unvicorn_start(self, start_path):             # <<<<<<<<<<<<<<
@@ -13693,7 +13820,7 @@ static PyObject *__pyx_pf_8cy_web_x_6WebApp_2unvicorn_start(CYTHON_UNUSED PyObje
   return __pyx_r;
 }
 
-/* "cy_web_x.py":451
+/* "cy_web_x.py":455
  * 
  * 
  * def web_handler(path: str, method: str,response_model=None):             # <<<<<<<<<<<<<<
@@ -13740,7 +13867,7 @@ static PyObject *__pyx_pw_8cy_web_x_15web_handler(PyObject *__pyx_self, PyObject
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_method)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("web_handler", 0, 2, 3, 1); __PYX_ERR(0, 451, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("web_handler", 0, 2, 3, 1); __PYX_ERR(0, 455, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
@@ -13750,7 +13877,7 @@ static PyObject *__pyx_pw_8cy_web_x_15web_handler(PyObject *__pyx_self, PyObject
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "web_handler") < 0)) __PYX_ERR(0, 451, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "web_handler") < 0)) __PYX_ERR(0, 455, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -13768,14 +13895,14 @@ static PyObject *__pyx_pw_8cy_web_x_15web_handler(PyObject *__pyx_self, PyObject
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("web_handler", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 451, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("web_handler", 0, 2, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 455, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cy_web_x.web_handler", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_path), (&PyString_Type), 1, "path", 1))) __PYX_ERR(0, 451, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_method), (&PyString_Type), 1, "method", 1))) __PYX_ERR(0, 451, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_path), (&PyString_Type), 1, "path", 1))) __PYX_ERR(0, 455, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_method), (&PyString_Type), 1, "method", 1))) __PYX_ERR(0, 455, __pyx_L1_error)
   __pyx_r = __pyx_pf_8cy_web_x_14web_handler(__pyx_self, __pyx_v_path, __pyx_v_method, __pyx_v_response_model);
 
   /* function exit code */
@@ -13787,7 +13914,7 @@ static PyObject *__pyx_pw_8cy_web_x_15web_handler(PyObject *__pyx_self, PyObject
   return __pyx_r;
 }
 
-/* "cy_web_x.py":453
+/* "cy_web_x.py":457
  * def web_handler(path: str, method: str,response_model=None):
  * 
  *     def warpper(obj):             # <<<<<<<<<<<<<<
@@ -13829,26 +13956,26 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
   __pyx_outer_scope = (struct __pyx_obj_8cy_web_x___pyx_scope_struct_1_web_handler *) __Pyx_CyFunction_GetClosure(__pyx_self);
   __pyx_cur_scope = __pyx_outer_scope;
 
-  /* "cy_web_x.py":454
+  /* "cy_web_x.py":458
  * 
  *     def warpper(obj):
  *         import inspect             # <<<<<<<<<<<<<<
  *         if inspect.isclass(obj):
  *             return __wrapper_class__(method, obj, path)
  */
-  __pyx_t_1 = __Pyx_patch_inspect(__Pyx_Import(__pyx_n_s_inspect, 0, -1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 454, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_patch_inspect(__Pyx_Import(__pyx_n_s_inspect, 0, -1)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 458, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_inspect = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":455
+  /* "cy_web_x.py":459
  *     def warpper(obj):
  *         import inspect
  *         if inspect.isclass(obj):             # <<<<<<<<<<<<<<
  *             return __wrapper_class__(method, obj, path)
  *         elif callable(obj):
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_inspect, __pyx_n_s_isclass); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 455, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_inspect, __pyx_n_s_isclass); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 459, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -13862,14 +13989,14 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_obj) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_obj);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 455, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 459, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 455, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 459, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "cy_web_x.py":456
+    /* "cy_web_x.py":460
  *         import inspect
  *         if inspect.isclass(obj):
  *             return __wrapper_class__(method, obj, path)             # <<<<<<<<<<<<<<
@@ -13877,10 +14004,10 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
  *             # fx= fastapi.FastAPI()
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_wrapper_class); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 456, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_wrapper_class); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 460, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    if (unlikely(!__pyx_cur_scope->__pyx_v_method)) { __Pyx_RaiseClosureNameError("method"); __PYX_ERR(0, 456, __pyx_L1_error) }
-    if (unlikely(!__pyx_cur_scope->__pyx_v_path)) { __Pyx_RaiseClosureNameError("path"); __PYX_ERR(0, 456, __pyx_L1_error) }
+    if (unlikely(!__pyx_cur_scope->__pyx_v_method)) { __Pyx_RaiseClosureNameError("method"); __PYX_ERR(0, 460, __pyx_L1_error) }
+    if (unlikely(!__pyx_cur_scope->__pyx_v_path)) { __Pyx_RaiseClosureNameError("path"); __PYX_ERR(0, 460, __pyx_L1_error) }
     __pyx_t_3 = NULL;
     __pyx_t_5 = 0;
     if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -13896,7 +14023,7 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[4] = {__pyx_t_3, __pyx_cur_scope->__pyx_v_method, __pyx_v_obj, __pyx_cur_scope->__pyx_v_path};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 3+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 456, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 3+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 460, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
@@ -13904,13 +14031,13 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[4] = {__pyx_t_3, __pyx_cur_scope->__pyx_v_method, __pyx_v_obj, __pyx_cur_scope->__pyx_v_path};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 3+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 456, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 3+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 460, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
     #endif
     {
-      __pyx_t_6 = PyTuple_New(3+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 456, __pyx_L1_error)
+      __pyx_t_6 = PyTuple_New(3+__pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 460, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       if (__pyx_t_3) {
         __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -13924,7 +14051,7 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
       __Pyx_INCREF(__pyx_cur_scope->__pyx_v_path);
       __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_path);
       PyTuple_SET_ITEM(__pyx_t_6, 2+__pyx_t_5, __pyx_cur_scope->__pyx_v_path);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 456, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_6, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 460, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     }
@@ -13933,7 +14060,7 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "cy_web_x.py":455
+    /* "cy_web_x.py":459
  *     def warpper(obj):
  *         import inspect
  *         if inspect.isclass(obj):             # <<<<<<<<<<<<<<
@@ -13942,18 +14069,18 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
  */
   }
 
-  /* "cy_web_x.py":457
+  /* "cy_web_x.py":461
  *         if inspect.isclass(obj):
  *             return __wrapper_class__(method, obj, path)
  *         elif callable(obj):             # <<<<<<<<<<<<<<
  *             # fx= fastapi.FastAPI()
  *             # fx.get(response_model=)
  */
-  __pyx_t_4 = __Pyx_PyCallable_Check(__pyx_v_obj); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(0, 457, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyCallable_Check(__pyx_v_obj); if (unlikely(__pyx_t_4 == ((int)-1))) __PYX_ERR(0, 461, __pyx_L1_error)
   __pyx_t_7 = (__pyx_t_4 != 0);
   if (__pyx_t_7) {
 
-    /* "cy_web_x.py":461
+    /* "cy_web_x.py":465
  *             # fx.get(response_model=)
  * 
  *             return __wrapper_func__(method, obj, path)             # <<<<<<<<<<<<<<
@@ -13961,10 +14088,10 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
  *     return warpper
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_wrapper_func); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 461, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_wrapper_func); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 465, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    if (unlikely(!__pyx_cur_scope->__pyx_v_method)) { __Pyx_RaiseClosureNameError("method"); __PYX_ERR(0, 461, __pyx_L1_error) }
-    if (unlikely(!__pyx_cur_scope->__pyx_v_path)) { __Pyx_RaiseClosureNameError("path"); __PYX_ERR(0, 461, __pyx_L1_error) }
+    if (unlikely(!__pyx_cur_scope->__pyx_v_method)) { __Pyx_RaiseClosureNameError("method"); __PYX_ERR(0, 465, __pyx_L1_error) }
+    if (unlikely(!__pyx_cur_scope->__pyx_v_path)) { __Pyx_RaiseClosureNameError("path"); __PYX_ERR(0, 465, __pyx_L1_error) }
     __pyx_t_6 = NULL;
     __pyx_t_5 = 0;
     if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_2))) {
@@ -13980,7 +14107,7 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_cur_scope->__pyx_v_method, __pyx_v_obj, __pyx_cur_scope->__pyx_v_path};
-      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 3+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 461, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 3+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 465, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
@@ -13988,13 +14115,13 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
       PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_cur_scope->__pyx_v_method, __pyx_v_obj, __pyx_cur_scope->__pyx_v_path};
-      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 3+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 461, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_5, 3+__pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 465, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_GOTREF(__pyx_t_1);
     } else
     #endif
     {
-      __pyx_t_3 = PyTuple_New(3+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 461, __pyx_L1_error)
+      __pyx_t_3 = PyTuple_New(3+__pyx_t_5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 465, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       if (__pyx_t_6) {
         __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -14008,7 +14135,7 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
       __Pyx_INCREF(__pyx_cur_scope->__pyx_v_path);
       __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_path);
       PyTuple_SET_ITEM(__pyx_t_3, 2+__pyx_t_5, __pyx_cur_scope->__pyx_v_path);
-      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 461, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_3, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 465, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     }
@@ -14017,7 +14144,7 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
     __pyx_t_1 = 0;
     goto __pyx_L0;
 
-    /* "cy_web_x.py":457
+    /* "cy_web_x.py":461
  *         if inspect.isclass(obj):
  *             return __wrapper_class__(method, obj, path)
  *         elif callable(obj):             # <<<<<<<<<<<<<<
@@ -14026,7 +14153,7 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
  */
   }
 
-  /* "cy_web_x.py":453
+  /* "cy_web_x.py":457
  * def web_handler(path: str, method: str,response_model=None):
  * 
  *     def warpper(obj):             # <<<<<<<<<<<<<<
@@ -14051,7 +14178,7 @@ static PyObject *__pyx_pf_8cy_web_x_11web_handler_warpper(PyObject *__pyx_self, 
   return __pyx_r;
 }
 
-/* "cy_web_x.py":451
+/* "cy_web_x.py":455
  * 
  * 
  * def web_handler(path: str, method: str,response_model=None):             # <<<<<<<<<<<<<<
@@ -14073,7 +14200,7 @@ static PyObject *__pyx_pf_8cy_web_x_14web_handler(CYTHON_UNUSED PyObject *__pyx_
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_8cy_web_x___pyx_scope_struct_1_web_handler *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 451, __pyx_L1_error)
+    __PYX_ERR(0, 455, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
@@ -14084,19 +14211,19 @@ static PyObject *__pyx_pf_8cy_web_x_14web_handler(CYTHON_UNUSED PyObject *__pyx_
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_method);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_method);
 
-  /* "cy_web_x.py":453
+  /* "cy_web_x.py":457
  * def web_handler(path: str, method: str,response_model=None):
  * 
  *     def warpper(obj):             # <<<<<<<<<<<<<<
  *         import inspect
  *         if inspect.isclass(obj):
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_11web_handler_1warpper, 0, __pyx_n_s_web_handler_locals_warpper, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 453, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_11web_handler_1warpper, 0, __pyx_n_s_web_handler_locals_warpper, ((PyObject*)__pyx_cur_scope), __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__21)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 457, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_warpper = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":463
+  /* "cy_web_x.py":467
  *             return __wrapper_func__(method, obj, path)
  * 
  *     return warpper             # <<<<<<<<<<<<<<
@@ -14108,7 +14235,7 @@ static PyObject *__pyx_pf_8cy_web_x_14web_handler(CYTHON_UNUSED PyObject *__pyx_
   __pyx_r = __pyx_v_warpper;
   goto __pyx_L0;
 
-  /* "cy_web_x.py":451
+  /* "cy_web_x.py":455
  * 
  * 
  * def web_handler(path: str, method: str,response_model=None):             # <<<<<<<<<<<<<<
@@ -14129,7 +14256,7 @@ static PyObject *__pyx_pf_8cy_web_x_14web_handler(CYTHON_UNUSED PyObject *__pyx_
   return __pyx_r;
 }
 
-/* "cy_web_x.py":468
+/* "cy_web_x.py":472
  * 
  * class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):
  *     def __init__(             # <<<<<<<<<<<<<<
@@ -14159,7 +14286,7 @@ static PyObject *__pyx_pw_8cy_web_x_29OAuth2PasswordBearerAndCookie_1__init__(Py
     static PyObject **__pyx_pyargnames[] = {&__pyx_n_s_self,&__pyx_n_s_token_url,&__pyx_n_s_jwt_secret_key,&__pyx_n_s_jwt_algorithm,&__pyx_n_s_scheme_name,&__pyx_n_s_scopes,&__pyx_n_s_description,&__pyx_n_s_auto_error,0};
     PyObject* values[8] = {0,0,0,0,0,0,0,0};
 
-    /* "cy_web_x.py":473
+    /* "cy_web_x.py":477
  *             jwt_secret_key: str,
  *             jwt_algorithm: str,
  *             scheme_name: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -14168,7 +14295,7 @@ static PyObject *__pyx_pw_8cy_web_x_29OAuth2PasswordBearerAndCookie_1__init__(Py
  */
     values[4] = ((PyObject *)((PyObject *)Py_None));
 
-    /* "cy_web_x.py":474
+    /* "cy_web_x.py":478
  *             jwt_algorithm: str,
  *             scheme_name: Optional[str] = None,
  *             scopes: Optional[Dict[str, str]] = None,             # <<<<<<<<<<<<<<
@@ -14177,7 +14304,7 @@ static PyObject *__pyx_pw_8cy_web_x_29OAuth2PasswordBearerAndCookie_1__init__(Py
  */
     values[5] = ((PyObject *)((PyObject *)Py_None));
 
-    /* "cy_web_x.py":475
+    /* "cy_web_x.py":479
  *             scheme_name: Optional[str] = None,
  *             scopes: Optional[Dict[str, str]] = None,
  *             description: Optional[str] = None,             # <<<<<<<<<<<<<<
@@ -14186,7 +14313,7 @@ static PyObject *__pyx_pw_8cy_web_x_29OAuth2PasswordBearerAndCookie_1__init__(Py
  */
     values[6] = ((PyObject *)((PyObject *)Py_None));
 
-    /* "cy_web_x.py":476
+    /* "cy_web_x.py":480
  *             scopes: Optional[Dict[str, str]] = None,
  *             description: Optional[str] = None,
  *             auto_error: bool = True             # <<<<<<<<<<<<<<
@@ -14226,19 +14353,19 @@ static PyObject *__pyx_pw_8cy_web_x_29OAuth2PasswordBearerAndCookie_1__init__(Py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_token_url)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 0, 4, 8, 1); __PYX_ERR(0, 468, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 0, 4, 8, 1); __PYX_ERR(0, 472, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_jwt_secret_key)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 0, 4, 8, 2); __PYX_ERR(0, 468, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 0, 4, 8, 2); __PYX_ERR(0, 472, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  3:
         if (likely((values[3] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_jwt_algorithm)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__init__", 0, 4, 8, 3); __PYX_ERR(0, 468, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__init__", 0, 4, 8, 3); __PYX_ERR(0, 472, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  4:
@@ -14266,7 +14393,7 @@ static PyObject *__pyx_pw_8cy_web_x_29OAuth2PasswordBearerAndCookie_1__init__(Py
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 468, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 472, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -14297,18 +14424,18 @@ static PyObject *__pyx_pw_8cy_web_x_29OAuth2PasswordBearerAndCookie_1__init__(Py
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 0, 4, 8, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 468, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 0, 4, 8, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 472, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cy_web_x.OAuth2PasswordBearerAndCookie.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_token_url), (&PyString_Type), 1, "token_url", 1))) __PYX_ERR(0, 470, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_jwt_secret_key), (&PyString_Type), 1, "jwt_secret_key", 1))) __PYX_ERR(0, 471, __pyx_L1_error)
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_jwt_algorithm), (&PyString_Type), 1, "jwt_algorithm", 1))) __PYX_ERR(0, 472, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_token_url), (&PyString_Type), 1, "token_url", 1))) __PYX_ERR(0, 474, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_jwt_secret_key), (&PyString_Type), 1, "jwt_secret_key", 1))) __PYX_ERR(0, 475, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_jwt_algorithm), (&PyString_Type), 1, "jwt_algorithm", 1))) __PYX_ERR(0, 476, __pyx_L1_error)
   __pyx_r = __pyx_pf_8cy_web_x_29OAuth2PasswordBearerAndCookie___init__(__pyx_self, __pyx_v_self, __pyx_v_token_url, __pyx_v_jwt_secret_key, __pyx_v_jwt_algorithm, __pyx_v_scheme_name, __pyx_v_scopes, __pyx_v_description, __pyx_v_auto_error);
 
-  /* "cy_web_x.py":468
+  /* "cy_web_x.py":472
  * 
  * class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):
  *     def __init__(             # <<<<<<<<<<<<<<
@@ -14339,30 +14466,30 @@ static PyObject *__pyx_pf_8cy_web_x_29OAuth2PasswordBearerAndCookie___init__(CYT
   __Pyx_RefNannySetupContext("__init__", 0);
   __Pyx_INCREF(__pyx_v_scopes);
 
-  /* "cy_web_x.py":479
+  /* "cy_web_x.py":483
  * 
  *     ):
  *         if not scopes:             # <<<<<<<<<<<<<<
  *             scopes = {}
  *         super().__init__(
  */
-  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_scopes); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 479, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_IsTrue(__pyx_v_scopes); if (unlikely(__pyx_t_1 < 0)) __PYX_ERR(0, 483, __pyx_L1_error)
   __pyx_t_2 = ((!__pyx_t_1) != 0);
   if (__pyx_t_2) {
 
-    /* "cy_web_x.py":480
+    /* "cy_web_x.py":484
  *     ):
  *         if not scopes:
  *             scopes = {}             # <<<<<<<<<<<<<<
  *         super().__init__(
  *             tokenUrl=token_url,
  */
-    __pyx_t_3 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 480, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 484, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF_SET(__pyx_v_scopes, __pyx_t_3);
     __pyx_t_3 = 0;
 
-    /* "cy_web_x.py":479
+    /* "cy_web_x.py":483
  * 
  *     ):
  *         if not scopes:             # <<<<<<<<<<<<<<
@@ -14371,7 +14498,7 @@ static PyObject *__pyx_pf_8cy_web_x_29OAuth2PasswordBearerAndCookie___init__(CYT
  */
   }
 
-  /* "cy_web_x.py":481
+  /* "cy_web_x.py":485
  *         if not scopes:
  *             scopes = {}
  *         super().__init__(             # <<<<<<<<<<<<<<
@@ -14379,9 +14506,9 @@ static PyObject *__pyx_pf_8cy_web_x_29OAuth2PasswordBearerAndCookie___init__(CYT
  *             scheme_name=scheme_name,
  */
   __pyx_t_3 = __Pyx_CyFunction_GetClassObj(__pyx_self);
-  if (!__pyx_t_3) { PyErr_SetString(PyExc_SystemError, "super(): empty __class__ cell"); __PYX_ERR(0, 481, __pyx_L1_error) }
+  if (!__pyx_t_3) { PyErr_SetString(PyExc_SystemError, "super(): empty __class__ cell"); __PYX_ERR(0, 485, __pyx_L1_error) }
   __Pyx_INCREF(__pyx_t_3);
-  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 481, __pyx_L1_error)
+  __pyx_t_4 = PyTuple_New(2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_GIVEREF(__pyx_t_3);
   PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_3);
@@ -14389,92 +14516,92 @@ static PyObject *__pyx_pf_8cy_web_x_29OAuth2PasswordBearerAndCookie___init__(CYT
   __Pyx_GIVEREF(__pyx_v_self);
   PyTuple_SET_ITEM(__pyx_t_4, 1, __pyx_v_self);
   __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 481, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_Call(__pyx_builtin_super, __pyx_t_4, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 481, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
-  /* "cy_web_x.py":482
+  /* "cy_web_x.py":486
  *             scopes = {}
  *         super().__init__(
  *             tokenUrl=token_url,             # <<<<<<<<<<<<<<
  *             scheme_name=scheme_name,
  *             description=description,
  */
-  __pyx_t_3 = __Pyx_PyDict_NewPresized(5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 482, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(5); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 486, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_tokenUrl, __pyx_v_token_url) < 0) __PYX_ERR(0, 482, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_tokenUrl, __pyx_v_token_url) < 0) __PYX_ERR(0, 486, __pyx_L1_error)
 
-  /* "cy_web_x.py":483
+  /* "cy_web_x.py":487
  *         super().__init__(
  *             tokenUrl=token_url,
  *             scheme_name=scheme_name,             # <<<<<<<<<<<<<<
  *             description=description,
  *             auto_error=auto_error,
  */
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_scheme_name, __pyx_v_scheme_name) < 0) __PYX_ERR(0, 482, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_scheme_name, __pyx_v_scheme_name) < 0) __PYX_ERR(0, 486, __pyx_L1_error)
 
-  /* "cy_web_x.py":484
+  /* "cy_web_x.py":488
  *             tokenUrl=token_url,
  *             scheme_name=scheme_name,
  *             description=description,             # <<<<<<<<<<<<<<
  *             auto_error=auto_error,
  *             scopes=scopes
  */
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_description, __pyx_v_description) < 0) __PYX_ERR(0, 482, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_description, __pyx_v_description) < 0) __PYX_ERR(0, 486, __pyx_L1_error)
 
-  /* "cy_web_x.py":485
+  /* "cy_web_x.py":489
  *             scheme_name=scheme_name,
  *             description=description,
  *             auto_error=auto_error,             # <<<<<<<<<<<<<<
  *             scopes=scopes
  *         )
  */
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_auto_error, __pyx_v_auto_error) < 0) __PYX_ERR(0, 482, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_auto_error, __pyx_v_auto_error) < 0) __PYX_ERR(0, 486, __pyx_L1_error)
 
-  /* "cy_web_x.py":486
+  /* "cy_web_x.py":490
  *             description=description,
  *             auto_error=auto_error,
  *             scopes=scopes             # <<<<<<<<<<<<<<
  *         )
  *         self.jwt_secret_key = jwt_secret_key
  */
-  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_scopes, __pyx_v_scopes) < 0) __PYX_ERR(0, 482, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_3, __pyx_n_s_scopes, __pyx_v_scopes) < 0) __PYX_ERR(0, 486, __pyx_L1_error)
 
-  /* "cy_web_x.py":481
+  /* "cy_web_x.py":485
  *         if not scopes:
  *             scopes = {}
  *         super().__init__(             # <<<<<<<<<<<<<<
  *             tokenUrl=token_url,
  *             scheme_name=scheme_name,
  */
-  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_empty_tuple, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 481, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_empty_tuple, __pyx_t_3); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 485, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-  /* "cy_web_x.py":488
+  /* "cy_web_x.py":492
  *             scopes=scopes
  *         )
  *         self.jwt_secret_key = jwt_secret_key             # <<<<<<<<<<<<<<
  *         self.jwt_algorithm = jwt_algorithm
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_jwt_secret_key, __pyx_v_jwt_secret_key) < 0) __PYX_ERR(0, 488, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_jwt_secret_key, __pyx_v_jwt_secret_key) < 0) __PYX_ERR(0, 492, __pyx_L1_error)
 
-  /* "cy_web_x.py":489
+  /* "cy_web_x.py":493
  *         )
  *         self.jwt_secret_key = jwt_secret_key
  *         self.jwt_algorithm = jwt_algorithm             # <<<<<<<<<<<<<<
  * 
  *     async def __call__(self, request: fastapi.Request):
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_jwt_algorithm, __pyx_v_jwt_algorithm) < 0) __PYX_ERR(0, 489, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_jwt_algorithm, __pyx_v_jwt_algorithm) < 0) __PYX_ERR(0, 493, __pyx_L1_error)
 
-  /* "cy_web_x.py":468
+  /* "cy_web_x.py":472
  * 
  * class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):
  *     def __init__(             # <<<<<<<<<<<<<<
@@ -14499,7 +14626,7 @@ static PyObject *__pyx_pf_8cy_web_x_29OAuth2PasswordBearerAndCookie___init__(CYT
 }
 static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "cy_web_x.py":491
+/* "cy_web_x.py":495
  *         self.jwt_algorithm = jwt_algorithm
  * 
  *     async def __call__(self, request: fastapi.Request):             # <<<<<<<<<<<<<<
@@ -14542,11 +14669,11 @@ static PyObject *__pyx_pw_8cy_web_x_29OAuth2PasswordBearerAndCookie_3__call__(Py
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_request)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("__call__", 1, 2, 2, 1); __PYX_ERR(0, 491, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("__call__", 1, 2, 2, 1); __PYX_ERR(0, 495, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__call__") < 0)) __PYX_ERR(0, 491, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__call__") < 0)) __PYX_ERR(0, 495, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -14559,7 +14686,7 @@ static PyObject *__pyx_pw_8cy_web_x_29OAuth2PasswordBearerAndCookie_3__call__(Py
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__call__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 491, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__call__", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 495, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cy_web_x.OAuth2PasswordBearerAndCookie.__call__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -14584,7 +14711,7 @@ static PyObject *__pyx_pf_8cy_web_x_29OAuth2PasswordBearerAndCookie_2__call__(CY
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_8cy_web_x___pyx_scope_struct_2___call__ *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 491, __pyx_L1_error)
+    __PYX_ERR(0, 495, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
@@ -14595,7 +14722,7 @@ static PyObject *__pyx_pf_8cy_web_x_29OAuth2PasswordBearerAndCookie_2__call__(CY
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_request);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_request);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator, __pyx_codeobj__22, (PyObject *) __pyx_cur_scope, __pyx_n_s_call, __pyx_n_s_OAuth2PasswordBearerAndCookie_2, __pyx_n_s_cy_web_x); if (unlikely(!gen)) __PYX_ERR(0, 491, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Coroutine_New((__pyx_coroutine_body_t) __pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator, __pyx_codeobj__22, (PyObject *) __pyx_cur_scope, __pyx_n_s_call, __pyx_n_s_OAuth2PasswordBearerAndCookie_2, __pyx_n_s_cy_web_x); if (unlikely(!gen)) __PYX_ERR(0, 495, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -14641,21 +14768,21 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 491, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 495, __pyx_L1_error)
 
-  /* "cy_web_x.py":493
+  /* "cy_web_x.py":497
  *     async def __call__(self, request: fastapi.Request):
  * 
  *         if request.cookies.get('access_token_cookie', None) is not None:             # <<<<<<<<<<<<<<
  *             token = request.cookies['access_token_cookie']
  *             try:
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_cookies); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 493, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_cookies); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 497, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 493, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 497, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 493, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_tuple__23, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 497, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_3 = (__pyx_t_1 != Py_None);
@@ -14663,23 +14790,23 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
   __pyx_t_4 = (__pyx_t_3 != 0);
   if (__pyx_t_4) {
 
-    /* "cy_web_x.py":494
+    /* "cy_web_x.py":498
  * 
  *         if request.cookies.get('access_token_cookie', None) is not None:
  *             token = request.cookies['access_token_cookie']             # <<<<<<<<<<<<<<
  *             try:
  * 
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_cookies); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 494, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_cookies); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 498, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_t_1, __pyx_n_s_access_token_cookie); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 494, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Dict_GetItem(__pyx_t_1, __pyx_n_s_access_token_cookie); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 498, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_GIVEREF(__pyx_t_2);
     __pyx_cur_scope->__pyx_v_token = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "cy_web_x.py":495
+    /* "cy_web_x.py":499
  *         if request.cookies.get('access_token_cookie', None) is not None:
  *             token = request.cookies['access_token_cookie']
  *             try:             # <<<<<<<<<<<<<<
@@ -14693,21 +14820,21 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
       __Pyx_XGOTREF(__pyx_t_7);
       /*try:*/ {
 
-        /* "cy_web_x.py":497
+        /* "cy_web_x.py":501
  *             try:
  * 
  *                 ret_data = jwt.decode(token, self.jwt_secret_key,             # <<<<<<<<<<<<<<
  *                                       algorithms=[self.jwt_algorithm],
  *                                       options={"verify_signature": False},
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_jwt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 497, __pyx_L5_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_jwt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 501, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_decode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 497, __pyx_L5_error)
+        __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_decode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 501, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_jwt_secret_key); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 497, __pyx_L5_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_jwt_secret_key); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 501, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 497, __pyx_L5_error)
+        __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 501, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_INCREF(__pyx_cur_scope->__pyx_v_token);
         __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_token);
@@ -14716,46 +14843,46 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
         PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_2);
         __pyx_t_2 = 0;
 
-        /* "cy_web_x.py":498
+        /* "cy_web_x.py":502
  * 
  *                 ret_data = jwt.decode(token, self.jwt_secret_key,
  *                                       algorithms=[self.jwt_algorithm],             # <<<<<<<<<<<<<<
  *                                       options={"verify_signature": False},
  *                                       )
  */
-        __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 498, __pyx_L5_error)
+        __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 502, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_jwt_algorithm); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 498, __pyx_L5_error)
+        __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_jwt_algorithm); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 502, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_9);
-        __pyx_t_10 = PyList_New(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 498, __pyx_L5_error)
+        __pyx_t_10 = PyList_New(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 502, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_GIVEREF(__pyx_t_9);
         PyList_SET_ITEM(__pyx_t_10, 0, __pyx_t_9);
         __pyx_t_9 = 0;
-        if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_algorithms, __pyx_t_10) < 0) __PYX_ERR(0, 498, __pyx_L5_error)
+        if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_algorithms, __pyx_t_10) < 0) __PYX_ERR(0, 502, __pyx_L5_error)
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-        /* "cy_web_x.py":499
+        /* "cy_web_x.py":503
  *                 ret_data = jwt.decode(token, self.jwt_secret_key,
  *                                       algorithms=[self.jwt_algorithm],
  *                                       options={"verify_signature": False},             # <<<<<<<<<<<<<<
  *                                       )
  * 
  */
-        __pyx_t_10 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 499, __pyx_L5_error)
+        __pyx_t_10 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 503, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_10);
-        if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_verify_signature, Py_False) < 0) __PYX_ERR(0, 499, __pyx_L5_error)
-        if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_options, __pyx_t_10) < 0) __PYX_ERR(0, 498, __pyx_L5_error)
+        if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_verify_signature, Py_False) < 0) __PYX_ERR(0, 503, __pyx_L5_error)
+        if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_options, __pyx_t_10) < 0) __PYX_ERR(0, 502, __pyx_L5_error)
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-        /* "cy_web_x.py":497
+        /* "cy_web_x.py":501
  *             try:
  * 
  *                 ret_data = jwt.decode(token, self.jwt_secret_key,             # <<<<<<<<<<<<<<
  *                                       algorithms=[self.jwt_algorithm],
  *                                       options={"verify_signature": False},
  */
-        __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_8, __pyx_t_2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 497, __pyx_L5_error)
+        __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_8, __pyx_t_2); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 501, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -14764,14 +14891,14 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
         __pyx_cur_scope->__pyx_v_ret_data = __pyx_t_10;
         __pyx_t_10 = 0;
 
-        /* "cy_web_x.py":502
+        /* "cy_web_x.py":506
  *                                       )
  * 
  *                 setattr(request, "usernane", ret_data.get("sup"))             # <<<<<<<<<<<<<<
  *                 setattr(request, "application_name", ret_data.get("application"))
  *                 return token
  */
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_ret_data, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 502, __pyx_L5_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_ret_data, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 506, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_2);
         __pyx_t_8 = NULL;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -14785,20 +14912,20 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
         }
         __pyx_t_10 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_8, __pyx_n_s_sup) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_n_s_sup);
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 502, __pyx_L5_error)
+        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 506, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_11 = PyObject_SetAttr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_usernane, __pyx_t_10); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 502, __pyx_L5_error)
+        __pyx_t_11 = PyObject_SetAttr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_usernane, __pyx_t_10); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 506, __pyx_L5_error)
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-        /* "cy_web_x.py":503
+        /* "cy_web_x.py":507
  * 
  *                 setattr(request, "usernane", ret_data.get("sup"))
  *                 setattr(request, "application_name", ret_data.get("application"))             # <<<<<<<<<<<<<<
  *                 return token
  *             except jose.exceptions.ExpiredSignatureError as e:
  */
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_ret_data, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 503, __pyx_L5_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_ret_data, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 507, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_2);
         __pyx_t_8 = NULL;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -14812,13 +14939,13 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
         }
         __pyx_t_10 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_8, __pyx_n_s_application) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_n_s_application);
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 503, __pyx_L5_error)
+        if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 507, __pyx_L5_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_11 = PyObject_SetAttr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_application_name, __pyx_t_10); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 503, __pyx_L5_error)
+        __pyx_t_11 = PyObject_SetAttr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_application_name, __pyx_t_10); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 507, __pyx_L5_error)
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-        /* "cy_web_x.py":504
+        /* "cy_web_x.py":508
  *                 setattr(request, "usernane", ret_data.get("sup"))
  *                 setattr(request, "application_name", ret_data.get("application"))
  *                 return token             # <<<<<<<<<<<<<<
@@ -14829,7 +14956,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
         __pyx_r = NULL; __Pyx_ReturnWithStopIteration(__pyx_cur_scope->__pyx_v_token);
         goto __pyx_L9_try_return;
 
-        /* "cy_web_x.py":495
+        /* "cy_web_x.py":499
  *         if request.cookies.get('access_token_cookie', None) is not None:
  *             token = request.cookies['access_token_cookie']
  *             try:             # <<<<<<<<<<<<<<
@@ -14844,7 +14971,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-      /* "cy_web_x.py":505
+      /* "cy_web_x.py":509
  *                 setattr(request, "application_name", ret_data.get("application"))
  *                 return token
  *             except jose.exceptions.ExpiredSignatureError as e:             # <<<<<<<<<<<<<<
@@ -14852,12 +14979,12 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
  *                     status_code=401,
  */
       __Pyx_ErrFetch(&__pyx_t_10, &__pyx_t_2, &__pyx_t_8);
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_jose); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 505, __pyx_L7_except_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_jose); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 509, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 505, __pyx_L7_except_error)
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 509, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_ExpiredSignatureError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 505, __pyx_L7_except_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_9, __pyx_n_s_ExpiredSignatureError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 509, __pyx_L7_except_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __pyx_t_12 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_10, __pyx_t_1);
@@ -14866,7 +14993,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
       __pyx_t_10 = 0; __pyx_t_2 = 0; __pyx_t_8 = 0;
       if (__pyx_t_12) {
         __Pyx_AddTraceback("cy_web_x.OAuth2PasswordBearerAndCookie.__call__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-        if (__Pyx_GetException(&__pyx_t_8, &__pyx_t_2, &__pyx_t_10) < 0) __PYX_ERR(0, 505, __pyx_L7_except_error)
+        if (__Pyx_GetException(&__pyx_t_8, &__pyx_t_2, &__pyx_t_10) < 0) __PYX_ERR(0, 509, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_GOTREF(__pyx_t_10);
@@ -14874,60 +15001,60 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
         __Pyx_GIVEREF(__pyx_t_2);
         __pyx_cur_scope->__pyx_v_e = __pyx_t_2;
 
-        /* "cy_web_x.py":506
+        /* "cy_web_x.py":510
  *                 return token
  *             except jose.exceptions.ExpiredSignatureError as e:
  *                 raise HTTPException(             # <<<<<<<<<<<<<<
  *                     status_code=401,
  *                     detail="Not authenticated",
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 506, __pyx_L7_except_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 510, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_1);
 
-        /* "cy_web_x.py":507
+        /* "cy_web_x.py":511
  *             except jose.exceptions.ExpiredSignatureError as e:
  *                 raise HTTPException(
  *                     status_code=401,             # <<<<<<<<<<<<<<
  *                     detail="Not authenticated",
  *                     headers={"WWW-Authenticate": "Bearer"},
  */
-        __pyx_t_9 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 507, __pyx_L7_except_error)
+        __pyx_t_9 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 511, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_9);
-        if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_status_code, __pyx_int_401) < 0) __PYX_ERR(0, 507, __pyx_L7_except_error)
-        if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_detail, __pyx_kp_s_Not_authenticated) < 0) __PYX_ERR(0, 507, __pyx_L7_except_error)
+        if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_status_code, __pyx_int_401) < 0) __PYX_ERR(0, 511, __pyx_L7_except_error)
+        if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_detail, __pyx_kp_s_Not_authenticated) < 0) __PYX_ERR(0, 511, __pyx_L7_except_error)
 
-        /* "cy_web_x.py":509
+        /* "cy_web_x.py":513
  *                     status_code=401,
  *                     detail="Not authenticated",
  *                     headers={"WWW-Authenticate": "Bearer"},             # <<<<<<<<<<<<<<
  *                 )
  *         else:
  */
-        __pyx_t_13 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 509, __pyx_L7_except_error)
+        __pyx_t_13 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 513, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_13);
-        if (PyDict_SetItem(__pyx_t_13, __pyx_kp_s_WWW_Authenticate, __pyx_n_s_Bearer) < 0) __PYX_ERR(0, 509, __pyx_L7_except_error)
-        if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_headers, __pyx_t_13) < 0) __PYX_ERR(0, 507, __pyx_L7_except_error)
+        if (PyDict_SetItem(__pyx_t_13, __pyx_kp_s_WWW_Authenticate, __pyx_n_s_Bearer) < 0) __PYX_ERR(0, 513, __pyx_L7_except_error)
+        if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_headers, __pyx_t_13) < 0) __PYX_ERR(0, 511, __pyx_L7_except_error)
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
 
-        /* "cy_web_x.py":506
+        /* "cy_web_x.py":510
  *                 return token
  *             except jose.exceptions.ExpiredSignatureError as e:
  *                 raise HTTPException(             # <<<<<<<<<<<<<<
  *                     status_code=401,
  *                     detail="Not authenticated",
  */
-        __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_t_9); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 506, __pyx_L7_except_error)
+        __pyx_t_13 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_t_9); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 510, __pyx_L7_except_error)
         __Pyx_GOTREF(__pyx_t_13);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
         __Pyx_Raise(__pyx_t_13, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
-        __PYX_ERR(0, 506, __pyx_L7_except_error)
+        __PYX_ERR(0, 510, __pyx_L7_except_error)
       }
       goto __pyx_L7_except_error;
       __pyx_L7_except_error:;
 
-      /* "cy_web_x.py":495
+      /* "cy_web_x.py":499
  *         if request.cookies.get('access_token_cookie', None) is not None:
  *             token = request.cookies['access_token_cookie']
  *             try:             # <<<<<<<<<<<<<<
@@ -14947,7 +15074,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
       goto __pyx_L0;
     }
 
-    /* "cy_web_x.py":493
+    /* "cy_web_x.py":497
  *     async def __call__(self, request: fastapi.Request):
  * 
  *         if request.cookies.get('access_token_cookie', None) is not None:             # <<<<<<<<<<<<<<
@@ -14956,7 +15083,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
  */
   }
 
-  /* "cy_web_x.py":512
+  /* "cy_web_x.py":516
  *                 )
  *         else:
  *             authorization: str = request.headers.get("Authorization")             # <<<<<<<<<<<<<<
@@ -14964,9 +15091,9 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
  *                 raise fastapi.exceptions.HTTPException(status_code=401)
  */
   /*else*/ {
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_headers); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 512, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_headers); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 516, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 512, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_get); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 516, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_t_2 = NULL;
@@ -14981,15 +15108,15 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
     }
     __pyx_t_10 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_8, __pyx_t_2, __pyx_n_s_Authorization) : __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_n_s_Authorization);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 512, __pyx_L1_error)
+    if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 516, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-    if (!(likely(PyString_CheckExact(__pyx_t_10))||((__pyx_t_10) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_10)->tp_name), 0))) __PYX_ERR(0, 512, __pyx_L1_error)
+    if (!(likely(PyString_CheckExact(__pyx_t_10))||((__pyx_t_10) == Py_None)||(PyErr_Format(PyExc_TypeError, "Expected %.16s, got %.200s", "str", Py_TYPE(__pyx_t_10)->tp_name), 0))) __PYX_ERR(0, 516, __pyx_L1_error)
     __Pyx_GIVEREF(__pyx_t_10);
     __pyx_cur_scope->__pyx_v_authorization = ((PyObject*)__pyx_t_10);
     __pyx_t_10 = 0;
 
-    /* "cy_web_x.py":513
+    /* "cy_web_x.py":517
  *         else:
  *             authorization: str = request.headers.get("Authorization")
  *             if authorization is None:             # <<<<<<<<<<<<<<
@@ -15000,33 +15127,33 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
     __pyx_t_3 = (__pyx_t_4 != 0);
     if (unlikely(__pyx_t_3)) {
 
-      /* "cy_web_x.py":514
+      /* "cy_web_x.py":518
  *             authorization: str = request.headers.get("Authorization")
  *             if authorization is None:
  *                 raise fastapi.exceptions.HTTPException(status_code=401)             # <<<<<<<<<<<<<<
  *             scheme, token = tuple(authorization.split(' '))
  *             if not authorization or scheme.lower() != "bearer":
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_fastapi); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 514, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_fastapi); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 518, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 514, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 518, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 514, __pyx_L1_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 518, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_8 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 514, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 518, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      if (PyDict_SetItem(__pyx_t_8, __pyx_n_s_status_code, __pyx_int_401) < 0) __PYX_ERR(0, 514, __pyx_L1_error)
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_empty_tuple, __pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 514, __pyx_L1_error)
+      if (PyDict_SetItem(__pyx_t_8, __pyx_n_s_status_code, __pyx_int_401) < 0) __PYX_ERR(0, 518, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_empty_tuple, __pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 518, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_Raise(__pyx_t_2, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __PYX_ERR(0, 514, __pyx_L1_error)
+      __PYX_ERR(0, 518, __pyx_L1_error)
 
-      /* "cy_web_x.py":513
+      /* "cy_web_x.py":517
  *         else:
  *             authorization: str = request.headers.get("Authorization")
  *             if authorization is None:             # <<<<<<<<<<<<<<
@@ -15035,16 +15162,16 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
  */
     }
 
-    /* "cy_web_x.py":515
+    /* "cy_web_x.py":519
  *             if authorization is None:
  *                 raise fastapi.exceptions.HTTPException(status_code=401)
  *             scheme, token = tuple(authorization.split(' '))             # <<<<<<<<<<<<<<
  *             if not authorization or scheme.lower() != "bearer":
  *                 if self.auto_error:
  */
-    __pyx_t_2 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_cur_scope->__pyx_v_authorization, __pyx_kp_s__24); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 515, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_CallUnboundCMethod1(&__pyx_umethod_PyString_Type_split, __pyx_cur_scope->__pyx_v_authorization, __pyx_kp_s__24); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 519, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_8 = __Pyx_PySequence_Tuple(__pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 515, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PySequence_Tuple(__pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 519, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (1) {
@@ -15053,7 +15180,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 515, __pyx_L1_error)
+        __PYX_ERR(0, 519, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       __pyx_t_2 = PyTuple_GET_ITEM(sequence, 0); 
@@ -15061,9 +15188,9 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
       __Pyx_INCREF(__pyx_t_2);
       __Pyx_INCREF(__pyx_t_10);
       #else
-      __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 515, __pyx_L1_error)
+      __pyx_t_2 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 519, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_10 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 515, __pyx_L1_error)
+      __pyx_t_10 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 519, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       #endif
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -15075,21 +15202,21 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
     __pyx_cur_scope->__pyx_v_token = __pyx_t_10;
     __pyx_t_10 = 0;
 
-    /* "cy_web_x.py":516
+    /* "cy_web_x.py":520
  *                 raise fastapi.exceptions.HTTPException(status_code=401)
  *             scheme, token = tuple(authorization.split(' '))
  *             if not authorization or scheme.lower() != "bearer":             # <<<<<<<<<<<<<<
  *                 if self.auto_error:
  *                     raise HTTPException(
  */
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_authorization); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 516, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_cur_scope->__pyx_v_authorization); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 520, __pyx_L1_error)
     __pyx_t_14 = ((!__pyx_t_4) != 0);
     if (!__pyx_t_14) {
     } else {
       __pyx_t_3 = __pyx_t_14;
       goto __pyx_L15_bool_binop_done;
     }
-    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_scheme, __pyx_n_s_lower); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 516, __pyx_L1_error)
+    __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_scheme, __pyx_n_s_lower); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_10);
     __pyx_t_2 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_10))) {
@@ -15103,79 +15230,79 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
     }
     __pyx_t_8 = (__pyx_t_2) ? __Pyx_PyObject_CallOneArg(__pyx_t_10, __pyx_t_2) : __Pyx_PyObject_CallNoArg(__pyx_t_10);
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 516, __pyx_L1_error)
+    if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 520, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-    __pyx_t_14 = (__Pyx_PyString_Equals(__pyx_t_8, __pyx_n_s_bearer, Py_NE)); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 516, __pyx_L1_error)
+    __pyx_t_14 = (__Pyx_PyString_Equals(__pyx_t_8, __pyx_n_s_bearer, Py_NE)); if (unlikely(__pyx_t_14 < 0)) __PYX_ERR(0, 520, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __pyx_t_3 = __pyx_t_14;
     __pyx_L15_bool_binop_done:;
     if (__pyx_t_3) {
 
-      /* "cy_web_x.py":517
+      /* "cy_web_x.py":521
  *             scheme, token = tuple(authorization.split(' '))
  *             if not authorization or scheme.lower() != "bearer":
  *                 if self.auto_error:             # <<<<<<<<<<<<<<
  *                     raise HTTPException(
  *                         status_code=401,
  */
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_auto_error); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 517, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_auto_error); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 521, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 517, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_8); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 521, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       if (unlikely(__pyx_t_3)) {
 
-        /* "cy_web_x.py":518
+        /* "cy_web_x.py":522
  *             if not authorization or scheme.lower() != "bearer":
  *                 if self.auto_error:
  *                     raise HTTPException(             # <<<<<<<<<<<<<<
  *                         status_code=401,
  *                         detail="Not authenticated",
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 518, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 522, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
 
-        /* "cy_web_x.py":519
+        /* "cy_web_x.py":523
  *                 if self.auto_error:
  *                     raise HTTPException(
  *                         status_code=401,             # <<<<<<<<<<<<<<
  *                         detail="Not authenticated",
  *                         headers={"WWW-Authenticate": "Bearer"},
  */
-        __pyx_t_10 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 519, __pyx_L1_error)
+        __pyx_t_10 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 523, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_10);
-        if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_status_code, __pyx_int_401) < 0) __PYX_ERR(0, 519, __pyx_L1_error)
-        if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_detail, __pyx_kp_s_Not_authenticated) < 0) __PYX_ERR(0, 519, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_status_code, __pyx_int_401) < 0) __PYX_ERR(0, 523, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_detail, __pyx_kp_s_Not_authenticated) < 0) __PYX_ERR(0, 523, __pyx_L1_error)
 
-        /* "cy_web_x.py":521
+        /* "cy_web_x.py":525
  *                         status_code=401,
  *                         detail="Not authenticated",
  *                         headers={"WWW-Authenticate": "Bearer"},             # <<<<<<<<<<<<<<
  *                     )
  *                 else:
  */
-        __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 521, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 525, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
-        if (PyDict_SetItem(__pyx_t_2, __pyx_kp_s_WWW_Authenticate, __pyx_n_s_Bearer) < 0) __PYX_ERR(0, 521, __pyx_L1_error)
-        if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_headers, __pyx_t_2) < 0) __PYX_ERR(0, 519, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_2, __pyx_kp_s_WWW_Authenticate, __pyx_n_s_Bearer) < 0) __PYX_ERR(0, 525, __pyx_L1_error)
+        if (PyDict_SetItem(__pyx_t_10, __pyx_n_s_headers, __pyx_t_2) < 0) __PYX_ERR(0, 523, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-        /* "cy_web_x.py":518
+        /* "cy_web_x.py":522
  *             if not authorization or scheme.lower() != "bearer":
  *                 if self.auto_error:
  *                     raise HTTPException(             # <<<<<<<<<<<<<<
  *                         status_code=401,
  *                         detail="Not authenticated",
  */
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_empty_tuple, __pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 518, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_empty_tuple, __pyx_t_10); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 522, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_Raise(__pyx_t_2, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __PYX_ERR(0, 518, __pyx_L1_error)
+        __PYX_ERR(0, 522, __pyx_L1_error)
 
-        /* "cy_web_x.py":517
+        /* "cy_web_x.py":521
  *             scheme, token = tuple(authorization.split(' '))
  *             if not authorization or scheme.lower() != "bearer":
  *                 if self.auto_error:             # <<<<<<<<<<<<<<
@@ -15184,7 +15311,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
  */
       }
 
-      /* "cy_web_x.py":524
+      /* "cy_web_x.py":528
  *                     )
  *                 else:
  *                     return None             # <<<<<<<<<<<<<<
@@ -15197,7 +15324,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
         goto __pyx_L0;
       }
 
-      /* "cy_web_x.py":516
+      /* "cy_web_x.py":520
  *                 raise fastapi.exceptions.HTTPException(status_code=401)
  *             scheme, token = tuple(authorization.split(' '))
  *             if not authorization or scheme.lower() != "bearer":             # <<<<<<<<<<<<<<
@@ -15206,7 +15333,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
  */
     }
 
-    /* "cy_web_x.py":525
+    /* "cy_web_x.py":529
  *                 else:
  *                     return None
  *             try:             # <<<<<<<<<<<<<<
@@ -15220,37 +15347,37 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
       __Pyx_XGOTREF(__pyx_t_5);
       /*try:*/ {
 
-        /* "cy_web_x.py":526
+        /* "cy_web_x.py":530
  *                     return None
  *             try:
  *                 ret_data = jwt.decode(token,             # <<<<<<<<<<<<<<
  *                                       self.jwt_secret_key,
  *                                       algorithms=[self.jwt_algorithm],
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_jwt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 526, __pyx_L18_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_jwt); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 530, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_decode); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 526, __pyx_L18_error)
+        __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_decode); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 530, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-        /* "cy_web_x.py":527
+        /* "cy_web_x.py":531
  *             try:
  *                 ret_data = jwt.decode(token,
  *                                       self.jwt_secret_key,             # <<<<<<<<<<<<<<
  *                                       algorithms=[self.jwt_algorithm],
  *                                       options={"verify_signature": False},
  */
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_jwt_secret_key); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 527, __pyx_L18_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_jwt_secret_key); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 531, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_2);
 
-        /* "cy_web_x.py":526
+        /* "cy_web_x.py":530
  *                     return None
  *             try:
  *                 ret_data = jwt.decode(token,             # <<<<<<<<<<<<<<
  *                                       self.jwt_secret_key,
  *                                       algorithms=[self.jwt_algorithm],
  */
-        __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 526, __pyx_L18_error)
+        __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 530, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_INCREF(__pyx_cur_scope->__pyx_v_token);
         __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_token);
@@ -15259,46 +15386,46 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
         PyTuple_SET_ITEM(__pyx_t_8, 1, __pyx_t_2);
         __pyx_t_2 = 0;
 
-        /* "cy_web_x.py":528
+        /* "cy_web_x.py":532
  *                 ret_data = jwt.decode(token,
  *                                       self.jwt_secret_key,
  *                                       algorithms=[self.jwt_algorithm],             # <<<<<<<<<<<<<<
  *                                       options={"verify_signature": False},
  *                                       )
  */
-        __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 528, __pyx_L18_error)
+        __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 532, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_2);
-        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_jwt_algorithm); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 528, __pyx_L18_error)
+        __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_jwt_algorithm); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 532, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_13);
-        __pyx_t_9 = PyList_New(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 528, __pyx_L18_error)
+        __pyx_t_9 = PyList_New(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 532, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_GIVEREF(__pyx_t_13);
         PyList_SET_ITEM(__pyx_t_9, 0, __pyx_t_13);
         __pyx_t_13 = 0;
-        if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_algorithms, __pyx_t_9) < 0) __PYX_ERR(0, 528, __pyx_L18_error)
+        if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_algorithms, __pyx_t_9) < 0) __PYX_ERR(0, 532, __pyx_L18_error)
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "cy_web_x.py":529
+        /* "cy_web_x.py":533
  *                                       self.jwt_secret_key,
  *                                       algorithms=[self.jwt_algorithm],
  *                                       options={"verify_signature": False},             # <<<<<<<<<<<<<<
  *                                       )
  * 
  */
-        __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 529, __pyx_L18_error)
+        __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 533, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_9);
-        if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_verify_signature, Py_False) < 0) __PYX_ERR(0, 529, __pyx_L18_error)
-        if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_options, __pyx_t_9) < 0) __PYX_ERR(0, 528, __pyx_L18_error)
+        if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_verify_signature, Py_False) < 0) __PYX_ERR(0, 533, __pyx_L18_error)
+        if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_options, __pyx_t_9) < 0) __PYX_ERR(0, 532, __pyx_L18_error)
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "cy_web_x.py":526
+        /* "cy_web_x.py":530
  *                     return None
  *             try:
  *                 ret_data = jwt.decode(token,             # <<<<<<<<<<<<<<
  *                                       self.jwt_secret_key,
  *                                       algorithms=[self.jwt_algorithm],
  */
-        __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_8, __pyx_t_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 526, __pyx_L18_error)
+        __pyx_t_9 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_t_8, __pyx_t_2); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 530, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -15307,14 +15434,14 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
         __pyx_cur_scope->__pyx_v_ret_data = __pyx_t_9;
         __pyx_t_9 = 0;
 
-        /* "cy_web_x.py":532
+        /* "cy_web_x.py":536
  *                                       )
  * 
  *                 setattr(request, "usernane", ret_data.get("usernane"))             # <<<<<<<<<<<<<<
  *                 setattr(request, "application", ret_data.get("application"))
  *             except jose.exceptions.JWTError:
  */
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_ret_data, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 532, __pyx_L18_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_ret_data, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 536, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_2);
         __pyx_t_8 = NULL;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -15328,20 +15455,20 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
         }
         __pyx_t_9 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_8, __pyx_n_s_usernane) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_n_s_usernane);
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 532, __pyx_L18_error)
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 536, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_11 = PyObject_SetAttr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_usernane, __pyx_t_9); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 532, __pyx_L18_error)
+        __pyx_t_11 = PyObject_SetAttr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_usernane, __pyx_t_9); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 536, __pyx_L18_error)
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "cy_web_x.py":533
+        /* "cy_web_x.py":537
  * 
  *                 setattr(request, "usernane", ret_data.get("usernane"))
  *                 setattr(request, "application", ret_data.get("application"))             # <<<<<<<<<<<<<<
  *             except jose.exceptions.JWTError:
  *                 raise HTTPException(
  */
-        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_ret_data, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 533, __pyx_L18_error)
+        __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_ret_data, __pyx_n_s_get); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 537, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_2);
         __pyx_t_8 = NULL;
         if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -15355,13 +15482,13 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
         }
         __pyx_t_9 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_8, __pyx_n_s_application) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_n_s_application);
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
-        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 533, __pyx_L18_error)
+        if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 537, __pyx_L18_error)
         __Pyx_GOTREF(__pyx_t_9);
         __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-        __pyx_t_11 = PyObject_SetAttr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_application, __pyx_t_9); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 533, __pyx_L18_error)
+        __pyx_t_11 = PyObject_SetAttr(__pyx_cur_scope->__pyx_v_request, __pyx_n_s_application, __pyx_t_9); if (unlikely(__pyx_t_11 == ((int)-1))) __PYX_ERR(0, 537, __pyx_L18_error)
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-        /* "cy_web_x.py":525
+        /* "cy_web_x.py":529
  *                 else:
  *                     return None
  *             try:             # <<<<<<<<<<<<<<
@@ -15381,7 +15508,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_XDECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-      /* "cy_web_x.py":534
+      /* "cy_web_x.py":538
  *                 setattr(request, "usernane", ret_data.get("usernane"))
  *                 setattr(request, "application", ret_data.get("application"))
  *             except jose.exceptions.JWTError:             # <<<<<<<<<<<<<<
@@ -15389,12 +15516,12 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
  *                     status_code=401,
  */
       __Pyx_ErrFetch(&__pyx_t_9, &__pyx_t_2, &__pyx_t_8);
-      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_jose); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 534, __pyx_L20_except_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_jose); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 538, __pyx_L20_except_error)
       __Pyx_GOTREF(__pyx_t_10);
-      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 534, __pyx_L20_except_error)
+      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_10, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 538, __pyx_L20_except_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_JWTError); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 534, __pyx_L20_except_error)
+      __pyx_t_10 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_JWTError); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 538, __pyx_L20_except_error)
       __Pyx_GOTREF(__pyx_t_10);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       __pyx_t_12 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_9, __pyx_t_10);
@@ -15403,63 +15530,63 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
       __pyx_t_9 = 0; __pyx_t_2 = 0; __pyx_t_8 = 0;
       if (__pyx_t_12) {
         __Pyx_AddTraceback("cy_web_x.OAuth2PasswordBearerAndCookie.__call__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-        if (__Pyx_GetException(&__pyx_t_8, &__pyx_t_2, &__pyx_t_9) < 0) __PYX_ERR(0, 534, __pyx_L20_except_error)
+        if (__Pyx_GetException(&__pyx_t_8, &__pyx_t_2, &__pyx_t_9) < 0) __PYX_ERR(0, 538, __pyx_L20_except_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_GOTREF(__pyx_t_9);
 
-        /* "cy_web_x.py":535
+        /* "cy_web_x.py":539
  *                 setattr(request, "application", ret_data.get("application"))
  *             except jose.exceptions.JWTError:
  *                 raise HTTPException(             # <<<<<<<<<<<<<<
  *                     status_code=401,
  *                     detail="Not authenticated",
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 535, __pyx_L20_except_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_10, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 539, __pyx_L20_except_error)
         __Pyx_GOTREF(__pyx_t_10);
 
-        /* "cy_web_x.py":536
+        /* "cy_web_x.py":540
  *             except jose.exceptions.JWTError:
  *                 raise HTTPException(
  *                     status_code=401,             # <<<<<<<<<<<<<<
  *                     detail="Not authenticated",
  *                     headers={"WWW-Authenticate": "Bearer"},
  */
-        __pyx_t_13 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 536, __pyx_L20_except_error)
+        __pyx_t_13 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 540, __pyx_L20_except_error)
         __Pyx_GOTREF(__pyx_t_13);
-        if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_status_code, __pyx_int_401) < 0) __PYX_ERR(0, 536, __pyx_L20_except_error)
-        if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_detail, __pyx_kp_s_Not_authenticated) < 0) __PYX_ERR(0, 536, __pyx_L20_except_error)
+        if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_status_code, __pyx_int_401) < 0) __PYX_ERR(0, 540, __pyx_L20_except_error)
+        if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_detail, __pyx_kp_s_Not_authenticated) < 0) __PYX_ERR(0, 540, __pyx_L20_except_error)
 
-        /* "cy_web_x.py":538
+        /* "cy_web_x.py":542
  *                     status_code=401,
  *                     detail="Not authenticated",
  *                     headers={"WWW-Authenticate": "Bearer"},             # <<<<<<<<<<<<<<
  *                 )
  *             except jose.exceptions.ExpiredSignatureError as e:
  */
-        __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 538, __pyx_L20_except_error)
+        __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 542, __pyx_L20_except_error)
         __Pyx_GOTREF(__pyx_t_1);
-        if (PyDict_SetItem(__pyx_t_1, __pyx_kp_s_WWW_Authenticate, __pyx_n_s_Bearer) < 0) __PYX_ERR(0, 538, __pyx_L20_except_error)
-        if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_headers, __pyx_t_1) < 0) __PYX_ERR(0, 536, __pyx_L20_except_error)
+        if (PyDict_SetItem(__pyx_t_1, __pyx_kp_s_WWW_Authenticate, __pyx_n_s_Bearer) < 0) __PYX_ERR(0, 542, __pyx_L20_except_error)
+        if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_headers, __pyx_t_1) < 0) __PYX_ERR(0, 540, __pyx_L20_except_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-        /* "cy_web_x.py":535
+        /* "cy_web_x.py":539
  *                 setattr(request, "application", ret_data.get("application"))
  *             except jose.exceptions.JWTError:
  *                 raise HTTPException(             # <<<<<<<<<<<<<<
  *                     status_code=401,
  *                     detail="Not authenticated",
  */
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_empty_tuple, __pyx_t_13); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 535, __pyx_L20_except_error)
+        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_10, __pyx_empty_tuple, __pyx_t_13); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 539, __pyx_L20_except_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_Raise(__pyx_t_1, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __PYX_ERR(0, 535, __pyx_L20_except_error)
+        __PYX_ERR(0, 539, __pyx_L20_except_error)
       }
 
-      /* "cy_web_x.py":540
+      /* "cy_web_x.py":544
  *                     headers={"WWW-Authenticate": "Bearer"},
  *                 )
  *             except jose.exceptions.ExpiredSignatureError as e:             # <<<<<<<<<<<<<<
@@ -15467,12 +15594,12 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
  *                     status_code=401,
  */
       __Pyx_ErrFetch(&__pyx_t_9, &__pyx_t_2, &__pyx_t_8);
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_jose); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 540, __pyx_L20_except_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_jose); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 544, __pyx_L20_except_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 540, __pyx_L20_except_error)
+      __pyx_t_13 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_exceptions); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 544, __pyx_L20_except_error)
       __Pyx_GOTREF(__pyx_t_13);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_ExpiredSignatureError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 540, __pyx_L20_except_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_13, __pyx_n_s_ExpiredSignatureError); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 544, __pyx_L20_except_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
       __pyx_t_12 = __Pyx_PyErr_GivenExceptionMatches(__pyx_t_9, __pyx_t_1);
@@ -15481,7 +15608,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
       __pyx_t_9 = 0; __pyx_t_2 = 0; __pyx_t_8 = 0;
       if (__pyx_t_12) {
         __Pyx_AddTraceback("cy_web_x.OAuth2PasswordBearerAndCookie.__call__", __pyx_clineno, __pyx_lineno, __pyx_filename);
-        if (__Pyx_GetException(&__pyx_t_8, &__pyx_t_2, &__pyx_t_9) < 0) __PYX_ERR(0, 540, __pyx_L20_except_error)
+        if (__Pyx_GetException(&__pyx_t_8, &__pyx_t_2, &__pyx_t_9) < 0) __PYX_ERR(0, 544, __pyx_L20_except_error)
         __Pyx_GOTREF(__pyx_t_8);
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_GOTREF(__pyx_t_9);
@@ -15489,60 +15616,60 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
         __Pyx_GIVEREF(__pyx_t_2);
         __pyx_cur_scope->__pyx_v_e = __pyx_t_2;
 
-        /* "cy_web_x.py":541
+        /* "cy_web_x.py":545
  *                 )
  *             except jose.exceptions.ExpiredSignatureError as e:
  *                 raise HTTPException(             # <<<<<<<<<<<<<<
  *                     status_code=401,
  *                     detail="Not authenticated",
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 541, __pyx_L20_except_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 545, __pyx_L20_except_error)
         __Pyx_GOTREF(__pyx_t_1);
 
-        /* "cy_web_x.py":542
+        /* "cy_web_x.py":546
  *             except jose.exceptions.ExpiredSignatureError as e:
  *                 raise HTTPException(
  *                     status_code=401,             # <<<<<<<<<<<<<<
  *                     detail="Not authenticated",
  *                     headers={"WWW-Authenticate": "Bearer"},
  */
-        __pyx_t_13 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 542, __pyx_L20_except_error)
+        __pyx_t_13 = __Pyx_PyDict_NewPresized(3); if (unlikely(!__pyx_t_13)) __PYX_ERR(0, 546, __pyx_L20_except_error)
         __Pyx_GOTREF(__pyx_t_13);
-        if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_status_code, __pyx_int_401) < 0) __PYX_ERR(0, 542, __pyx_L20_except_error)
-        if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_detail, __pyx_kp_s_Not_authenticated) < 0) __PYX_ERR(0, 542, __pyx_L20_except_error)
+        if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_status_code, __pyx_int_401) < 0) __PYX_ERR(0, 546, __pyx_L20_except_error)
+        if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_detail, __pyx_kp_s_Not_authenticated) < 0) __PYX_ERR(0, 546, __pyx_L20_except_error)
 
-        /* "cy_web_x.py":544
+        /* "cy_web_x.py":548
  *                     status_code=401,
  *                     detail="Not authenticated",
  *                     headers={"WWW-Authenticate": "Bearer"},             # <<<<<<<<<<<<<<
  *                 )
  *             return token
  */
-        __pyx_t_10 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 544, __pyx_L20_except_error)
+        __pyx_t_10 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 548, __pyx_L20_except_error)
         __Pyx_GOTREF(__pyx_t_10);
-        if (PyDict_SetItem(__pyx_t_10, __pyx_kp_s_WWW_Authenticate, __pyx_n_s_Bearer) < 0) __PYX_ERR(0, 544, __pyx_L20_except_error)
-        if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_headers, __pyx_t_10) < 0) __PYX_ERR(0, 542, __pyx_L20_except_error)
+        if (PyDict_SetItem(__pyx_t_10, __pyx_kp_s_WWW_Authenticate, __pyx_n_s_Bearer) < 0) __PYX_ERR(0, 548, __pyx_L20_except_error)
+        if (PyDict_SetItem(__pyx_t_13, __pyx_n_s_headers, __pyx_t_10) < 0) __PYX_ERR(0, 546, __pyx_L20_except_error)
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
 
-        /* "cy_web_x.py":541
+        /* "cy_web_x.py":545
  *                 )
  *             except jose.exceptions.ExpiredSignatureError as e:
  *                 raise HTTPException(             # <<<<<<<<<<<<<<
  *                     status_code=401,
  *                     detail="Not authenticated",
  */
-        __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_t_13); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 541, __pyx_L20_except_error)
+        __pyx_t_10 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_empty_tuple, __pyx_t_13); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 545, __pyx_L20_except_error)
         __Pyx_GOTREF(__pyx_t_10);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_DECREF(__pyx_t_13); __pyx_t_13 = 0;
         __Pyx_Raise(__pyx_t_10, 0, 0, 0);
         __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
-        __PYX_ERR(0, 541, __pyx_L20_except_error)
+        __PYX_ERR(0, 545, __pyx_L20_except_error)
       }
       goto __pyx_L20_except_error;
       __pyx_L20_except_error:;
 
-      /* "cy_web_x.py":525
+      /* "cy_web_x.py":529
  *                 else:
  *                     return None
  *             try:             # <<<<<<<<<<<<<<
@@ -15557,7 +15684,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
       __pyx_L23_try_end:;
     }
 
-    /* "cy_web_x.py":546
+    /* "cy_web_x.py":550
  *                     headers={"WWW-Authenticate": "Bearer"},
  *                 )
  *             return token             # <<<<<<<<<<<<<<
@@ -15570,7 +15697,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
   }
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
 
-  /* "cy_web_x.py":491
+  /* "cy_web_x.py":495
  *         self.jwt_algorithm = jwt_algorithm
  * 
  *     async def __call__(self, request: fastapi.Request):             # <<<<<<<<<<<<<<
@@ -15598,7 +15725,7 @@ static PyObject *__pyx_gb_8cy_web_x_29OAuth2PasswordBearerAndCookie_4generator(_
   return __pyx_r;
 }
 
-/* "cy_web_x.py":549
+/* "cy_web_x.py":553
  * 
  * 
  * def add_controller(web_app,prefix_path: str, controller_dir):             # <<<<<<<<<<<<<<
@@ -15644,17 +15771,17 @@ static PyObject *__pyx_pw_8cy_web_x_17add_controller(PyObject *__pyx_self, PyObj
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_prefix_path)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("add_controller", 1, 3, 3, 1); __PYX_ERR(0, 549, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("add_controller", 1, 3, 3, 1); __PYX_ERR(0, 553, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_controller_dir)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("add_controller", 1, 3, 3, 2); __PYX_ERR(0, 549, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("add_controller", 1, 3, 3, 2); __PYX_ERR(0, 553, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "add_controller") < 0)) __PYX_ERR(0, 549, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "add_controller") < 0)) __PYX_ERR(0, 553, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -15669,13 +15796,13 @@ static PyObject *__pyx_pw_8cy_web_x_17add_controller(PyObject *__pyx_self, PyObj
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("add_controller", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 549, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("add_controller", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 553, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cy_web_x.add_controller", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
   return NULL;
   __pyx_L4_argument_unpacking_done:;
-  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_prefix_path), (&PyString_Type), 1, "prefix_path", 1))) __PYX_ERR(0, 549, __pyx_L1_error)
+  if (unlikely(!__Pyx_ArgTypeTest(((PyObject *)__pyx_v_prefix_path), (&PyString_Type), 1, "prefix_path", 1))) __PYX_ERR(0, 553, __pyx_L1_error)
   __pyx_r = __pyx_pf_8cy_web_x_16add_controller(__pyx_self, __pyx_v_web_app, __pyx_v_prefix_path, __pyx_v_controller_dir);
 
   /* function exit code */
@@ -15700,14 +15827,14 @@ static PyObject *__pyx_pf_8cy_web_x_16add_controller(CYTHON_UNUSED PyObject *__p
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("add_controller", 0);
 
-  /* "cy_web_x.py":550
+  /* "cy_web_x.py":554
  * 
  * def add_controller(web_app,prefix_path: str, controller_dir):
  *     web_app.load_controller_from_dir(prefix_path, controller_dir)             # <<<<<<<<<<<<<<
  * def start_with_uvicorn():
  *     global web_application
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_web_app, __pyx_n_s_load_controller_from_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 550, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_web_app, __pyx_n_s_load_controller_from_dir); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 554, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __pyx_t_3 = NULL;
   __pyx_t_4 = 0;
@@ -15724,7 +15851,7 @@ static PyObject *__pyx_pf_8cy_web_x_16add_controller(CYTHON_UNUSED PyObject *__p
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_prefix_path, __pyx_v_controller_dir};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 550, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 554, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -15732,13 +15859,13 @@ static PyObject *__pyx_pf_8cy_web_x_16add_controller(CYTHON_UNUSED PyObject *__p
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_2)) {
     PyObject *__pyx_temp[3] = {__pyx_t_3, __pyx_v_prefix_path, __pyx_v_controller_dir};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 550, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_2, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 554, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 550, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 554, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_3) {
       __Pyx_GIVEREF(__pyx_t_3); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_3); __pyx_t_3 = NULL;
@@ -15749,14 +15876,14 @@ static PyObject *__pyx_pf_8cy_web_x_16add_controller(CYTHON_UNUSED PyObject *__p
     __Pyx_INCREF(__pyx_v_controller_dir);
     __Pyx_GIVEREF(__pyx_v_controller_dir);
     PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_4, __pyx_v_controller_dir);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 550, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_2, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 554, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":549
+  /* "cy_web_x.py":553
  * 
  * 
  * def add_controller(web_app,prefix_path: str, controller_dir):             # <<<<<<<<<<<<<<
@@ -15780,7 +15907,7 @@ static PyObject *__pyx_pf_8cy_web_x_16add_controller(CYTHON_UNUSED PyObject *__p
   return __pyx_r;
 }
 
-/* "cy_web_x.py":551
+/* "cy_web_x.py":555
  * def add_controller(web_app,prefix_path: str, controller_dir):
  *     web_app.load_controller_from_dir(prefix_path, controller_dir)
  * def start_with_uvicorn():             # <<<<<<<<<<<<<<
@@ -15816,49 +15943,49 @@ static PyObject *__pyx_pf_8cy_web_x_18start_with_uvicorn(CYTHON_UNUSED PyObject 
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("start_with_uvicorn", 0);
 
-  /* "cy_web_x.py":553
+  /* "cy_web_x.py":557
  * def start_with_uvicorn():
  *     global web_application
  *     if isinstance(web_application,WebApp):             # <<<<<<<<<<<<<<
  *         web_application.unvicorn_start(
  *             f"{WebApp.__module__}"
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 553, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 557, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 553, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 557, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyObject_IsInstance(__pyx_t_1, __pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 553, __pyx_L1_error)
+  __pyx_t_3 = PyObject_IsInstance(__pyx_t_1, __pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 557, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = (__pyx_t_3 != 0);
   if (__pyx_t_4) {
 
-    /* "cy_web_x.py":554
+    /* "cy_web_x.py":558
  *     global web_application
  *     if isinstance(web_application,WebApp):
  *         web_application.unvicorn_start(             # <<<<<<<<<<<<<<
  *             f"{WebApp.__module__}"
  *         )
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 554, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 558, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_unvicorn_start); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 554, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_unvicorn_start); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 558, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "cy_web_x.py":555
+    /* "cy_web_x.py":559
  *     if isinstance(web_application,WebApp):
  *         web_application.unvicorn_start(
  *             f"{WebApp.__module__}"             # <<<<<<<<<<<<<<
  *         )
  *     # run_path=path.replace(os.sep,"/").replace('/','.')
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 555, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 559, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_module); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 555, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_module); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 559, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 555, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_empty_unicode); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 559, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_6 = NULL;
@@ -15874,12 +16001,12 @@ static PyObject *__pyx_pf_8cy_web_x_18start_with_uvicorn(CYTHON_UNUSED PyObject 
     __pyx_t_2 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_6, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_1);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 554, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 558, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "cy_web_x.py":553
+    /* "cy_web_x.py":557
  * def start_with_uvicorn():
  *     global web_application
  *     if isinstance(web_application,WebApp):             # <<<<<<<<<<<<<<
@@ -15888,7 +16015,7 @@ static PyObject *__pyx_pf_8cy_web_x_18start_with_uvicorn(CYTHON_UNUSED PyObject 
  */
   }
 
-  /* "cy_web_x.py":551
+  /* "cy_web_x.py":555
  * def add_controller(web_app,prefix_path: str, controller_dir):
  *     web_app.load_controller_from_dir(prefix_path, controller_dir)
  * def start_with_uvicorn():             # <<<<<<<<<<<<<<
@@ -15912,7 +16039,7 @@ static PyObject *__pyx_pf_8cy_web_x_18start_with_uvicorn(CYTHON_UNUSED PyObject 
   return __pyx_r;
 }
 
-/* "cy_web_x.py":561
+/* "cy_web_x.py":565
  * 
  * 
  * def load_controller_from_dir(prefix, controller_path):             # <<<<<<<<<<<<<<
@@ -15955,11 +16082,11 @@ static PyObject *__pyx_pw_8cy_web_x_21load_controller_from_dir(PyObject *__pyx_s
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_controller_path)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("load_controller_from_dir", 1, 2, 2, 1); __PYX_ERR(0, 561, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("load_controller_from_dir", 1, 2, 2, 1); __PYX_ERR(0, 565, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "load_controller_from_dir") < 0)) __PYX_ERR(0, 561, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "load_controller_from_dir") < 0)) __PYX_ERR(0, 565, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -15972,7 +16099,7 @@ static PyObject *__pyx_pw_8cy_web_x_21load_controller_from_dir(PyObject *__pyx_s
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("load_controller_from_dir", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 561, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("load_controller_from_dir", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 565, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("cy_web_x.load_controller_from_dir", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -16000,37 +16127,37 @@ static PyObject *__pyx_pf_8cy_web_x_20load_controller_from_dir(CYTHON_UNUSED PyO
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("load_controller_from_dir", 0);
 
-  /* "cy_web_x.py":563
+  /* "cy_web_x.py":567
  * def load_controller_from_dir(prefix, controller_path):
  *     global web_application
  *     if isinstance(web_application,WebApp):             # <<<<<<<<<<<<<<
  *         web_application.load_controller_from_dir(
  *             prefix, controller_path
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 563, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 567, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 563, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 567, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyObject_IsInstance(__pyx_t_1, __pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 563, __pyx_L1_error)
+  __pyx_t_3 = PyObject_IsInstance(__pyx_t_1, __pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 567, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = (__pyx_t_3 != 0);
   if (__pyx_t_4) {
 
-    /* "cy_web_x.py":564
+    /* "cy_web_x.py":568
  *     global web_application
  *     if isinstance(web_application,WebApp):
  *         web_application.load_controller_from_dir(             # <<<<<<<<<<<<<<
  *             prefix, controller_path
  *         )
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 564, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 568, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_load_controller_from_dir); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 564, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_load_controller_from_dir); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 568, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-    /* "cy_web_x.py":565
+    /* "cy_web_x.py":569
  *     if isinstance(web_application,WebApp):
  *         web_application.load_controller_from_dir(
  *             prefix, controller_path             # <<<<<<<<<<<<<<
@@ -16052,7 +16179,7 @@ static PyObject *__pyx_pf_8cy_web_x_20load_controller_from_dir(CYTHON_UNUSED PyO
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_v_prefix, __pyx_v_controller_path};
-      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 564, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 568, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
@@ -16060,13 +16187,13 @@ static PyObject *__pyx_pf_8cy_web_x_20load_controller_from_dir(CYTHON_UNUSED PyO
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
       PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_v_prefix, __pyx_v_controller_path};
-      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 564, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_6, 2+__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 568, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_GOTREF(__pyx_t_2);
     } else
     #endif
     {
-      __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 564, __pyx_L1_error)
+      __pyx_t_7 = PyTuple_New(2+__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 568, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       if (__pyx_t_1) {
         __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_1); __pyx_t_1 = NULL;
@@ -16077,14 +16204,14 @@ static PyObject *__pyx_pf_8cy_web_x_20load_controller_from_dir(CYTHON_UNUSED PyO
       __Pyx_INCREF(__pyx_v_controller_path);
       __Pyx_GIVEREF(__pyx_v_controller_path);
       PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_6, __pyx_v_controller_path);
-      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 564, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_7, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 568, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "cy_web_x.py":563
+    /* "cy_web_x.py":567
  * def load_controller_from_dir(prefix, controller_path):
  *     global web_application
  *     if isinstance(web_application,WebApp):             # <<<<<<<<<<<<<<
@@ -16093,7 +16220,7 @@ static PyObject *__pyx_pf_8cy_web_x_20load_controller_from_dir(CYTHON_UNUSED PyO
  */
   }
 
-  /* "cy_web_x.py":561
+  /* "cy_web_x.py":565
  * 
  * 
  * def load_controller_from_dir(prefix, controller_path):             # <<<<<<<<<<<<<<
@@ -16117,7 +16244,7 @@ static PyObject *__pyx_pf_8cy_web_x_20load_controller_from_dir(CYTHON_UNUSED PyO
   return __pyx_r;
 }
 
-/* "cy_web_x.py":567
+/* "cy_web_x.py":571
  *             prefix, controller_path
  *         )
  * def middleware():             # <<<<<<<<<<<<<<
@@ -16152,24 +16279,24 @@ static PyObject *__pyx_pf_8cy_web_x_22middleware(CYTHON_UNUSED PyObject *__pyx_s
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("middleware", 0);
 
-  /* "cy_web_x.py":569
+  /* "cy_web_x.py":573
  * def middleware():
  *     global web_application
  *     if isinstance(web_application, WebApp):             # <<<<<<<<<<<<<<
  *         return web_application.app.middleware("http")
  * def auth():
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 569, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 573, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 569, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 573, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyObject_IsInstance(__pyx_t_1, __pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 569, __pyx_L1_error)
+  __pyx_t_3 = PyObject_IsInstance(__pyx_t_1, __pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 573, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = (__pyx_t_3 != 0);
   if (__pyx_t_4) {
 
-    /* "cy_web_x.py":570
+    /* "cy_web_x.py":574
  *     global web_application
  *     if isinstance(web_application, WebApp):
  *         return web_application.app.middleware("http")             # <<<<<<<<<<<<<<
@@ -16177,12 +16304,12 @@ static PyObject *__pyx_pf_8cy_web_x_22middleware(CYTHON_UNUSED PyObject *__pyx_s
  *     global web_application
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 570, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 574, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_app); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 570, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_app); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 574, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_middleware); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 570, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_middleware); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 574, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_t_5 = NULL;
@@ -16197,14 +16324,14 @@ static PyObject *__pyx_pf_8cy_web_x_22middleware(CYTHON_UNUSED PyObject *__pyx_s
     }
     __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_5, __pyx_n_s_http) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_n_s_http);
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 570, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 574, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_r = __pyx_t_2;
     __pyx_t_2 = 0;
     goto __pyx_L0;
 
-    /* "cy_web_x.py":569
+    /* "cy_web_x.py":573
  * def middleware():
  *     global web_application
  *     if isinstance(web_application, WebApp):             # <<<<<<<<<<<<<<
@@ -16213,7 +16340,7 @@ static PyObject *__pyx_pf_8cy_web_x_22middleware(CYTHON_UNUSED PyObject *__pyx_s
  */
   }
 
-  /* "cy_web_x.py":567
+  /* "cy_web_x.py":571
  *             prefix, controller_path
  *         )
  * def middleware():             # <<<<<<<<<<<<<<
@@ -16236,7 +16363,7 @@ static PyObject *__pyx_pf_8cy_web_x_22middleware(CYTHON_UNUSED PyObject *__pyx_s
   return __pyx_r;
 }
 
-/* "cy_web_x.py":571
+/* "cy_web_x.py":575
  *     if isinstance(web_application, WebApp):
  *         return web_application.app.middleware("http")
  * def auth():             # <<<<<<<<<<<<<<
@@ -16273,24 +16400,24 @@ static PyObject *__pyx_pf_8cy_web_x_24auth(CYTHON_UNUSED PyObject *__pyx_self) {
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("auth", 0);
 
-  /* "cy_web_x.py":573
+  /* "cy_web_x.py":577
  * def auth():
  *     global web_application
  *     if isinstance(web_application,WebApp):             # <<<<<<<<<<<<<<
  *         return fastapi.Depends(web_application.get_auth())
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 573, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 577, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 573, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 577, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = PyObject_IsInstance(__pyx_t_1, __pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 573, __pyx_L1_error)
+  __pyx_t_3 = PyObject_IsInstance(__pyx_t_1, __pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 577, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = (__pyx_t_3 != 0);
   if (__pyx_t_4) {
 
-    /* "cy_web_x.py":574
+    /* "cy_web_x.py":578
  *     global web_application
  *     if isinstance(web_application,WebApp):
  *         return fastapi.Depends(web_application.get_auth())             # <<<<<<<<<<<<<<
@@ -16298,14 +16425,14 @@ static PyObject *__pyx_pf_8cy_web_x_24auth(CYTHON_UNUSED PyObject *__pyx_self) {
  * def auth_account():
  */
     __Pyx_XDECREF(__pyx_r);
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_fastapi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 574, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_fastapi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 578, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_Depends); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 574, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_Depends); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 578, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_web_application); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 574, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_web_application); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 578, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_get_auth); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 574, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_get_auth); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 578, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_6 = NULL;
@@ -16320,7 +16447,7 @@ static PyObject *__pyx_pf_8cy_web_x_24auth(CYTHON_UNUSED PyObject *__pyx_self) {
     }
     __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 574, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 578, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __pyx_t_7 = NULL;
@@ -16336,14 +16463,14 @@ static PyObject *__pyx_pf_8cy_web_x_24auth(CYTHON_UNUSED PyObject *__pyx_self) {
     __pyx_t_2 = (__pyx_t_7) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_7, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_1);
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 574, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 578, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     __pyx_r = __pyx_t_2;
     __pyx_t_2 = 0;
     goto __pyx_L0;
 
-    /* "cy_web_x.py":573
+    /* "cy_web_x.py":577
  * def auth():
  *     global web_application
  *     if isinstance(web_application,WebApp):             # <<<<<<<<<<<<<<
@@ -16352,7 +16479,7 @@ static PyObject *__pyx_pf_8cy_web_x_24auth(CYTHON_UNUSED PyObject *__pyx_self) {
  */
   }
 
-  /* "cy_web_x.py":571
+  /* "cy_web_x.py":575
  *     if isinstance(web_application, WebApp):
  *         return web_application.app.middleware("http")
  * def auth():             # <<<<<<<<<<<<<<
@@ -16377,7 +16504,7 @@ static PyObject *__pyx_pf_8cy_web_x_24auth(CYTHON_UNUSED PyObject *__pyx_self) {
   return __pyx_r;
 }
 
-/* "cy_web_x.py":576
+/* "cy_web_x.py":580
  *         return fastapi.Depends(web_application.get_auth())
  * 
  * def auth_account():             # <<<<<<<<<<<<<<
@@ -16399,7 +16526,7 @@ static PyObject *__pyx_pw_8cy_web_x_27auth_account(PyObject *__pyx_self, CYTHON_
   return __pyx_r;
 }
 
-/* "cy_web_x.py":577
+/* "cy_web_x.py":581
  * 
  * def auth_account():
  *     def wrapper(fn):             # <<<<<<<<<<<<<<
@@ -16436,31 +16563,31 @@ static PyObject *__pyx_pf_8cy_web_x_12auth_account_wrapper(CYTHON_UNUSED PyObjec
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("wrapper", 0);
 
-  /* "cy_web_x.py":578
+  /* "cy_web_x.py":582
  * def auth_account():
  *     def wrapper(fn):
  *         if not callable(fn):             # <<<<<<<<<<<<<<
  *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} must be a function")
  *         if fn.__annotations__ is None:
  */
-  __pyx_t_1 = __Pyx_PyCallable_Check(__pyx_v_fn); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(0, 578, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyCallable_Check(__pyx_v_fn); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(0, 582, __pyx_L1_error)
   __pyx_t_2 = ((!(__pyx_t_1 != 0)) != 0);
   if (unlikely(__pyx_t_2)) {
 
-    /* "cy_web_x.py":579
+    /* "cy_web_x.py":583
  *     def wrapper(fn):
  *         if not callable(fn):
  *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} must be a function")             # <<<<<<<<<<<<<<
  *         if fn.__annotations__ is None:
  *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and passwrd:str and return dict(username:str,application:str,is_ok:bool)")
  */
-    __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 579, __pyx_L1_error)
+    __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 583, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __pyx_t_4 = 0;
     __pyx_t_5 = 127;
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_name); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 579, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_name); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 583, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 579, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 583, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_5 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) > __pyx_t_5) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) : __pyx_t_5;
@@ -16472,12 +16599,12 @@ static PyObject *__pyx_pf_8cy_web_x_12auth_account_wrapper(CYTHON_UNUSED PyObjec
     __pyx_t_4 += 4;
     __Pyx_GIVEREF(__pyx_kp_u_in);
     PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_kp_u_in);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_code); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 579, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_code); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 583, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_co_filename); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 579, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_co_filename); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 583, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 579, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_FormatSimple(__pyx_t_6, __pyx_empty_unicode); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 583, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
     __pyx_t_5 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) > __pyx_t_5) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_7) : __pyx_t_5;
@@ -16489,17 +16616,17 @@ static PyObject *__pyx_pf_8cy_web_x_12auth_account_wrapper(CYTHON_UNUSED PyObjec
     __pyx_t_4 += 19;
     __Pyx_GIVEREF(__pyx_kp_u_must_be_a_function);
     PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_kp_u_must_be_a_function);
-    __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 579, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 583, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 579, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_7); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 583, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_Raise(__pyx_t_3, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(0, 579, __pyx_L1_error)
+    __PYX_ERR(0, 583, __pyx_L1_error)
 
-    /* "cy_web_x.py":578
+    /* "cy_web_x.py":582
  * def auth_account():
  *     def wrapper(fn):
  *         if not callable(fn):             # <<<<<<<<<<<<<<
@@ -16508,212 +16635,26 @@ static PyObject *__pyx_pf_8cy_web_x_12auth_account_wrapper(CYTHON_UNUSED PyObjec
  */
   }
 
-  /* "cy_web_x.py":580
- *         if not callable(fn):
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} must be a function")
- *         if fn.__annotations__ is None:             # <<<<<<<<<<<<<<
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and passwrd:str and return dict(username:str,application:str,is_ok:bool)")
- *         if fn.__annotations__.get('username') is None:
- */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_annotations); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 580, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = (__pyx_t_3 == Py_None);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_1 = (__pyx_t_2 != 0);
-  if (unlikely(__pyx_t_1)) {
-
-    /* "cy_web_x.py":581
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} must be a function")
- *         if fn.__annotations__ is None:
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and passwrd:str and return dict(username:str,application:str,is_ok:bool)")             # <<<<<<<<<<<<<<
- *         if fn.__annotations__.get('username') is None:
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
- */
-    __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 581, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = 0;
-    __pyx_t_5 = 127;
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_name); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 581, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_7, __pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 581, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_5 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) > __pyx_t_5) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) : __pyx_t_5;
-    __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6);
-    __Pyx_GIVEREF(__pyx_t_6);
-    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6);
-    __pyx_t_6 = 0;
-    __Pyx_INCREF(__pyx_kp_u_in);
-    __pyx_t_4 += 4;
-    __Pyx_GIVEREF(__pyx_kp_u_in);
-    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_kp_u_in);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_code); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 581, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_co_filename); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 581, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_7, __pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 581, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_5 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) > __pyx_t_5) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) : __pyx_t_5;
-    __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6);
-    __Pyx_GIVEREF(__pyx_t_6);
-    PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_t_6);
-    __pyx_t_6 = 0;
-    __Pyx_INCREF(__pyx_kp_u_function_must_have_2_args_usern);
-    __pyx_t_4 += 112;
-    __Pyx_GIVEREF(__pyx_kp_u_function_must_have_2_args_usern);
-    PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_kp_u_function_must_have_2_args_usern);
-    __pyx_t_6 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 581, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 581, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(0, 581, __pyx_L1_error)
-
-    /* "cy_web_x.py":580
- *         if not callable(fn):
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} must be a function")
- *         if fn.__annotations__ is None:             # <<<<<<<<<<<<<<
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and passwrd:str and return dict(username:str,application:str,is_ok:bool)")
- *         if fn.__annotations__.get('username') is None:
- */
-  }
-
-  /* "cy_web_x.py":582
- *         if fn.__annotations__ is None:
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and passwrd:str and return dict(username:str,application:str,is_ok:bool)")
- *         if fn.__annotations__.get('username') is None:             # <<<<<<<<<<<<<<
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
- *         if fn.__annotations__.get('password') is None:
- */
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_annotations); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 582, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_get); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 582, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_7);
-  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_7);
-    if (likely(__pyx_t_6)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-      __Pyx_INCREF(__pyx_t_6);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_7, function);
-    }
-  }
-  __pyx_t_3 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_6, __pyx_n_s_username) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_n_s_username);
-  __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 582, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  __pyx_t_1 = (__pyx_t_3 == Py_None);
-  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_2 = (__pyx_t_1 != 0);
-  if (unlikely(__pyx_t_2)) {
-
-    /* "cy_web_x.py":583
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and passwrd:str and return dict(username:str,application:str,is_ok:bool)")
- *         if fn.__annotations__.get('username') is None:
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")             # <<<<<<<<<<<<<<
- *         if fn.__annotations__.get('password') is None:
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
- */
-    __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 583, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_4 = 0;
-    __pyx_t_5 = 127;
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_name); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 583, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_7, __pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 583, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_5 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) > __pyx_t_5) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) : __pyx_t_5;
-    __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6);
-    __Pyx_GIVEREF(__pyx_t_6);
-    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6);
-    __pyx_t_6 = 0;
-    __Pyx_INCREF(__pyx_kp_u_in);
-    __pyx_t_4 += 4;
-    __Pyx_GIVEREF(__pyx_kp_u_in);
-    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_kp_u_in);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_code); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 583, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_co_filename); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 583, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_7);
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_7, __pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 583, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_5 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) > __pyx_t_5) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) : __pyx_t_5;
-    __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6);
-    __Pyx_GIVEREF(__pyx_t_6);
-    PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_t_6);
-    __pyx_t_6 = 0;
-    __Pyx_INCREF(__pyx_kp_u_function_must_have_2_args_usern_2);
-    __pyx_t_4 += 102;
-    __Pyx_GIVEREF(__pyx_kp_u_function_must_have_2_args_usern_2);
-    PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_kp_u_function_must_have_2_args_usern_2);
-    __pyx_t_6 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 583, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_6);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 583, __pyx_L1_error)
-    __Pyx_GOTREF(__pyx_t_3);
-    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
-    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-    __PYX_ERR(0, 583, __pyx_L1_error)
-
-    /* "cy_web_x.py":582
- *         if fn.__annotations__ is None:
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and passwrd:str and return dict(username:str,application:str,is_ok:bool)")
- *         if fn.__annotations__.get('username') is None:             # <<<<<<<<<<<<<<
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
- *         if fn.__annotations__.get('password') is None:
- */
-  }
-
   /* "cy_web_x.py":584
+ *         if not callable(fn):
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} must be a function")
+ *         if fn.__annotations__ is None:             # <<<<<<<<<<<<<<
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and passwrd:str and return dict(username:str,application:str,is_ok:bool)")
  *         if fn.__annotations__.get('username') is None:
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
- *         if fn.__annotations__.get('password') is None:             # <<<<<<<<<<<<<<
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
- *         global web_application
  */
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_annotations); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 584, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_get); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 584, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_7);
-  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  __pyx_t_6 = NULL;
-  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
-    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_7);
-    if (likely(__pyx_t_6)) {
-      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-      __Pyx_INCREF(__pyx_t_6);
-      __Pyx_INCREF(function);
-      __Pyx_DECREF_SET(__pyx_t_7, function);
-    }
-  }
-  __pyx_t_3 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_6, __pyx_n_s_password) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_n_s_password);
-  __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 584, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_annotations); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 584, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_t_2 = (__pyx_t_3 == Py_None);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_1 = (__pyx_t_2 != 0);
   if (unlikely(__pyx_t_1)) {
 
     /* "cy_web_x.py":585
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} must be a function")
+ *         if fn.__annotations__ is None:
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and passwrd:str and return dict(username:str,application:str,is_ok:bool)")             # <<<<<<<<<<<<<<
+ *         if fn.__annotations__.get('username') is None:
  *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
- *         if fn.__annotations__.get('password') is None:
- *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")             # <<<<<<<<<<<<<<
- *         global web_application
- *         if isinstance(web_application,WebApp):
  */
     __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 585, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
@@ -16746,10 +16687,10 @@ static PyObject *__pyx_pf_8cy_web_x_12auth_account_wrapper(CYTHON_UNUSED PyObjec
     __Pyx_GIVEREF(__pyx_t_6);
     PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_t_6);
     __pyx_t_6 = 0;
-    __Pyx_INCREF(__pyx_kp_u_function_must_have_2_args_usern_2);
-    __pyx_t_4 += 102;
-    __Pyx_GIVEREF(__pyx_kp_u_function_must_have_2_args_usern_2);
-    PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_kp_u_function_must_have_2_args_usern_2);
+    __Pyx_INCREF(__pyx_kp_u_function_must_have_2_args_usern);
+    __pyx_t_4 += 112;
+    __Pyx_GIVEREF(__pyx_kp_u_function_must_have_2_args_usern);
+    PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_kp_u_function_must_have_2_args_usern);
     __pyx_t_6 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 585, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -16761,6 +16702,192 @@ static PyObject *__pyx_pf_8cy_web_x_12auth_account_wrapper(CYTHON_UNUSED PyObjec
     __PYX_ERR(0, 585, __pyx_L1_error)
 
     /* "cy_web_x.py":584
+ *         if not callable(fn):
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} must be a function")
+ *         if fn.__annotations__ is None:             # <<<<<<<<<<<<<<
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and passwrd:str and return dict(username:str,application:str,is_ok:bool)")
+ *         if fn.__annotations__.get('username') is None:
+ */
+  }
+
+  /* "cy_web_x.py":586
+ *         if fn.__annotations__ is None:
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and passwrd:str and return dict(username:str,application:str,is_ok:bool)")
+ *         if fn.__annotations__.get('username') is None:             # <<<<<<<<<<<<<<
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
+ *         if fn.__annotations__.get('password') is None:
+ */
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_annotations); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 586, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_get); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 586, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __pyx_t_6 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
+    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_7);
+    if (likely(__pyx_t_6)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+      __Pyx_INCREF(__pyx_t_6);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_7, function);
+    }
+  }
+  __pyx_t_3 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_6, __pyx_n_s_username) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_n_s_username);
+  __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 586, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __pyx_t_1 = (__pyx_t_3 == Py_None);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_2 = (__pyx_t_1 != 0);
+  if (unlikely(__pyx_t_2)) {
+
+    /* "cy_web_x.py":587
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and passwrd:str and return dict(username:str,application:str,is_ok:bool)")
+ *         if fn.__annotations__.get('username') is None:
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")             # <<<<<<<<<<<<<<
+ *         if fn.__annotations__.get('password') is None:
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
+ */
+    __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 587, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_4 = 0;
+    __pyx_t_5 = 127;
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_name); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 587, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_7, __pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 587, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_5 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) > __pyx_t_5) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) : __pyx_t_5;
+    __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6);
+    __Pyx_GIVEREF(__pyx_t_6);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6);
+    __pyx_t_6 = 0;
+    __Pyx_INCREF(__pyx_kp_u_in);
+    __pyx_t_4 += 4;
+    __Pyx_GIVEREF(__pyx_kp_u_in);
+    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_kp_u_in);
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_code); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 587, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_co_filename); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 587, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_7, __pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 587, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_5 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) > __pyx_t_5) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) : __pyx_t_5;
+    __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6);
+    __Pyx_GIVEREF(__pyx_t_6);
+    PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_t_6);
+    __pyx_t_6 = 0;
+    __Pyx_INCREF(__pyx_kp_u_function_must_have_2_args_usern_2);
+    __pyx_t_4 += 102;
+    __Pyx_GIVEREF(__pyx_kp_u_function_must_have_2_args_usern_2);
+    PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_kp_u_function_must_have_2_args_usern_2);
+    __pyx_t_6 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 587, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 587, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __PYX_ERR(0, 587, __pyx_L1_error)
+
+    /* "cy_web_x.py":586
+ *         if fn.__annotations__ is None:
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and passwrd:str and return dict(username:str,application:str,is_ok:bool)")
+ *         if fn.__annotations__.get('username') is None:             # <<<<<<<<<<<<<<
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
+ *         if fn.__annotations__.get('password') is None:
+ */
+  }
+
+  /* "cy_web_x.py":588
+ *         if fn.__annotations__.get('username') is None:
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
+ *         if fn.__annotations__.get('password') is None:             # <<<<<<<<<<<<<<
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
+ *         global web_application
+ */
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_annotations); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 588, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_6);
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_get); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 588, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_7);
+  __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+  __pyx_t_6 = NULL;
+  if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
+    __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_7);
+    if (likely(__pyx_t_6)) {
+      PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
+      __Pyx_INCREF(__pyx_t_6);
+      __Pyx_INCREF(function);
+      __Pyx_DECREF_SET(__pyx_t_7, function);
+    }
+  }
+  __pyx_t_3 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_6, __pyx_n_s_password) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_n_s_password);
+  __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 588, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+  __pyx_t_2 = (__pyx_t_3 == Py_None);
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_1 = (__pyx_t_2 != 0);
+  if (unlikely(__pyx_t_1)) {
+
+    /* "cy_web_x.py":589
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
+ *         if fn.__annotations__.get('password') is None:
+ *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")             # <<<<<<<<<<<<<<
+ *         global web_application
+ *         if isinstance(web_application,WebApp):
+ */
+    __pyx_t_3 = PyTuple_New(4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 589, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __pyx_t_4 = 0;
+    __pyx_t_5 = 127;
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_name); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 589, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_7, __pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 589, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_5 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) > __pyx_t_5) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) : __pyx_t_5;
+    __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6);
+    __Pyx_GIVEREF(__pyx_t_6);
+    PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_6);
+    __pyx_t_6 = 0;
+    __Pyx_INCREF(__pyx_kp_u_in);
+    __pyx_t_4 += 4;
+    __Pyx_GIVEREF(__pyx_kp_u_in);
+    PyTuple_SET_ITEM(__pyx_t_3, 1, __pyx_kp_u_in);
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_fn, __pyx_n_s_code); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 589, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_co_filename); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 589, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_7);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __pyx_t_6 = __Pyx_PyObject_FormatSimple(__pyx_t_7, __pyx_empty_unicode); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 589, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+    __pyx_t_5 = (__Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) > __pyx_t_5) ? __Pyx_PyUnicode_MAX_CHAR_VALUE(__pyx_t_6) : __pyx_t_5;
+    __pyx_t_4 += __Pyx_PyUnicode_GET_LENGTH(__pyx_t_6);
+    __Pyx_GIVEREF(__pyx_t_6);
+    PyTuple_SET_ITEM(__pyx_t_3, 2, __pyx_t_6);
+    __pyx_t_6 = 0;
+    __Pyx_INCREF(__pyx_kp_u_function_must_have_2_args_usern_2);
+    __pyx_t_4 += 102;
+    __Pyx_GIVEREF(__pyx_kp_u_function_must_have_2_args_usern_2);
+    PyTuple_SET_ITEM(__pyx_t_3, 3, __pyx_kp_u_function_must_have_2_args_usern_2);
+    __pyx_t_6 = __Pyx_PyUnicode_Join(__pyx_t_3, 4, __pyx_t_4, __pyx_t_5); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 589, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_6);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __pyx_t_3 = __Pyx_PyObject_CallOneArg(((PyObject *)(&((PyTypeObject*)PyExc_Exception)[0])), __pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 589, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_3);
+    __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+    __Pyx_Raise(__pyx_t_3, 0, 0, 0);
+    __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+    __PYX_ERR(0, 589, __pyx_L1_error)
+
+    /* "cy_web_x.py":588
  *         if fn.__annotations__.get('username') is None:
  *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
  *         if fn.__annotations__.get('password') is None:             # <<<<<<<<<<<<<<
@@ -16769,35 +16896,36 @@ static PyObject *__pyx_pf_8cy_web_x_12auth_account_wrapper(CYTHON_UNUSED PyObjec
  */
   }
 
-  /* "cy_web_x.py":587
+  /* "cy_web_x.py":591
  *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
  *         global web_application
  *         if isinstance(web_application,WebApp):             # <<<<<<<<<<<<<<
  *             web_application.on_auth_user = fn
  *     return wrapper
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_web_application); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 587, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_web_application); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 591, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 587, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 591, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_1 = PyObject_IsInstance(__pyx_t_3, __pyx_t_6); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(0, 587, __pyx_L1_error)
+  __pyx_t_1 = PyObject_IsInstance(__pyx_t_3, __pyx_t_6); if (unlikely(__pyx_t_1 == ((int)-1))) __PYX_ERR(0, 591, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_2 = (__pyx_t_1 != 0);
   if (__pyx_t_2) {
 
-    /* "cy_web_x.py":588
+    /* "cy_web_x.py":592
  *         global web_application
  *         if isinstance(web_application,WebApp):
  *             web_application.on_auth_user = fn             # <<<<<<<<<<<<<<
  *     return wrapper
+ * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_web_application); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 588, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_web_application); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 592, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    if (__Pyx_PyObject_SetAttrStr(__pyx_t_6, __pyx_n_s_on_auth_user, __pyx_v_fn) < 0) __PYX_ERR(0, 588, __pyx_L1_error)
+    if (__Pyx_PyObject_SetAttrStr(__pyx_t_6, __pyx_n_s_on_auth_user, __pyx_v_fn) < 0) __PYX_ERR(0, 592, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-    /* "cy_web_x.py":587
+    /* "cy_web_x.py":591
  *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} function must have 2 args username:str and password:str dict(username:str,application:str,is_ok:bool)")
  *         global web_application
  *         if isinstance(web_application,WebApp):             # <<<<<<<<<<<<<<
@@ -16806,7 +16934,7 @@ static PyObject *__pyx_pf_8cy_web_x_12auth_account_wrapper(CYTHON_UNUSED PyObjec
  */
   }
 
-  /* "cy_web_x.py":577
+  /* "cy_web_x.py":581
  * 
  * def auth_account():
  *     def wrapper(fn):             # <<<<<<<<<<<<<<
@@ -16829,7 +16957,7 @@ static PyObject *__pyx_pf_8cy_web_x_12auth_account_wrapper(CYTHON_UNUSED PyObjec
   return __pyx_r;
 }
 
-/* "cy_web_x.py":576
+/* "cy_web_x.py":580
  *         return fastapi.Depends(web_application.get_auth())
  * 
  * def auth_account():             # <<<<<<<<<<<<<<
@@ -16847,29 +16975,31 @@ static PyObject *__pyx_pf_8cy_web_x_26auth_account(CYTHON_UNUSED PyObject *__pyx
   int __pyx_clineno = 0;
   __Pyx_RefNannySetupContext("auth_account", 0);
 
-  /* "cy_web_x.py":577
+  /* "cy_web_x.py":581
  * 
  * def auth_account():
  *     def wrapper(fn):             # <<<<<<<<<<<<<<
  *         if not callable(fn):
  *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} must be a function")
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_12auth_account_1wrapper, 0, __pyx_n_s_auth_account_locals_wrapper, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__26)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 577, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_12auth_account_1wrapper, 0, __pyx_n_s_auth_account_locals_wrapper, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__26)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 581, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_v_wrapper = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":589
+  /* "cy_web_x.py":593
  *         if isinstance(web_application,WebApp):
  *             web_application.on_auth_user = fn
  *     return wrapper             # <<<<<<<<<<<<<<
+ * 
+ * 
  */
   __Pyx_XDECREF(__pyx_r);
   __Pyx_INCREF(__pyx_v_wrapper);
   __pyx_r = __pyx_v_wrapper;
   goto __pyx_L0;
 
-  /* "cy_web_x.py":576
+  /* "cy_web_x.py":580
  *         return fastapi.Depends(web_application.get_auth())
  * 
  * def auth_account():             # <<<<<<<<<<<<<<
@@ -16884,6 +17014,101 @@ static PyObject *__pyx_pf_8cy_web_x_26auth_account(CYTHON_UNUSED PyObject *__pyx
   __pyx_r = NULL;
   __pyx_L0:;
   __Pyx_XDECREF(__pyx_v_wrapper);
+  __Pyx_XGIVEREF(__pyx_r);
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+/* "cy_web_x.py":596
+ * 
+ * 
+ * def fast_api()->fastapi.FastAPI:             # <<<<<<<<<<<<<<
+ *     global web_application
+ *     if isinstance(web_application,WebApp):
+ */
+
+/* Python wrapper */
+static PyObject *__pyx_pw_8cy_web_x_29fast_api(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused); /*proto*/
+static PyMethodDef __pyx_mdef_8cy_web_x_29fast_api = {"fast_api", (PyCFunction)__pyx_pw_8cy_web_x_29fast_api, METH_NOARGS, 0};
+static PyObject *__pyx_pw_8cy_web_x_29fast_api(PyObject *__pyx_self, CYTHON_UNUSED PyObject *unused) {
+  PyObject *__pyx_r = 0;
+  __Pyx_RefNannyDeclarations
+  __Pyx_RefNannySetupContext("fast_api (wrapper)", 0);
+  __pyx_r = __pyx_pf_8cy_web_x_28fast_api(__pyx_self);
+
+  /* function exit code */
+  __Pyx_RefNannyFinishContext();
+  return __pyx_r;
+}
+
+static PyObject *__pyx_pf_8cy_web_x_28fast_api(CYTHON_UNUSED PyObject *__pyx_self) {
+  PyObject *__pyx_r = NULL;
+  __Pyx_RefNannyDeclarations
+  PyObject *__pyx_t_1 = NULL;
+  PyObject *__pyx_t_2 = NULL;
+  int __pyx_t_3;
+  int __pyx_t_4;
+  int __pyx_lineno = 0;
+  const char *__pyx_filename = NULL;
+  int __pyx_clineno = 0;
+  __Pyx_RefNannySetupContext("fast_api", 0);
+
+  /* "cy_web_x.py":598
+ * def fast_api()->fastapi.FastAPI:
+ *     global web_application
+ *     if isinstance(web_application,WebApp):             # <<<<<<<<<<<<<<
+ *         return web_application.app
+ */
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_web_application); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 598, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_WebApp); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 598, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = PyObject_IsInstance(__pyx_t_1, __pyx_t_2); if (unlikely(__pyx_t_3 == ((int)-1))) __PYX_ERR(0, 598, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  __pyx_t_4 = (__pyx_t_3 != 0);
+  if (__pyx_t_4) {
+
+    /* "cy_web_x.py":599
+ *     global web_application
+ *     if isinstance(web_application,WebApp):
+ *         return web_application.app             # <<<<<<<<<<<<<<
+ */
+    __Pyx_XDECREF(__pyx_r);
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_web_application); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 599, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_2);
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_app); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 599, __pyx_L1_error)
+    __Pyx_GOTREF(__pyx_t_1);
+    __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+    __pyx_r = __pyx_t_1;
+    __pyx_t_1 = 0;
+    goto __pyx_L0;
+
+    /* "cy_web_x.py":598
+ * def fast_api()->fastapi.FastAPI:
+ *     global web_application
+ *     if isinstance(web_application,WebApp):             # <<<<<<<<<<<<<<
+ *         return web_application.app
+ */
+  }
+
+  /* "cy_web_x.py":596
+ * 
+ * 
+ * def fast_api()->fastapi.FastAPI:             # <<<<<<<<<<<<<<
+ *     global web_application
+ *     if isinstance(web_application,WebApp):
+ */
+
+  /* function exit code */
+  __pyx_r = Py_None; __Pyx_INCREF(Py_None);
+  goto __pyx_L0;
+  __pyx_L1_error:;
+  __Pyx_XDECREF(__pyx_t_1);
+  __Pyx_XDECREF(__pyx_t_2);
+  __Pyx_AddTraceback("cy_web_x.fast_api", __pyx_clineno, __pyx_lineno, __pyx_filename);
+  __pyx_r = NULL;
+  __pyx_L0:;
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
@@ -17416,6 +17641,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {&__pyx_n_s_exp, __pyx_k_exp, sizeof(__pyx_k_exp), 0, 0, 1, 1},
   {&__pyx_n_s_expire, __pyx_k_expire, sizeof(__pyx_k_expire), 0, 0, 1, 1},
   {&__pyx_n_s_expires_delta, __pyx_k_expires_delta, sizeof(__pyx_k_expires_delta), 0, 0, 1, 1},
+  {&__pyx_n_s_fast_api, __pyx_k_fast_api, sizeof(__pyx_k_fast_api), 0, 0, 1, 1},
   {&__pyx_n_s_fastapi, __pyx_k_fastapi, sizeof(__pyx_k_fastapi), 0, 0, 1, 1},
   {&__pyx_n_s_fastapi_exceptions, __pyx_k_fastapi_exceptions, sizeof(__pyx_k_fastapi_exceptions), 0, 0, 1, 1},
   {&__pyx_n_s_fastapi_security, __pyx_k_fastapi_security, sizeof(__pyx_k_fastapi_security), 0, 0, 1, 1},
@@ -17620,7 +17846,7 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
   __pyx_builtin_object = __Pyx_GetBuiltinName(__pyx_n_s_object); if (!__pyx_builtin_object) __PYX_ERR(0, 236, __pyx_L1_error)
-  __pyx_builtin_super = __Pyx_GetBuiltinName(__pyx_n_s_super); if (!__pyx_builtin_super) __PYX_ERR(0, 481, __pyx_L1_error)
+  __pyx_builtin_super = __Pyx_GetBuiltinName(__pyx_n_s_super); if (!__pyx_builtin_super) __PYX_ERR(0, 485, __pyx_L1_error)
   return 0;
   __pyx_L1_error:;
   return -1;
@@ -17679,73 +17905,73 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__12);
   __pyx_codeobj__13 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__12, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_wrapper, 247, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__13)) __PYX_ERR(0, 247, __pyx_L1_error)
 
-  /* "cy_web_x.py":306
+  /* "cy_web_x.py":310
  *     global web_application
  *     if not isinstance(web_application,WebApp):
  *         raise Exception("WebApp was not found")             # <<<<<<<<<<<<<<
  *     if web_application.on_auth_user is None:
  *         raise Exception("Please create on auth user with  cy_web_x.auth_user")
  */
-  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_WebApp_was_not_found); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 306, __pyx_L1_error)
+  __pyx_tuple__14 = PyTuple_Pack(1, __pyx_kp_s_WebApp_was_not_found); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 310, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
 
-  /* "cy_web_x.py":308
+  /* "cy_web_x.py":312
  *         raise Exception("WebApp was not found")
  *     if web_application.on_auth_user is None:
  *         raise Exception("Please create on auth user with  cy_web_x.auth_user")             # <<<<<<<<<<<<<<
  *     user = web_application.on_auth_user(form_data.username, form_data.password)
  *     if not isinstance(user,dict):
  */
-  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_Please_create_on_auth_user_with); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 308, __pyx_L1_error)
+  __pyx_tuple__15 = PyTuple_Pack(1, __pyx_kp_s_Please_create_on_auth_user_with); if (unlikely(!__pyx_tuple__15)) __PYX_ERR(0, 312, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__15);
   __Pyx_GIVEREF(__pyx_tuple__15);
 
-  /* "cy_web_x.py":368
+  /* "cy_web_x.py":372
  *         self.static_dir = static_dir
  *         if self.static_dir is not None and self.static_dir[0:2] == "./":
  *             self.static_dir = os.path.join(self.working_dir, self.static_dir[2:])             # <<<<<<<<<<<<<<
  *         self.logs_dir = logs_dir
  *         if self.logs_dir[0:2] == "./":
  */
-  __pyx_slice__16 = PySlice_New(__pyx_int_2, Py_None, Py_None); if (unlikely(!__pyx_slice__16)) __PYX_ERR(0, 368, __pyx_L1_error)
+  __pyx_slice__16 = PySlice_New(__pyx_int_2, Py_None, Py_None); if (unlikely(!__pyx_slice__16)) __PYX_ERR(0, 372, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_slice__16);
   __Pyx_GIVEREF(__pyx_slice__16);
 
-  /* "cy_web_x.py":453
+  /* "cy_web_x.py":457
  * def web_handler(path: str, method: str,response_model=None):
  * 
  *     def warpper(obj):             # <<<<<<<<<<<<<<
  *         import inspect
  *         if inspect.isclass(obj):
  */
-  __pyx_tuple__20 = PyTuple_Pack(2, __pyx_n_s_obj, __pyx_n_s_inspect); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 453, __pyx_L1_error)
+  __pyx_tuple__20 = PyTuple_Pack(2, __pyx_n_s_obj, __pyx_n_s_inspect); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 457, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
-  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_warpper, 453, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 453, __pyx_L1_error)
+  __pyx_codeobj__21 = (PyObject*)__Pyx_PyCode_New(1, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__20, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_warpper, 457, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__21)) __PYX_ERR(0, 457, __pyx_L1_error)
 
-  /* "cy_web_x.py":493
+  /* "cy_web_x.py":497
  *     async def __call__(self, request: fastapi.Request):
  * 
  *         if request.cookies.get('access_token_cookie', None) is not None:             # <<<<<<<<<<<<<<
  *             token = request.cookies['access_token_cookie']
  *             try:
  */
-  __pyx_tuple__23 = PyTuple_Pack(2, __pyx_n_s_access_token_cookie, Py_None); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 493, __pyx_L1_error)
+  __pyx_tuple__23 = PyTuple_Pack(2, __pyx_n_s_access_token_cookie, Py_None); if (unlikely(!__pyx_tuple__23)) __PYX_ERR(0, 497, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__23);
   __Pyx_GIVEREF(__pyx_tuple__23);
 
-  /* "cy_web_x.py":577
+  /* "cy_web_x.py":581
  * 
  * def auth_account():
  *     def wrapper(fn):             # <<<<<<<<<<<<<<
  *         if not callable(fn):
  *             raise Exception(f"{fn.__name__} in {fn.__code__.co_filename} must be a function")
  */
-  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_n_s_fn); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 577, __pyx_L1_error)
+  __pyx_tuple__25 = PyTuple_Pack(1, __pyx_n_s_fn); if (unlikely(!__pyx_tuple__25)) __PYX_ERR(0, 581, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__25);
   __Pyx_GIVEREF(__pyx_tuple__25);
-  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_wrapper, 577, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 577, __pyx_L1_error)
+  __pyx_codeobj__26 = (PyObject*)__Pyx_PyCode_New(1, 0, 1, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__25, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_wrapper, 581, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__26)) __PYX_ERR(0, 581, __pyx_L1_error)
 
   /* "cy_web_x.py":19
  * 
@@ -17912,161 +18138,170 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_GIVEREF(__pyx_tuple__55);
   __pyx_codeobj__56 = (PyObject*)__Pyx_PyCode_New(3, 0, 10, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__55, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_load_controller_from_file, 257, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__56)) __PYX_ERR(0, 257, __pyx_L1_error)
 
-  /* "cy_web_x.py":292
+  /* "cy_web_x.py":296
  * from typing import Union
  * from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
  * def create_access_token(data: dict, expires_delta = None,SECRET_KEY=None,ALGORITHM=None):             # <<<<<<<<<<<<<<
  *     to_encode = data.copy()
  *     if expires_delta:
  */
-  __pyx_tuple__57 = PyTuple_Pack(7, __pyx_n_s_data, __pyx_n_s_expires_delta, __pyx_n_s_SECRET_KEY, __pyx_n_s_ALGORITHM, __pyx_n_s_to_encode, __pyx_n_s_expire, __pyx_n_s_encoded_jwt); if (unlikely(!__pyx_tuple__57)) __PYX_ERR(0, 292, __pyx_L1_error)
+  __pyx_tuple__57 = PyTuple_Pack(7, __pyx_n_s_data, __pyx_n_s_expires_delta, __pyx_n_s_SECRET_KEY, __pyx_n_s_ALGORITHM, __pyx_n_s_to_encode, __pyx_n_s_expire, __pyx_n_s_encoded_jwt); if (unlikely(!__pyx_tuple__57)) __PYX_ERR(0, 296, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__57);
   __Pyx_GIVEREF(__pyx_tuple__57);
-  __pyx_codeobj__58 = (PyObject*)__Pyx_PyCode_New(4, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__57, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_create_access_token, 292, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__58)) __PYX_ERR(0, 292, __pyx_L1_error)
-  __pyx_tuple__59 = PyTuple_Pack(3, ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None)); if (unlikely(!__pyx_tuple__59)) __PYX_ERR(0, 292, __pyx_L1_error)
+  __pyx_codeobj__58 = (PyObject*)__Pyx_PyCode_New(4, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__57, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_create_access_token, 296, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__58)) __PYX_ERR(0, 296, __pyx_L1_error)
+  __pyx_tuple__59 = PyTuple_Pack(3, ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None)); if (unlikely(!__pyx_tuple__59)) __PYX_ERR(0, 296, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__59);
   __Pyx_GIVEREF(__pyx_tuple__59);
 
-  /* "cy_web_x.py":303
+  /* "cy_web_x.py":307
  * 
  * 
  * def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):             # <<<<<<<<<<<<<<
  *     global web_application
  *     if not isinstance(web_application,WebApp):
  */
-  __pyx_tuple__60 = PyTuple_Pack(3, __pyx_n_s_form_data, __pyx_n_s_user, __pyx_n_s_access_token); if (unlikely(!__pyx_tuple__60)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_tuple__60 = PyTuple_Pack(3, __pyx_n_s_form_data, __pyx_n_s_user, __pyx_n_s_access_token); if (unlikely(!__pyx_tuple__60)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__60);
   __Pyx_GIVEREF(__pyx_tuple__60);
-  __pyx_codeobj__61 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__60, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_login_for_access_token, 303, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__61)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_codeobj__61 = (PyObject*)__Pyx_PyCode_New(1, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__60, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_login_for_access_token, 307, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__61)) __PYX_ERR(0, 307, __pyx_L1_error)
 
-  /* "cy_web_x.py":335
+  /* "cy_web_x.py":339
  * 
  * 
  *     def __init__(self,             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_tuple__62 = PyTuple_Pack(16, __pyx_n_s_self, __pyx_n_s_working_dir, __pyx_n_s_bind, __pyx_n_s_host_url, __pyx_n_s_logs_dir, __pyx_n_s_controller_dirs, __pyx_n_s_api_host_dir, __pyx_n_s_static_dir, __pyx_n_s_dev_mode, __pyx_n_s_template_dir, __pyx_n_s_url_get_token, __pyx_n_s_jwt_algorithm, __pyx_n_s_jwt_secret_key, __pyx_n_s_remain, __pyx_n_s_StaticFiles, __pyx_n_s_x); if (unlikely(!__pyx_tuple__62)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_tuple__62 = PyTuple_Pack(16, __pyx_n_s_self, __pyx_n_s_working_dir, __pyx_n_s_bind, __pyx_n_s_host_url, __pyx_n_s_logs_dir, __pyx_n_s_controller_dirs, __pyx_n_s_api_host_dir, __pyx_n_s_static_dir, __pyx_n_s_dev_mode, __pyx_n_s_template_dir, __pyx_n_s_url_get_token, __pyx_n_s_jwt_algorithm, __pyx_n_s_jwt_secret_key, __pyx_n_s_remain, __pyx_n_s_StaticFiles, __pyx_n_s_x); if (unlikely(!__pyx_tuple__62)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__62);
   __Pyx_GIVEREF(__pyx_tuple__62);
-  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(13, 0, 16, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__62, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_init, 335, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_codeobj__63 = (PyObject*)__Pyx_PyCode_New(13, 0, 16, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__62, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_init, 339, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__63)) __PYX_ERR(0, 339, __pyx_L1_error)
 
-  /* "cy_web_x.py":421
+  /* "cy_web_x.py":425
  * 
  * 
  *     def unvicorn_start(self, start_path):             # <<<<<<<<<<<<<<
  *         global web_application
  *         # for k,v in self.web_app_module.__dict__.items():
  */
-  __pyx_tuple__64 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_start_path, __pyx_n_s_run_path); if (unlikely(!__pyx_tuple__64)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __pyx_tuple__64 = PyTuple_Pack(3, __pyx_n_s_self, __pyx_n_s_start_path, __pyx_n_s_run_path); if (unlikely(!__pyx_tuple__64)) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__64);
   __Pyx_GIVEREF(__pyx_tuple__64);
-  __pyx_codeobj__65 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__64, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_unvicorn_start, 421, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__65)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __pyx_codeobj__65 = (PyObject*)__Pyx_PyCode_New(2, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__64, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_unvicorn_start, 425, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__65)) __PYX_ERR(0, 425, __pyx_L1_error)
 
-  /* "cy_web_x.py":451
+  /* "cy_web_x.py":455
  * 
  * 
  * def web_handler(path: str, method: str,response_model=None):             # <<<<<<<<<<<<<<
  * 
  *     def warpper(obj):
  */
-  __pyx_tuple__66 = PyTuple_Pack(5, __pyx_n_s_path, __pyx_n_s_method, __pyx_n_s_response_model, __pyx_n_s_warpper, __pyx_n_s_warpper); if (unlikely(!__pyx_tuple__66)) __PYX_ERR(0, 451, __pyx_L1_error)
+  __pyx_tuple__66 = PyTuple_Pack(5, __pyx_n_s_path, __pyx_n_s_method, __pyx_n_s_response_model, __pyx_n_s_warpper, __pyx_n_s_warpper); if (unlikely(!__pyx_tuple__66)) __PYX_ERR(0, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__66);
   __Pyx_GIVEREF(__pyx_tuple__66);
-  __pyx_codeobj__67 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__66, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_web_handler, 451, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__67)) __PYX_ERR(0, 451, __pyx_L1_error)
-  __pyx_tuple__68 = PyTuple_Pack(1, ((PyObject *)Py_None)); if (unlikely(!__pyx_tuple__68)) __PYX_ERR(0, 451, __pyx_L1_error)
+  __pyx_codeobj__67 = (PyObject*)__Pyx_PyCode_New(3, 0, 5, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__66, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_web_handler, 455, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__67)) __PYX_ERR(0, 455, __pyx_L1_error)
+  __pyx_tuple__68 = PyTuple_Pack(1, ((PyObject *)Py_None)); if (unlikely(!__pyx_tuple__68)) __PYX_ERR(0, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__68);
   __Pyx_GIVEREF(__pyx_tuple__68);
 
-  /* "cy_web_x.py":468
+  /* "cy_web_x.py":472
  * 
  * class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):
  *     def __init__(             # <<<<<<<<<<<<<<
  *             self,
  *             token_url: str,
  */
-  __pyx_tuple__69 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_token_url, __pyx_n_s_jwt_secret_key, __pyx_n_s_jwt_algorithm, __pyx_n_s_scheme_name, __pyx_n_s_scopes, __pyx_n_s_description, __pyx_n_s_auto_error); if (unlikely(!__pyx_tuple__69)) __PYX_ERR(0, 468, __pyx_L1_error)
+  __pyx_tuple__69 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_token_url, __pyx_n_s_jwt_secret_key, __pyx_n_s_jwt_algorithm, __pyx_n_s_scheme_name, __pyx_n_s_scopes, __pyx_n_s_description, __pyx_n_s_auto_error); if (unlikely(!__pyx_tuple__69)) __PYX_ERR(0, 472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__69);
   __Pyx_GIVEREF(__pyx_tuple__69);
-  __pyx_codeobj__70 = (PyObject*)__Pyx_PyCode_New(8, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__69, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_init, 468, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__70)) __PYX_ERR(0, 468, __pyx_L1_error)
-  __pyx_tuple__71 = PyTuple_Pack(4, ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_True)); if (unlikely(!__pyx_tuple__71)) __PYX_ERR(0, 468, __pyx_L1_error)
+  __pyx_codeobj__70 = (PyObject*)__Pyx_PyCode_New(8, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__69, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_init, 472, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__70)) __PYX_ERR(0, 472, __pyx_L1_error)
+  __pyx_tuple__71 = PyTuple_Pack(4, ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_True)); if (unlikely(!__pyx_tuple__71)) __PYX_ERR(0, 472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__71);
   __Pyx_GIVEREF(__pyx_tuple__71);
 
-  /* "cy_web_x.py":491
+  /* "cy_web_x.py":495
  *         self.jwt_algorithm = jwt_algorithm
  * 
  *     async def __call__(self, request: fastapi.Request):             # <<<<<<<<<<<<<<
  * 
  *         if request.cookies.get('access_token_cookie', None) is not None:
  */
-  __pyx_tuple__72 = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_request, __pyx_n_s_token, __pyx_n_s_ret_data, __pyx_n_s_e, __pyx_n_s_authorization, __pyx_n_s_scheme); if (unlikely(!__pyx_tuple__72)) __PYX_ERR(0, 491, __pyx_L1_error)
+  __pyx_tuple__72 = PyTuple_Pack(7, __pyx_n_s_self, __pyx_n_s_request, __pyx_n_s_token, __pyx_n_s_ret_data, __pyx_n_s_e, __pyx_n_s_authorization, __pyx_n_s_scheme); if (unlikely(!__pyx_tuple__72)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__72);
   __Pyx_GIVEREF(__pyx_tuple__72);
-  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(2, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__72, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_call, 491, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 491, __pyx_L1_error)
+  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(2, 0, 7, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__72, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_call, 495, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 495, __pyx_L1_error)
 
-  /* "cy_web_x.py":549
+  /* "cy_web_x.py":553
  * 
  * 
  * def add_controller(web_app,prefix_path: str, controller_dir):             # <<<<<<<<<<<<<<
  *     web_app.load_controller_from_dir(prefix_path, controller_dir)
  * def start_with_uvicorn():
  */
-  __pyx_tuple__73 = PyTuple_Pack(3, __pyx_n_s_web_app, __pyx_n_s_prefix_path, __pyx_n_s_controller_dir); if (unlikely(!__pyx_tuple__73)) __PYX_ERR(0, 549, __pyx_L1_error)
+  __pyx_tuple__73 = PyTuple_Pack(3, __pyx_n_s_web_app, __pyx_n_s_prefix_path, __pyx_n_s_controller_dir); if (unlikely(!__pyx_tuple__73)) __PYX_ERR(0, 553, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__73);
   __Pyx_GIVEREF(__pyx_tuple__73);
-  __pyx_codeobj__74 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__73, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_add_controller, 549, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__74)) __PYX_ERR(0, 549, __pyx_L1_error)
+  __pyx_codeobj__74 = (PyObject*)__Pyx_PyCode_New(3, 0, 3, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__73, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_add_controller, 553, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__74)) __PYX_ERR(0, 553, __pyx_L1_error)
 
-  /* "cy_web_x.py":551
+  /* "cy_web_x.py":555
  * def add_controller(web_app,prefix_path: str, controller_dir):
  *     web_app.load_controller_from_dir(prefix_path, controller_dir)
  * def start_with_uvicorn():             # <<<<<<<<<<<<<<
  *     global web_application
  *     if isinstance(web_application,WebApp):
  */
-  __pyx_codeobj__75 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_start_with_uvicorn, 551, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__75)) __PYX_ERR(0, 551, __pyx_L1_error)
+  __pyx_codeobj__75 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_start_with_uvicorn, 555, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__75)) __PYX_ERR(0, 555, __pyx_L1_error)
 
-  /* "cy_web_x.py":561
+  /* "cy_web_x.py":565
  * 
  * 
  * def load_controller_from_dir(prefix, controller_path):             # <<<<<<<<<<<<<<
  *     global web_application
  *     if isinstance(web_application,WebApp):
  */
-  __pyx_tuple__76 = PyTuple_Pack(2, __pyx_n_s_prefix, __pyx_n_s_controller_path); if (unlikely(!__pyx_tuple__76)) __PYX_ERR(0, 561, __pyx_L1_error)
+  __pyx_tuple__76 = PyTuple_Pack(2, __pyx_n_s_prefix, __pyx_n_s_controller_path); if (unlikely(!__pyx_tuple__76)) __PYX_ERR(0, 565, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__76);
   __Pyx_GIVEREF(__pyx_tuple__76);
-  __pyx_codeobj__77 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__76, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_load_controller_from_dir, 561, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__77)) __PYX_ERR(0, 561, __pyx_L1_error)
+  __pyx_codeobj__77 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__76, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_load_controller_from_dir, 565, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__77)) __PYX_ERR(0, 565, __pyx_L1_error)
 
-  /* "cy_web_x.py":567
+  /* "cy_web_x.py":571
  *             prefix, controller_path
  *         )
  * def middleware():             # <<<<<<<<<<<<<<
  *     global web_application
  *     if isinstance(web_application, WebApp):
  */
-  __pyx_codeobj__78 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_middleware, 567, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__78)) __PYX_ERR(0, 567, __pyx_L1_error)
+  __pyx_codeobj__78 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_middleware, 571, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__78)) __PYX_ERR(0, 571, __pyx_L1_error)
 
-  /* "cy_web_x.py":571
+  /* "cy_web_x.py":575
  *     if isinstance(web_application, WebApp):
  *         return web_application.app.middleware("http")
  * def auth():             # <<<<<<<<<<<<<<
  *     global web_application
  *     if isinstance(web_application,WebApp):
  */
-  __pyx_codeobj__79 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_auth, 571, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__79)) __PYX_ERR(0, 571, __pyx_L1_error)
+  __pyx_codeobj__79 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_auth, 575, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__79)) __PYX_ERR(0, 575, __pyx_L1_error)
 
-  /* "cy_web_x.py":576
+  /* "cy_web_x.py":580
  *         return fastapi.Depends(web_application.get_auth())
  * 
  * def auth_account():             # <<<<<<<<<<<<<<
  *     def wrapper(fn):
  *         if not callable(fn):
  */
-  __pyx_tuple__80 = PyTuple_Pack(2, __pyx_n_s_wrapper, __pyx_n_s_wrapper); if (unlikely(!__pyx_tuple__80)) __PYX_ERR(0, 576, __pyx_L1_error)
+  __pyx_tuple__80 = PyTuple_Pack(2, __pyx_n_s_wrapper, __pyx_n_s_wrapper); if (unlikely(!__pyx_tuple__80)) __PYX_ERR(0, 580, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__80);
   __Pyx_GIVEREF(__pyx_tuple__80);
-  __pyx_codeobj__81 = (PyObject*)__Pyx_PyCode_New(0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__80, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_auth_account, 576, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__81)) __PYX_ERR(0, 576, __pyx_L1_error)
+  __pyx_codeobj__81 = (PyObject*)__Pyx_PyCode_New(0, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__80, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_auth_account, 580, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__81)) __PYX_ERR(0, 580, __pyx_L1_error)
+
+  /* "cy_web_x.py":596
+ * 
+ * 
+ * def fast_api()->fastapi.FastAPI:             # <<<<<<<<<<<<<<
+ *     global web_application
+ *     if isinstance(web_application,WebApp):
+ */
+  __pyx_codeobj__82 = (PyObject*)__Pyx_PyCode_New(0, 0, 0, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_cy_web_cy_web_x_cy_web_x_py, __pyx_n_s_fast_api, 596, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__82)) __PYX_ERR(0, 596, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -18140,7 +18375,7 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_type_8cy_web_x___pyx_scope_struct__auth.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
   }
   __pyx_ptype_8cy_web_x___pyx_scope_struct__auth = &__pyx_type_8cy_web_x___pyx_scope_struct__auth;
-  if (PyType_Ready(&__pyx_type_8cy_web_x___pyx_scope_struct_1_web_handler) < 0) __PYX_ERR(0, 451, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_8cy_web_x___pyx_scope_struct_1_web_handler) < 0) __PYX_ERR(0, 455, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_8cy_web_x___pyx_scope_struct_1_web_handler.tp_print = 0;
   #endif
@@ -18148,7 +18383,7 @@ static int __Pyx_modinit_type_init_code(void) {
     __pyx_type_8cy_web_x___pyx_scope_struct_1_web_handler.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
   }
   __pyx_ptype_8cy_web_x___pyx_scope_struct_1_web_handler = &__pyx_type_8cy_web_x___pyx_scope_struct_1_web_handler;
-  if (PyType_Ready(&__pyx_type_8cy_web_x___pyx_scope_struct_2___call__) < 0) __PYX_ERR(0, 491, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_8cy_web_x___pyx_scope_struct_2___call__) < 0) __PYX_ERR(0, 495, __pyx_L1_error)
   #if PY_VERSION_HEX < 0x030800B1
   __pyx_type_8cy_web_x___pyx_scope_struct_2___call__.tp_print = 0;
   #endif
@@ -18980,62 +19215,62 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":284
+  /* "cy_web_x.py":288
  *                 self.request_handlers[v.path]=v
  * 
  * __cache_apps__ = {}             # <<<<<<<<<<<<<<
  * __cache_apps_lock__ = threading.Lock()
  * __instance__ = None
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 284, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 288, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cache_apps, __pyx_t_1) < 0) __PYX_ERR(0, 284, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cache_apps, __pyx_t_1) < 0) __PYX_ERR(0, 288, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":285
+  /* "cy_web_x.py":289
  * 
  * __cache_apps__ = {}
  * __cache_apps_lock__ = threading.Lock()             # <<<<<<<<<<<<<<
  * __instance__ = None
  * web_application = None
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_threading); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_threading); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_Lock); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_Lock); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_CallNoArg(__pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cache_apps_lock, __pyx_t_1) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_cache_apps_lock, __pyx_t_1) < 0) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":286
+  /* "cy_web_x.py":290
  * __cache_apps__ = {}
  * __cache_apps_lock__ = threading.Lock()
  * __instance__ = None             # <<<<<<<<<<<<<<
  * web_application = None
  * from fastapi import Depends, FastAPI, HTTPException, status
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_instance, Py_None) < 0) __PYX_ERR(0, 286, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_instance, Py_None) < 0) __PYX_ERR(0, 290, __pyx_L1_error)
 
-  /* "cy_web_x.py":287
+  /* "cy_web_x.py":291
  * __cache_apps_lock__ = threading.Lock()
  * __instance__ = None
  * web_application = None             # <<<<<<<<<<<<<<
  * from fastapi import Depends, FastAPI, HTTPException, status
  * from datetime import datetime, timedelta
  */
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_web_application, Py_None) < 0) __PYX_ERR(0, 287, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_web_application, Py_None) < 0) __PYX_ERR(0, 291, __pyx_L1_error)
 
-  /* "cy_web_x.py":288
+  /* "cy_web_x.py":292
  * __instance__ = None
  * web_application = None
  * from fastapi import Depends, FastAPI, HTTPException, status             # <<<<<<<<<<<<<<
  * from datetime import datetime, timedelta
  * from typing import Union
  */
-  __pyx_t_1 = PyList_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 288, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_n_s_Depends);
   __Pyx_GIVEREF(__pyx_n_s_Depends);
@@ -19049,35 +19284,35 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_status);
   __Pyx_GIVEREF(__pyx_n_s_status);
   PyList_SET_ITEM(__pyx_t_1, 3, __pyx_n_s_status);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_fastapi, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 288, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_fastapi, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_Depends); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 288, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_Depends); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Depends, __pyx_t_1) < 0) __PYX_ERR(0, 288, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Depends, __pyx_t_1) < 0) __PYX_ERR(0, 292, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_FastAPI); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 288, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_FastAPI); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_FastAPI, __pyx_t_1) < 0) __PYX_ERR(0, 288, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_FastAPI, __pyx_t_1) < 0) __PYX_ERR(0, 292, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 288, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_HTTPException); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_HTTPException, __pyx_t_1) < 0) __PYX_ERR(0, 288, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_HTTPException, __pyx_t_1) < 0) __PYX_ERR(0, 292, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_status); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 288, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_status); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 292, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_status, __pyx_t_1) < 0) __PYX_ERR(0, 288, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_status, __pyx_t_1) < 0) __PYX_ERR(0, 292, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cy_web_x.py":289
+  /* "cy_web_x.py":293
  * web_application = None
  * from fastapi import Depends, FastAPI, HTTPException, status
  * from datetime import datetime, timedelta             # <<<<<<<<<<<<<<
  * from typing import Union
  * from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
  */
-  __pyx_t_2 = PyList_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_datetime);
   __Pyx_GIVEREF(__pyx_n_s_datetime);
@@ -19085,48 +19320,48 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_timedelta);
   __Pyx_GIVEREF(__pyx_n_s_timedelta);
   PyList_SET_ITEM(__pyx_t_2, 1, __pyx_n_s_timedelta);
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_datetime, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_datetime, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_datetime); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_datetime); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_datetime, __pyx_t_2) < 0) __PYX_ERR(0, 289, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_datetime, __pyx_t_2) < 0) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_timedelta); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_timedelta); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_timedelta, __pyx_t_2) < 0) __PYX_ERR(0, 289, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_timedelta, __pyx_t_2) < 0) __PYX_ERR(0, 293, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":290
+  /* "cy_web_x.py":294
  * from fastapi import Depends, FastAPI, HTTPException, status
  * from datetime import datetime, timedelta
  * from typing import Union             # <<<<<<<<<<<<<<
  * from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
  * def create_access_token(data: dict, expires_delta = None,SECRET_KEY=None,ALGORITHM=None):
  */
-  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 290, __pyx_L1_error)
+  __pyx_t_1 = PyList_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 294, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(__pyx_n_s_Union);
   __Pyx_GIVEREF(__pyx_n_s_Union);
   PyList_SET_ITEM(__pyx_t_1, 0, __pyx_n_s_Union);
-  __pyx_t_2 = __Pyx_Import(__pyx_n_s_typing, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 290, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_Import(__pyx_n_s_typing, __pyx_t_1, -1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 294, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_Union); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 290, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_ImportFrom(__pyx_t_2, __pyx_n_s_Union); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 294, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Union, __pyx_t_1) < 0) __PYX_ERR(0, 290, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_Union, __pyx_t_1) < 0) __PYX_ERR(0, 294, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cy_web_x.py":291
+  /* "cy_web_x.py":295
  * from datetime import datetime, timedelta
  * from typing import Union
  * from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm             # <<<<<<<<<<<<<<
  * def create_access_token(data: dict, expires_delta = None,SECRET_KEY=None,ALGORITHM=None):
  *     to_encode = data.copy()
  */
-  __pyx_t_2 = PyList_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 291, __pyx_L1_error)
+  __pyx_t_2 = PyList_New(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 295, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_INCREF(__pyx_n_s_OAuth2PasswordBearer);
   __Pyx_GIVEREF(__pyx_n_s_OAuth2PasswordBearer);
@@ -19134,266 +19369,266 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(__pyx_n_s_OAuth2PasswordRequestForm);
   __Pyx_GIVEREF(__pyx_n_s_OAuth2PasswordRequestForm);
   PyList_SET_ITEM(__pyx_t_2, 1, __pyx_n_s_OAuth2PasswordRequestForm);
-  __pyx_t_1 = __Pyx_Import(__pyx_n_s_fastapi_security, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 291, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_Import(__pyx_n_s_fastapi_security, __pyx_t_2, -1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 295, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_OAuth2PasswordBearer); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 291, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_OAuth2PasswordBearer); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 295, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_OAuth2PasswordBearer, __pyx_t_2) < 0) __PYX_ERR(0, 291, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_OAuth2PasswordBearer, __pyx_t_2) < 0) __PYX_ERR(0, 295, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_OAuth2PasswordRequestForm); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 291, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_ImportFrom(__pyx_t_1, __pyx_n_s_OAuth2PasswordRequestForm); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 295, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_OAuth2PasswordRequestForm, __pyx_t_2) < 0) __PYX_ERR(0, 291, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_OAuth2PasswordRequestForm, __pyx_t_2) < 0) __PYX_ERR(0, 295, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":292
+  /* "cy_web_x.py":296
  * from typing import Union
  * from fastapi.security import OAuth2PasswordBearer, OAuth2PasswordRequestForm
  * def create_access_token(data: dict, expires_delta = None,SECRET_KEY=None,ALGORITHM=None):             # <<<<<<<<<<<<<<
  *     to_encode = data.copy()
  *     if expires_delta:
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 292, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 296, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_n_u_dict_2) < 0) __PYX_ERR(0, 292, __pyx_L1_error)
-  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_11create_access_token, 0, __pyx_n_s_create_access_token, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__58)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 292, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_data, __pyx_n_u_dict_2) < 0) __PYX_ERR(0, 296, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_11create_access_token, 0, __pyx_n_s_create_access_token, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__58)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 296, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_2, __pyx_tuple__59);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_2, __pyx_t_1);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_create_access_token, __pyx_t_2) < 0) __PYX_ERR(0, 292, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_create_access_token, __pyx_t_2) < 0) __PYX_ERR(0, 296, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cy_web_x.py":303
+  /* "cy_web_x.py":307
  * 
  * 
  * def login_for_access_token(form_data: OAuth2PasswordRequestForm = Depends()):             # <<<<<<<<<<<<<<
  *     global web_application
  *     if not isinstance(web_application,WebApp):
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_OAuth2PasswordRequestForm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_OAuth2PasswordRequestForm); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_form_data, __pyx_t_1) < 0) __PYX_ERR(0, 303, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_form_data, __pyx_t_1) < 0) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_13login_for_access_token, 0, __pyx_n_s_login_for_access_token, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__61)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_13login_for_access_token, 0, __pyx_n_s_login_for_access_token, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__61)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_1, sizeof(__pyx_defaults), 1)) __PYX_ERR(0, 303, __pyx_L1_error)
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_Depends); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 303, __pyx_L1_error)
+  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_1, sizeof(__pyx_defaults), 1)) __PYX_ERR(0, 307, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_Depends); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 303, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_CallNoArg(__pyx_t_4); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_CyFunction_Defaults(__pyx_defaults, __pyx_t_1)->__pyx_arg_form_data = __pyx_t_3;
   __Pyx_GIVEREF(__pyx_t_3);
   __pyx_t_3 = 0;
-  __Pyx_CyFunction_SetDefaultsGetter(__pyx_t_1, __pyx_pf_8cy_web_x_28__defaults__);
+  __Pyx_CyFunction_SetDefaultsGetter(__pyx_t_1, __pyx_pf_8cy_web_x_30__defaults__);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_1, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_login_for_access_token, __pyx_t_1) < 0) __PYX_ERR(0, 303, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_login_for_access_token, __pyx_t_1) < 0) __PYX_ERR(0, 307, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":332
+  /* "cy_web_x.py":336
  *     return {"access_token": access_token, "token_type": "bearer"}
  * 
  * class WebApp(BaseWebApp):             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_BaseWebApp); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_BaseWebApp); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_WebApp, __pyx_n_s_WebApp, (PyObject *) NULL, __pyx_n_s_cy_web_x, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_WebApp, __pyx_n_s_WebApp, (PyObject *) NULL, __pyx_n_s_cy_web_x, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "cy_web_x.py":335
+  /* "cy_web_x.py":339
  * 
  * 
  *     def __init__(self,             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(12); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(12); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_working_dir, __pyx_n_u_str) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_bind, __pyx_n_u_str) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_host_url, __pyx_n_u_str) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_logs_dir, __pyx_n_u_str) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_working_dir, __pyx_n_u_str) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_bind, __pyx_n_u_str) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_host_url, __pyx_n_u_str) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_logs_dir, __pyx_n_u_str) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
 
-  /* "cy_web_x.py":342
+  /* "cy_web_x.py":346
  *                  host_url: str = "http://localhost:8011",
  *                  logs_dir: str = "./logs",
  *                  controller_dirs: List[str] = [],             # <<<<<<<<<<<<<<
  *                  api_host_dir: str = "api",
  *                  static_dir: str = None,
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_List); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 342, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_List); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 346, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_5, ((PyObject *)(&PyString_Type))); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 342, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_5, ((PyObject *)(&PyString_Type))); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 346, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_controller_dirs, __pyx_t_6) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_controller_dirs, __pyx_t_6) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_api_host_dir, __pyx_n_u_str) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_static_dir, __pyx_n_u_str) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_api_host_dir, __pyx_n_u_str) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_static_dir, __pyx_n_u_str) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
 
-  /* "cy_web_x.py":345
+  /* "cy_web_x.py":349
  *                  api_host_dir: str = "api",
  *                  static_dir: str = None,
  *                  dev_mode: bool = False,             # <<<<<<<<<<<<<<
  *                  template_dir: str = None,
  *                  url_get_token: str = "api/accounts/token",
  */
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dev_mode, ((PyObject*)&PyBool_Type)) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_template_dir, __pyx_n_u_str) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_url_get_token, __pyx_n_u_str) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_jwt_algorithm, __pyx_n_u_str) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_jwt_secret_key, __pyx_n_u_str) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_dev_mode, ((PyObject*)&PyBool_Type)) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_template_dir, __pyx_n_u_str) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_url_get_token, __pyx_n_u_str) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_jwt_algorithm, __pyx_n_u_str) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_jwt_secret_key, __pyx_n_u_str) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
 
-  /* "cy_web_x.py":335
+  /* "cy_web_x.py":339
  * 
  * 
  *     def __init__(self,             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_6WebApp_1__init__, 0, __pyx_n_s_WebApp___init, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__63)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 335, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_6WebApp_1__init__, 0, __pyx_n_s_WebApp___init, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__63)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_6, sizeof(__pyx_defaults1), 1)) __PYX_ERR(0, 335, __pyx_L1_error)
+  if (!__Pyx_CyFunction_InitDefaults(__pyx_t_6, sizeof(__pyx_defaults1), 1)) __PYX_ERR(0, 339, __pyx_L1_error)
 
-  /* "cy_web_x.py":342
+  /* "cy_web_x.py":346
  *                  host_url: str = "http://localhost:8011",
  *                  logs_dir: str = "./logs",
  *                  controller_dirs: List[str] = [],             # <<<<<<<<<<<<<<
  *                  api_host_dir: str = "api",
  *                  static_dir: str = None,
  */
-  __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 342, __pyx_L1_error)
+  __pyx_t_5 = PyList_New(0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 346, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_CyFunction_Defaults(__pyx_defaults1, __pyx_t_6)->__pyx_arg_controller_dirs = __pyx_t_5;
   __Pyx_GIVEREF(__pyx_t_5);
   __pyx_t_5 = 0;
-  __Pyx_CyFunction_SetDefaultsGetter(__pyx_t_6, __pyx_pf_8cy_web_x_30__defaults__);
+  __Pyx_CyFunction_SetDefaultsGetter(__pyx_t_6, __pyx_pf_8cy_web_x_32__defaults__);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_6, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_6) < 0) __PYX_ERR(0, 335, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_6) < 0) __PYX_ERR(0, 339, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "cy_web_x.py":421
+  /* "cy_web_x.py":425
  * 
  * 
  *     def unvicorn_start(self, start_path):             # <<<<<<<<<<<<<<
  *         global web_application
  *         # for k,v in self.web_app_module.__dict__.items():
  */
-  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_6WebApp_3unvicorn_start, 0, __pyx_n_s_WebApp_unvicorn_start, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__65)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_6WebApp_3unvicorn_start, 0, __pyx_n_s_WebApp_unvicorn_start, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__65)); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_unvicorn_start, __pyx_t_6) < 0) __PYX_ERR(0, 421, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_unvicorn_start, __pyx_t_6) < 0) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
 
-  /* "cy_web_x.py":332
+  /* "cy_web_x.py":336
  *     return {"access_token": access_token, "token_type": "bearer"}
  * 
  * class WebApp(BaseWebApp):             # <<<<<<<<<<<<<<
  * 
  * 
  */
-  __pyx_t_6 = __Pyx_Py3ClassCreate(__pyx_t_1, __pyx_n_s_WebApp, __pyx_t_2, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 332, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_Py3ClassCreate(__pyx_t_1, __pyx_n_s_WebApp, __pyx_t_2, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_WebApp, __pyx_t_6) < 0) __PYX_ERR(0, 332, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_WebApp, __pyx_t_6) < 0) __PYX_ERR(0, 336, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cy_web_x.py":451
+  /* "cy_web_x.py":455
  * 
  * 
  * def web_handler(path: str, method: str,response_model=None):             # <<<<<<<<<<<<<<
  * 
  *     def warpper(obj):
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 451, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_path, __pyx_n_u_str) < 0) __PYX_ERR(0, 451, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_method, __pyx_n_u_str) < 0) __PYX_ERR(0, 451, __pyx_L1_error)
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_15web_handler, 0, __pyx_n_s_web_handler, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__67)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 451, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_path, __pyx_n_u_str) < 0) __PYX_ERR(0, 455, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_method, __pyx_n_u_str) < 0) __PYX_ERR(0, 455, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_15web_handler, 0, __pyx_n_s_web_handler, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__67)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 455, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_1, __pyx_tuple__68);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_1, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_web_handler, __pyx_t_1) < 0) __PYX_ERR(0, 451, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_web_handler, __pyx_t_1) < 0) __PYX_ERR(0, 455, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":467
+  /* "cy_web_x.py":471
  * 
  * 
  * class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):             # <<<<<<<<<<<<<<
  *     def __init__(
  *             self,
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_OAuth2PasswordBearer); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 467, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_OAuth2PasswordBearer); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 467, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 467, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_OAuth2PasswordBearerAndCookie, __pyx_n_s_OAuth2PasswordBearerAndCookie, (PyObject *) NULL, __pyx_n_s_cy_web_x, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 467, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_OAuth2PasswordBearerAndCookie, __pyx_n_s_OAuth2PasswordBearerAndCookie, (PyObject *) NULL, __pyx_n_s_cy_web_x, (PyObject *) NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 467, __pyx_L1_error)
+  __pyx_t_6 = PyList_New(0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
 
-  /* "cy_web_x.py":468
+  /* "cy_web_x.py":472
  * 
  * class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):
  *     def __init__(             # <<<<<<<<<<<<<<
  *             self,
  *             token_url: str,
  */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 468, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_token_url, __pyx_n_u_str) < 0) __PYX_ERR(0, 468, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_jwt_secret_key, __pyx_n_u_str) < 0) __PYX_ERR(0, 468, __pyx_L1_error)
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_jwt_algorithm, __pyx_n_u_str) < 0) __PYX_ERR(0, 468, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_token_url, __pyx_n_u_str) < 0) __PYX_ERR(0, 472, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_jwt_secret_key, __pyx_n_u_str) < 0) __PYX_ERR(0, 472, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_jwt_algorithm, __pyx_n_u_str) < 0) __PYX_ERR(0, 472, __pyx_L1_error)
 
-  /* "cy_web_x.py":473
+  /* "cy_web_x.py":477
  *             jwt_secret_key: str,
  *             jwt_algorithm: str,
  *             scheme_name: Optional[str] = None,             # <<<<<<<<<<<<<<
  *             scopes: Optional[Dict[str, str]] = None,
  *             description: Optional[str] = None,
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_Optional); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 473, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_Optional); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 477, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_5, ((PyObject *)(&PyString_Type))); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 473, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_5, ((PyObject *)(&PyString_Type))); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 477, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_scheme_name, __pyx_t_7) < 0) __PYX_ERR(0, 468, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_scheme_name, __pyx_t_7) < 0) __PYX_ERR(0, 472, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "cy_web_x.py":474
+  /* "cy_web_x.py":478
  *             jwt_algorithm: str,
  *             scheme_name: Optional[str] = None,
  *             scopes: Optional[Dict[str, str]] = None,             # <<<<<<<<<<<<<<
  *             description: Optional[str] = None,
  *             auto_error: bool = True
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_Optional); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 474, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_Optional); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 478, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_Dict); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 474, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_Dict); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 478, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 474, __pyx_L1_error)
+  __pyx_t_8 = PyTuple_New(2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 478, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_INCREF(((PyObject *)(&PyString_Type)));
   __Pyx_GIVEREF(((PyObject *)(&PyString_Type)));
@@ -19401,49 +19636,49 @@ if (!__Pyx_RefNanny) {
   __Pyx_INCREF(((PyObject *)(&PyString_Type)));
   __Pyx_GIVEREF(((PyObject *)(&PyString_Type)));
   PyTuple_SET_ITEM(__pyx_t_8, 1, ((PyObject *)(&PyString_Type)));
-  __pyx_t_9 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 474, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_GetItem(__pyx_t_5, __pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 478, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 474, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_7, __pyx_t_9); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 478, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_scopes, __pyx_t_8) < 0) __PYX_ERR(0, 468, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_scopes, __pyx_t_8) < 0) __PYX_ERR(0, 472, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "cy_web_x.py":475
+  /* "cy_web_x.py":479
  *             scheme_name: Optional[str] = None,
  *             scopes: Optional[Dict[str, str]] = None,
  *             description: Optional[str] = None,             # <<<<<<<<<<<<<<
  *             auto_error: bool = True
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_Optional); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 475, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_Optional); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 479, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_9 = __Pyx_PyObject_GetItem(__pyx_t_8, ((PyObject *)(&PyString_Type))); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 475, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyObject_GetItem(__pyx_t_8, ((PyObject *)(&PyString_Type))); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 479, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_description, __pyx_t_9) < 0) __PYX_ERR(0, 468, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_description, __pyx_t_9) < 0) __PYX_ERR(0, 472, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-  /* "cy_web_x.py":476
+  /* "cy_web_x.py":480
  *             scopes: Optional[Dict[str, str]] = None,
  *             description: Optional[str] = None,
  *             auto_error: bool = True             # <<<<<<<<<<<<<<
  * 
  *     ):
  */
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_auto_error, ((PyObject*)&PyBool_Type)) < 0) __PYX_ERR(0, 468, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_auto_error, ((PyObject*)&PyBool_Type)) < 0) __PYX_ERR(0, 472, __pyx_L1_error)
 
-  /* "cy_web_x.py":468
+  /* "cy_web_x.py":472
  * 
  * class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):
  *     def __init__(             # <<<<<<<<<<<<<<
  *             self,
  *             token_url: str,
  */
-  __pyx_t_9 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_29OAuth2PasswordBearerAndCookie_1__init__, 0, __pyx_n_s_OAuth2PasswordBearerAndCookie_3, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__70)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 468, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_29OAuth2PasswordBearerAndCookie_1__init__, 0, __pyx_n_s_OAuth2PasswordBearerAndCookie_3, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__70)); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 472, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
   __Pyx_INCREF(__pyx_t_9);
   PyList_Append(__pyx_t_6, __pyx_t_9);
@@ -19451,135 +19686,158 @@ if (!__Pyx_RefNanny) {
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_9, __pyx_tuple__71);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_9, __pyx_t_4);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_9) < 0) __PYX_ERR(0, 468, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_9) < 0) __PYX_ERR(0, 472, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
 
-  /* "cy_web_x.py":491
+  /* "cy_web_x.py":495
  *         self.jwt_algorithm = jwt_algorithm
  * 
  *     async def __call__(self, request: fastapi.Request):             # <<<<<<<<<<<<<<
  * 
  *         if request.cookies.get('access_token_cookie', None) is not None:
  */
-  __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 491, __pyx_L1_error)
+  __pyx_t_9 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_9);
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_fastapi); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 491, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_fastapi); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_Request); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 491, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_Request); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_request, __pyx_t_8) < 0) __PYX_ERR(0, 491, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_9, __pyx_n_s_request, __pyx_t_8) < 0) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  __pyx_t_8 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_29OAuth2PasswordBearerAndCookie_3__call__, 0, __pyx_n_s_OAuth2PasswordBearerAndCookie_2, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 491, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_29OAuth2PasswordBearerAndCookie_3__call__, 0, __pyx_n_s_OAuth2PasswordBearerAndCookie_2, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_8, __pyx_t_9);
   __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_call, __pyx_t_8) < 0) __PYX_ERR(0, 491, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_call, __pyx_t_8) < 0) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "cy_web_x.py":467
+  /* "cy_web_x.py":471
  * 
  * 
  * class OAuth2PasswordBearerAndCookie(OAuth2PasswordBearer):             # <<<<<<<<<<<<<<
  *     def __init__(
  *             self,
  */
-  __pyx_t_8 = __Pyx_Py3ClassCreate(__pyx_t_1, __pyx_n_s_OAuth2PasswordBearerAndCookie, __pyx_t_2, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 467, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_Py3ClassCreate(__pyx_t_1, __pyx_n_s_OAuth2PasswordBearerAndCookie, __pyx_t_2, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  if (__Pyx_CyFunction_InitClassCell(__pyx_t_6, __pyx_t_8) < 0) __PYX_ERR(0, 467, __pyx_L1_error)
+  if (__Pyx_CyFunction_InitClassCell(__pyx_t_6, __pyx_t_8) < 0) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_OAuth2PasswordBearerAndCookie, __pyx_t_8) < 0) __PYX_ERR(0, 467, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_OAuth2PasswordBearerAndCookie, __pyx_t_8) < 0) __PYX_ERR(0, 471, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "cy_web_x.py":549
+  /* "cy_web_x.py":553
  * 
  * 
  * def add_controller(web_app,prefix_path: str, controller_dir):             # <<<<<<<<<<<<<<
  *     web_app.load_controller_from_dir(prefix_path, controller_dir)
  * def start_with_uvicorn():
  */
-  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 549, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 553, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_prefix_path, __pyx_n_u_str) < 0) __PYX_ERR(0, 549, __pyx_L1_error)
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_17add_controller, 0, __pyx_n_s_add_controller, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__74)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 549, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_2, __pyx_n_s_prefix_path, __pyx_n_u_str) < 0) __PYX_ERR(0, 553, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_17add_controller, 0, __pyx_n_s_add_controller, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__74)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 553, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_1, __pyx_t_2);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_add_controller, __pyx_t_1) < 0) __PYX_ERR(0, 549, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_add_controller, __pyx_t_1) < 0) __PYX_ERR(0, 553, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":551
+  /* "cy_web_x.py":555
  * def add_controller(web_app,prefix_path: str, controller_dir):
  *     web_app.load_controller_from_dir(prefix_path, controller_dir)
  * def start_with_uvicorn():             # <<<<<<<<<<<<<<
  *     global web_application
  *     if isinstance(web_application,WebApp):
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_19start_with_uvicorn, 0, __pyx_n_s_start_with_uvicorn, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__75)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 551, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_19start_with_uvicorn, 0, __pyx_n_s_start_with_uvicorn, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__75)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 555, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_start_with_uvicorn, __pyx_t_1) < 0) __PYX_ERR(0, 551, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_start_with_uvicorn, __pyx_t_1) < 0) __PYX_ERR(0, 555, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":561
+  /* "cy_web_x.py":565
  * 
  * 
  * def load_controller_from_dir(prefix, controller_path):             # <<<<<<<<<<<<<<
  *     global web_application
  *     if isinstance(web_application,WebApp):
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_21load_controller_from_dir, 0, __pyx_n_s_load_controller_from_dir, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__77)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 561, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_21load_controller_from_dir, 0, __pyx_n_s_load_controller_from_dir, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__77)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 565, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_load_controller_from_dir, __pyx_t_1) < 0) __PYX_ERR(0, 561, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_load_controller_from_dir, __pyx_t_1) < 0) __PYX_ERR(0, 565, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":567
+  /* "cy_web_x.py":571
  *             prefix, controller_path
  *         )
  * def middleware():             # <<<<<<<<<<<<<<
  *     global web_application
  *     if isinstance(web_application, WebApp):
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_23middleware, 0, __pyx_n_s_middleware, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__78)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 567, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_23middleware, 0, __pyx_n_s_middleware, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__78)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 571, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_middleware, __pyx_t_1) < 0) __PYX_ERR(0, 567, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_middleware, __pyx_t_1) < 0) __PYX_ERR(0, 571, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":571
+  /* "cy_web_x.py":575
  *     if isinstance(web_application, WebApp):
  *         return web_application.app.middleware("http")
  * def auth():             # <<<<<<<<<<<<<<
  *     global web_application
  *     if isinstance(web_application,WebApp):
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_25auth, 0, __pyx_n_s_auth, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__79)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 571, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_25auth, 0, __pyx_n_s_auth, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__79)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 575, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_auth, __pyx_t_1) < 0) __PYX_ERR(0, 571, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_auth, __pyx_t_1) < 0) __PYX_ERR(0, 575, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "cy_web_x.py":576
+  /* "cy_web_x.py":580
  *         return fastapi.Depends(web_application.get_auth())
  * 
  * def auth_account():             # <<<<<<<<<<<<<<
  *     def wrapper(fn):
  *         if not callable(fn):
  */
-  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_27auth_account, 0, __pyx_n_s_auth_account, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__81)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 576, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_27auth_account, 0, __pyx_n_s_auth_account, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__81)); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 580, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_auth_account, __pyx_t_1) < 0) __PYX_ERR(0, 576, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_auth_account, __pyx_t_1) < 0) __PYX_ERR(0, 580, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+
+  /* "cy_web_x.py":596
+ * 
+ * 
+ * def fast_api()->fastapi.FastAPI:             # <<<<<<<<<<<<<<
+ *     global web_application
+ *     if isinstance(web_application,WebApp):
+ */
+  __pyx_t_1 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 596, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_1);
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_fastapi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 596, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_2);
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_FastAPI); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 596, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
+  if (PyDict_SetItem(__pyx_t_1, __pyx_n_s_return, __pyx_t_3) < 0) __PYX_ERR(0, 596, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+  __pyx_t_3 = __Pyx_CyFunction_New(&__pyx_mdef_8cy_web_x_29fast_api, 0, __pyx_n_s_fast_api, NULL, __pyx_n_s_cy_web_x, __pyx_d, ((PyObject *)__pyx_codeobj__82)); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 596, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  __Pyx_CyFunction_SetAnnotationsDict(__pyx_t_3, __pyx_t_1);
+  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_fast_api, __pyx_t_3) < 0) __PYX_ERR(0, 596, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /* "cy_web_x.py":1
  * import logging             # <<<<<<<<<<<<<<
  * from fastapi.exceptions import HTTPException
  * from typing import List
  */
-  __pyx_t_1 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_GOTREF(__pyx_t_1);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_1) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
-  __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+  __pyx_t_3 = __Pyx_PyDict_NewPresized(0); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_GOTREF(__pyx_t_3);
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_test, __pyx_t_3) < 0) __PYX_ERR(0, 1, __pyx_L1_error)
+  __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
 
   /*--- Wrapped vars code ---*/
 
