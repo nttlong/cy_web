@@ -10,7 +10,7 @@ import fastapi
 
 import cy_web
 cy_web.create_web_app(
-    working_dir= r"C:\code\python\cy_web\test_apps",
+    working_dir= pathlib.Path(__file__).parent.__str__(),
     host_url="http://localhost:5011",
     static_dir="./static",
     template_dir="./templates",

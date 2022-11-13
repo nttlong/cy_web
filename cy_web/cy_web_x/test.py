@@ -5,7 +5,7 @@ import cy_web_x
 fx=cy_web_x.WebApp(
 
 
-    working_dir= r"C:\code\python\cy_web\test_apps",
+    working_dir= r"C:\code\python\cy_web\example",
     host_url="http://localhost:5011",
     static_dir="./static",
     template_dir="./templates",
