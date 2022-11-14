@@ -3,7 +3,7 @@ import pathlib
 from typing import List
 import sys
 sys.path.append(pathlib.Path(__file__).parent.__str__())
-from .cy_web_x import get_root_package_dir
+
 import cy_web_x
 
 
