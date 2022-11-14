@@ -1,8 +1,12 @@
+import os.path
 import pathlib
 from typing import List
 import sys
 sys.path.append(pathlib.Path(__file__).parent.__str__())
+from .cy_web_x import get_root_package_dir
 import cy_web_x
+
+
 def create_web_app(
         working_dir:str,
         host_url:str,
@@ -50,17 +54,11 @@ def start_with_uvicorn():
 
 def middleware():
     return cy_web_x.middleware()
-def auth():
-    """
-    Set require auth on api handler
-    :return:
-    """
-    return cy_web_x.auth()
-def auth_account():
-    """
-    Code decorate for on aoyhthenti cate token
-    :return:
-    """
-    return cy_web_x.auth_account()
+
+
 def add_cors(origins:List[str]):
     return cy_web_x.add_cors(origins)
+
+
+def model():
+    return cy_web_x.model()

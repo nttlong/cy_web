@@ -1,6 +1,8 @@
 from typing import Optional,List
-from example.controllers.models.tanents import Tanents
 
+import cy_web
+from example.controllers.models.tanents import Tanents
+@cy_web.model()
 class Users:
 
     # Tanent: Optional[Tanents]

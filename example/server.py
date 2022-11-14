@@ -36,13 +36,6 @@ cy_web.add_cors(
     "http://localhost:8080",
 ])
 cy_web.load_controller_from_dir("api","./controllers")
-@cy_web.auth_account()
-def verify_account(username:str,password:str):
-    return dict(
-        application='a',
-        is_ok=True,
-        username =username
 
-    )
 if __name__ =="__main__":
     cy_web.start_with_uvicorn()
